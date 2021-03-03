@@ -1,0 +1,217 @@
+AP COMP SCI A 1 OF 2
+8
+Lesson-26
+Rick Platek
+•
+Dec 9
+
+=============================================================================
+Task #1:  Present Titius-Bode
+=============================================================================
+ In the 18th century, the astronomer Johann Daniel Titius proposed a rule,
+   later recorded by Johann Elert Bode, for calculating the distance from
+   the sun to each of the planets known at the time. To apply that rule,
+   which is know as the "Titius-Bode-Law", you begin by writing down the
+   sequence
+
+	b_1 = 1    b_2 = 3   b_3 = 6  b_4 = 12   b_5 = 24   b_6 = 48 ...
+
+   where each subsequent element in the sequence is twice the preceding one.
+   It turns out that an approximate distance to the ith planet can be computed
+   from this series by applying the formula
+
+
+      d_i = 4 + b_i
+           ---------
+              10
+
+
+    The distance d_i is expressed in astronomical units (AUs), which correspond
+    to the average distance from the earth to the sun (approximately 93E6 miles).
+    Except for a disconcerting gap between Mars and Jupiter, the "Titius-Bode" law
+    gives reasonable approximations for the distances to the seven planets known
+    at the time.
+
+
+       	   Mercury	0.5AU
+	   Venus	0.7AU
+	   Earth	1.0AU
+	   Mars		1.6AU
+	   ?		2.8AU
+	   Jupiter	5.2AU
+	   Saturn	10.0AU
+	   Uranus	19.6AU
+
+    Concern about the gap in the sequence led astronomers to discover the asteroid
+    belt, which they suggested might have been the remains of a planet that had
+    once orbited the sun at the distance specified by the missing entry in the
+    table.
+
+    Write a recursive method getTitiusBodeDistance(k) that calculates the expected
+    distance between the sun and the kth planet, numbering outward from Mercury
+    starting at 1. Test your method by writing a program that displays the
+    distances to each of these planets in tabular form.
+
+
+
+
+
+==============================================================================
+Task #2: Present RiffleShuffle
+==============================================================================
+
+   Compose a program to rearrange a deck of n cards using the
+   Gilbert-Shannon-Reeds model of a "riffle-shuffle." First, generate
+   a random integer r according to a binomial distribution: flip a fair
+   coin n times and let r be the number of heads. Now, divide the deck
+   into two piles: the first r cards and the remaining n-r cards. To
+   complete the shuffle, repeatedly take the top card from one of the
+   two piles and put it on the bottom of a new pile. If there are n1 cards
+   remaining in the first pile and n2 cards remaining in the second pile,
+   choose the next card from the first pile with probability n1 / (n1 + n2)
+   and from the second pile with probability n2 / (n1 + n2).
+
+   Watch this video :https://www.youtube.com/watch?v=AxJubaijQbI
+   to determine how many riffle shuffles you need to apply to a deck
+   of 52 cards to produce a (nearly) uniformly shuffled deck.
+
+   Write the program RiffleShuffle.java to demonstrate the result. Represent
+   the 52 cards in an integer array(card[0], ... ,card[51) and your program
+   should include a method riffleShuffe(int [] cards) that performs
+   exactly 1 riffle shuffle via a side effect.
+
+   Look up the bernoulli() method from the StdRandom library and use it
+   in your program.
+
+
+===========================================================================
+Task #3: Present Rumors
+===========================================================================
+   Rumors. Alice is throwing a party with n other guests, including
+   Bob. Bob starts a rumor about Alice by telling it to one of the other
+   guests. A person hearing this rumor for the first time will immediately
+   tell it ot one other guest, chosen uniformly at random from all the
+   people at the party except Alice and the person from whom they heard it.
+   If a person (including Bob) hears the rumor for a second time, he or she
+   will not propagate it further. Write a program to estimate the probability
+   that everyone at the party (except Alice) will hear the rumor before it
+   stops propagating. Also calculate an estimate of the expected number
+   of people to hear the rumor.
+
+
+   n          P(all heard)       Expected Number Heard
+   1            1.0               1
+   2            1.0               2
+   3            1.0               3
+   4            0.5               3.5
+   5            0.22              3.89
+
+
+===========================================================================
+Task #4: Computing Terms in the Fibonacci Sequence
+===========================================================================
+
+  Let  t_i be the ith term
+
+  First 13 terms of the Fibonacci Sequence are:
+
+  t_0 :   0
+  t_1 :   1
+  t_2 :   1
+  t_3 :   2
+  t_4 :   3
+  t_5 :   5
+  t_6 :   8
+  t_7 :  13
+  t_8 :  21
+  t_9 :  34
+  t_10:  55
+  t_11 : 89
+  t_12 :144
+
+
+
+a. Write a recursive method to compute the ith term of the Fibonacci sequence.
+
+   // precondition: n >= 0
+   public static int fib (int n){
+         // your code goes here
+   }
+
+b. How many function calls are made for fib(5)?
+
+
+============================================================================
+Task #5: An alternate recursive solution.
+============================================================================
+
+   Hopefully you see that the implementation of fib(int) in part (a). is
+   highly inefficient, many people people are tempted to point the finger
+   at recursion as the culprit. The problem in the Fibonacci example, however,
+   has nothing to do with recursion per se but rather with the way in which
+   recursion is used. By adopting a different strategy, it is possible to
+   write a recursive implementation of the fib method in which the large-scale
+   inefficiencies disappear completely.
+
+   As is often the case when using recursion, the key to finding a more
+   efficient solution lies in adopting a more general approach. The Fibonacci
+   sequence is not the only sequence whose terms are defined by the recurrence
+   relation
+
+          t_n = t_(n-1) + t_(n-2).
+
+   Depending on how you choose the first two terms, you can generate many
+   different sequences. The traditional Fibonacci sequence
+
+      0,1,1,2,3,5,13,21,34,55,89,144,...
+
+   comes from defining t_0 = 0 and t_1 = 1. If, for example, you defined
+   t_0 = 3 and t_1 = 7, you would get this sequence instead:
+
+     3,7,10,17,27,44,71,115,186,301,487,788,1275,...
+
+   Similarly, defining t_0 = -1 and t_1 = 2 gives rise to the following
+   sequence:
+
+     -1,2,1,3,4,7,11,18,29,47,76,123,199,...
+
+   These sequences all use the same recurrence relation, which specifies that
+   each new term is the sum of the preceding two. The only way the sequences
+   differ is in the choice of the first two terms. As a general class, sequences
+   that follow this pattern are called additive sequences.
+
+   This concept of an additive sequence makes it possibleto convert the problem
+   of finding the nth term in the Fibonacci sequence into the more general problem
+   of finding the nth term in an additive sequence whose initial terms are t_0 and
+   t_1. Such a method requires three arguments and might be expressed in Java as
+   a method with the following method signature.
+
+        // preconditin: n >= 0, t0 is the first term, t1 is the
+	//              second term.
+        public static int additiveSequence(int n, int t0, int t1)
+
+
+
+  a. Use recursion to implement the additiveSequence(int,int,int) method.
+
+
+  b. Rewrite the fib(int) method as a wrapper method of additiveSequence(int,int,int).
+
+
+  c. How many function calls are made for fib(5)?
+
+
+
+========================================================================================
+Hw:
+========================================================================================
+ Coursera: week5/programming assignment
+
+  Files to submit via Google Classroom.
+  - ActivationFunction.java
+  - Divisors.java
+  - AudioCollage.java
+Class comments
+
+Lesson-26
+Displaying lesson.txt.

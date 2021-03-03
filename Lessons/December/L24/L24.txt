@@ -1,0 +1,160 @@
+AP COMP SCI A 1 OF 2
+8
+Lesson-24
+Rick Platek
+•
+Dec 3 (Edited Dec 3)
+
+=============================================================================
+Task #1: Cannonball
+=============================================================================
+ a.Spherical objects, such as cannonballs, can be stacked to form a pyramid
+   with one cannonball at the top, sitting on top of a square composed of
+   four cannonballs, sitting on top of a square composed of nine cannonballs,
+   and so forth. Write a recursive method cannonball that takes as its
+   argument the height of the pyramid and returns the number of cannonballs
+   it contains. Your method must operate recursively and must not use any
+   iterative constructs such as while or for.
+
+ b. Write a program Cannonball.java that takes one command-line argument n
+    and uses the recursive function from part(a) to print the number of
+    cannonballs in the pyramid. Throw a run time exception when necessary.
+
+
+ c. Draw a stack frame diagram for cannonball(3).
+
+
+
+
+
+
+==============================================================================
+Task #2: toBinary
+==============================================================================
+
+  Write a program that takes a positive integer n (in decimal) as a
+  command-line argument and prints its binary representation. Use this simple
+  method: repeatedly divide 2 into n and read the remainders backward.
+
+  a. First write a function toReverseBinary(int) that uses a while loop to
+     carry out this computation and returns a String with the bits in the
+     wrong order.
+
+  b. Then write a function toBinary(int) that uses recursion to arrange the bits
+     in the correct order.
+
+
+
+
+===========================================================================
+Task #3: Digit Sum
+===========================================================================
+   Write a recursive method digitSum(int) that takes a nonnegative integer
+   and returns the sum of its digits. For example, calling digitSum(1729)
+   should return 1 + 7 + 2 + 9, which is 19.
+
+   The recursive implementation of digitSum(int) depends on the fact that it
+   is easy to break an integer down into two components using division by 10.
+   For example, given the integer 1729, you can divide it into two pieces as
+   follows:
+				1729
+		               /    \
+	                    172      9
+
+   Each of the resulting integers is strictly smaller than the original
+   and thus represents a simpler case.
+
+
+===========================================================================
+Task #4: Digital Root
+===========================================================================
+
+    The digital root of an integer n is defined as the result of summing
+    the digits repeatedly until only a single digit remains. For example,
+    the digital root of 1729 can be calculated using the following steps:
+
+        Step 1:   1 + 7 + 2 + 9  -> 19
+	Step 2:   1 + 9          -> 10
+        Step 3:   1 + 0          -> 1
+
+    Write a method digitalRoot(int n) that returns the digital root of n.
+    Part of the challenge of this problem is to write the method
+    recursively without using any explicit loops.
+
+
+
+
+============================================================================
+Task #5: Random Noise with StdAudio
+=============================================================================
+  Read the Section 1.5  Standard Audio.
+
+  Write the program RandomNoise.java that takes one command-line argument
+  duration (in seconds) and uses a sampling rate of 44,100 samples per second
+  to play random noise for the specified duration.
+
+
+
+
+===============================================================================
+Task #6: Euclid's Algorithm
+===============================================================================
+    In section 2.5, read the section Euclid's Algorithm and study and
+    run the program Euclid.java.
+
+    Take Note:
+    Lame’s theorem.
+
+     Using the Euclidean algorithm to find the greatest common divisor of two
+     positive integers the number of divisions is less than or equal to five
+     times the number of decimal digits in the minimum of the two integers.
+
+
+
+    Complete Web exercise #1.
+
+
+
+    Complete Web exercise #23.
+
+
+================================================================================
+Hw: Due
+================================================================================
+
+1. Compose a program to rearrange a deck of n cards using the
+   Gilbert-Shannon-Reeds model of a "riffle-shuffle." First, generate
+   a random integer r according to a binomial distribution: flip a fair
+   coin n times and let r be the number of heads. Now, divide the deck
+   into two piles: the first r cards and the remaining n-r cards. To
+   complete the shuffle, repeatedly take the top card from one of the
+   two piles and put it on the bottom of a new pile. If there are n1 cards
+   remaining in the first pile and n2 cards remaining in the second pile,
+   choose the next card from the first pile with probability n1 / (n1 + n2)
+   and from the second pile with probability n2 / (n1 + n2).
+
+   Watch this video :https://www.youtube.com/watch?v=AxJubaijQbI
+   to determine how many riffle shuffles you need to apply to a deck
+   of 52 cards to produce a (nearly) uniformly shuffled deck.
+
+   Write the program RiffleShuffle.java to demonstrate the result. Represent
+   the 52 cards in an integer array(card[0], ... ,card[51) and your program
+   should include a method riffleShuffe(int [] cards) that performs
+   exactly 1 riffle shuffle via a side effect.
+
+   Look up the bernoulli() method from the StdRandom library and use it
+   in your program.
+
+
+2. Write the program ChromaticScale.java that plays each note, starting with A,
+   in the chromatic scale for 1 second.
+      -- Use the StdAudio library
+      -- Refer to the Standard Audio section on this page of the book site:
+         https://introcs.cs.princeton.edu/java/15inout/
+
+lesson.txt
+Text
+Class comments
+
+Lesson-24
+Displaying lesson.txt.

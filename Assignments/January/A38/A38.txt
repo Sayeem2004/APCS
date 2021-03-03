@@ -1,0 +1,42 @@
+AP COMP SCI A 1 OF 2
+8
+Assignment #38: You may work with a partner.
+Rick Platek
+•
+8:27 AM
+25 points
+Due Jan 25, 11:59 PM
+1. Watch the video: Cryptography: Linear Feedback Shift Register
+
+    https://www.youtube.com/watch?v=1UCaZjdRC_c
+
+
+2. Complete the Linear Feedback Shift Register Programming Assignment
+   found here:
+
+      https://www.cs.princeton.edu/courses/archive/fall10/cos126/assignments/lfsr.html
+
+
+3. Submit the following files:
+
+    -- LFSR.java (15 pts)
+    -- PhotoMagic.java (10 pts)
+
+   Your program must comply with the following.
+
+   Compilation instructions
+   $ javac LFSR.java PhotoMagic.java
+
+   Execution instructions
+   $ java PhotoMagic pipe.png 01101000010100010000 16
+
+COS 126 Programming Assignment: LFSR
+https://www.cs.princeton.edu/courses/archive/fall10/cos126/assignments/lfsr.html
+
+Cryptography: Linear Feedback Shift Register
+YouTube video   ‪10 minutes‬
+Class comments
+
+Your work
+Assigned
+Private comments

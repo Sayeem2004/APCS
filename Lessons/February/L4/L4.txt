@@ -1,0 +1,26 @@
+Data Structures
+Period 6
+Lesson-04
+Rick Platek
+•
+8:56 AM
+============================================================================
+Join Codestepbystep.com
+============================================================================
+ 1. Create an account at : https://www.codestepbystep.com/
+    Use your Stuyvesant credentials.
+
+ 2. Go to  https://www.codestepbystep.com/course/list
+
+   Join the Course:
+
+   Stuyvesant High School
+   CS AP2-Spring 2021      Mr. Platek
+
+===============================================================================
+Group Work Assignments: Assignment-06 and 07.
+===============================================================================
+Class comments
+
+Lesson-04
+Displaying assignment-07.txt.

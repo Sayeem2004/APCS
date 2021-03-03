@@ -1,0 +1,208 @@
+AP COMP SCI A 1 OF 2
+8
+Assignment #37: Find a partner.  Submit 2 files : Rational.java and RationalClient.java.
+Rick Platek
+•
+7:23 AM
+45 points
+Due Jan 22, 11:45 PM
+=============================================================================
+Task #1: Review the Java Documentation
+=============================================================================
+
+1. What is an Object?
+
+   https://docs.oracle.com/javase/tutorial/java/concepts/object.html
+
+2. What is a Class?
+
+   https://docs.oracle.com/javase/tutorial/java/concepts/class.html
+
+3. What is Inheritance?
+
+   https://docs.oracle.com/javase/tutorial/java/concepts/inheritance.html
+
+
+=========================================================================
+Task #2:  Immutable Objects
+========================================================================
+According to Joshua Bloch, a professor at Carnegie Mellon University
+and formerly the Chief Java architect at Google,
+
+It is considered good practice to minimize mutablity of an Object.
+=========================================================================
+An immutable class is simply a class whose instances cannot be modified. All
+of the information contained in each instance is fixed for the lifetime
+of the object, so no changes can ever be observed. The Java platform contain
+many immutable classes, including String and the boxed primitive classes.
+There are many good reasons for this: Immutable classes are easier to design,
+implement, and use than mutable classes. They are less prone to error and
+more secure.
+
+To make a class immutable, follow these 5 rules:
+
+1. Don't provide methods that modify the object's state
+   (known as mutators/setters).
+
+2. Ensure that the class can't be extended.
+   A way for preventing subclassing is by making the class final.
+
+    public final class A{...}
+
+3. Make all fields(instance variables) final.
+
+4. Make all fields private.
+
+5. Ensure exclusive access to any mutatable components.
+   If your class contains a mutatable object, ensure that clients cannot
+   obtain references to these objects.
+
+
+============================================================================
+Task#3:	Implement a Rational number ADT.
+============================================================================
+
+A rational number is simply a ratio of 2 integers.
+
+Your Rational object will be a immutable data type that always
+expresses the rational number in simplest form. For example, 2/4 is
+stored as 1/2, 10/8 is stored as 5/4, etc..
+
+The rational number class supports the 4 arithmetic operations :
+  +, -, *,  and /.
+
+
+
+You should have 2 files: Rational.java and RationalClient.java.
+The RationalClient program should contain only a main method its
+purpose is to test your Rational class.
+Steps for implementing the Rational ADT.
+Follow Professor Bloch's good programming practices listed above.
+
+1. Declare appropriate fields.  (2pts)
+
+2. Provide a default constructor which sets the default value to 0/1. (2pts)
+
+
+3. Provide a second constructor Rational(int n) that represents n / 1. (2pts)
+
+4. Provide a third constructor Rational(int n, int d) to represent
+   n/d. (3 pts)
+
+   This constructor should simplify n/d when necessary. You may want
+   to write a separate method to complete the simplification.
+
+   Also, if d is 0 a RuntimeException should be thrown with the message
+   DIVISION BY ZERO.
+
+5. Override the toString() method with appropriate behavior. (2 pts)
+
+    When a method in one class duplicates the name and parameter
+    structure of a method in a superclass, the local definition
+    overrides the definition from the superclass. To indicate that
+    the decision to replace the definition of an existing method
+    with a new one was intentional, it is now conventional in Java
+    to specify that you are suppling a new implementation of an
+    existing method by writing @Override before the new definition
+    as follows:
+
+	    @Override
+	    public String toString() {...}
+
+    The @Override syntax is an example of what Java calls annotation.
+    Like comments, annotations provide documentation about the code even
+    though those annotations have no effect when the program runs. Unlike
+    comments, however, annotations are read by the compiler, which can
+    use the information to improve its operation. In the case of the
+    @Override annotation, for example, the compiler checks to ensure
+    that the method does indeed override a method from its superclass.
+
+
+6. Implement the method  plus(Rational rhs) to perform the addition of
+   2 rational numbers (a/b + c/d). (2pts)
+
+
+
+7. Implement  minus(Rational rhs) for subtraction. (2pts)
+
+8. Implement  times(Rational rhs) for multiplication. (2pts)
+
+9. Implement  dividesBy(Rational rhs) for division. (2pts)
+
+10. Test that your code enforces that only 1 value of zero exists.(2pts)
+    These tests should be done within the RationalClient program.
+
+      Rational()     --> 0/1
+      Rational(0,3)  --> 0/1
+      Rational(0)    --> 0/1
+      Rational(0,-3) --> 0/1
+
+   Fix your code if necessary.
+
+
+11. For negative rational numbers, the negation sign should only be
+    associated with the numerator.(2pts)
+
+    Rational(1,-3)    --> -1/3
+
+
+12.  Assume a,b,c, and d are references to rational objects,
+     write the Jave code to represent each of the following expressions:
+     (3 pts)
+    a. a + b + c + d
+
+    b. a(b + c) - d
+
+    c. (a + b) / (c + d)
+
+13. Assume rats is an ArrayList of Rational numbers, write code to compute
+    the sum of the rationals from list rats. (3pts)
+
+
+14. Add the invert(), negate() ,abs() and doubleValue()  methods to the Rational
+    class. (4 pts)
+
+     1/2     inverted       is  2/1
+     1/2     negated        is -1/2
+    -1/2     absolute value is  1/2
+     1/2     as a double    is  0.5
+
+15.(3 pts)
+   Write a code to approximate e using first 10 terms of the Taylor series:
+
+     e = 1 + 1/1! + 1/2! + 1/3! + ...
+
+
+  The output should be:
+  0      0/1                                0.00000000
+  1      1/1                                1.00000000
+  2      2/1                                2.00000000
+  3      5/2                                2.50000000
+  4      8/3                                2 .66666667
+  5      65/24                            2.70833333
+  6      163/60                          2.71666667
+  7      1957/720                      2.71805556
+  8      685/252                        2.71825397
+  9      109601/40320             2.71827877
+  10    1454877/2273984      0.63979210
+
+
+16. Implement an appropriate equals method. Use the Override annotation.
+    (3 pts)
+
+17. Test your code with a static method
+
+        int  linearSearch(Rational[] rats, Rational key)
+
+    that returns the index of the first occurrence of key in the [] or
+    -1 if not found. (3 pts)
+
+
+18. Test that your class works nicely with the ArrayList class,
+    test your equals method by using the contains method of
+    the Arraylist class. (3 pts)
+Class comments
+
+Your work
+Assigned
+Private comments

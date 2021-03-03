@@ -1,0 +1,33 @@
+AP COMP SCI A 1 OF 2
+8
+Assignment-17
+Rick Platek
+•
+Nov 5
+Due Nov 9
+- Prepare your solution for the next class.
+
+
+Question #1:
+
+	 Review the program RangeFilter.java posted in section 1.5
+	 of the booksite.
+
+
+	 Write a filter TenPerLine that reads from standard input a
+	 sequence of integers and prints only the integers between 0 and 99
+	 back, 10 integers per line, with columns aligned. Then write a
+	 program RandomIntSeq that takes two integer command-line
+	 arguments m and n and prints n random integers between 0 and
+	 m-1. Test your programs with the command
+
+         $ java RandomIntSeq 200 100 | java TenPerLine
+Class comments
+
+Your work
+Turned in
+No work attached
+Private comments
+
+Assignment-17
+Displaying hw.txt.

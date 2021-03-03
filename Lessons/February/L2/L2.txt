@@ -1,0 +1,243 @@
+Data Structures
+Period 6
+Lesson-02
+Rick Platek
+•
+8:57 AM
+============================================================================
+Polymorphism ( Dynamic Dispatch)
+============================================================================
+
+The word polymorphism literally means “many forms.” In the context of object-
+oriented design, it refers to the ability of a reference variable to take
+different forms.
+
+---Polymorphism Example
+Function f;
+f = new Square();
+System.out.println(f.evaluate(1.1)); // 1.21
+f = new Half();
+System.out.println(f.evaluate(1.1)); // 0.55
+
+
+We say that the variable, f, is polymorphic; it may take one of many forms,
+depending on the specific class of the object to which it refers.
+
+
+-- Dynamic Dispatch Example
+Function f;
+if (Math.random() < 0.5)
+f = GaussianPDF();
+else
+f = Square();
+//The function that f refers to determined at run time.
+plot(f,-10,10,50);
+
+Java uses a process known as dynamic dispatch, deciding at runtime to call the
+version of the method that is most specific to the actual type of the referenced
+object (not the declared type). So, if the object is a Square instance, it will
+execute the Square evaluate method, if the object is a GaussianPDF instance, it
+will execute the GaussianPDF evaluate method.
+
+
+===============================================================================
+Lambda Expressions represent an unnamed function.
+===============================================================================
+Scheme: (lambda(x y) (+ x y))
+
+Python: lambda x,y : x + y
+
+Java : x,y -> x + y
+
+Example Usage:
+
+***
+Important : Use the Function.java, Square.java, GaussianPDF.java
+from the book site
+***
+
+public class FunctionGraph {
+
+// plots the function f in the interval [a, b] using n+1 evenly spaced points
+public static void plot(Function f, double a, double b, int n) {
+double[] y = new double[n+1];
+double delta = (b - a) / n;
+for (int i = 0; i <= n; i++)
+y[i] = f.evaluate(a + delta*i);
+StdStats.plotPoints(y);
+StdStats.plotLines(y);
+}
+
+
+
+// sample client program
+public static void main(String[] args) {
+double a = Double.parseDouble(args[0]);
+double b = Double.parseDouble(args[1]);
+// a collection of functions
+Function [] functions = { new Square(), new GaussianPDF(), x -> 0.5}; // lambda expression
+// Polymorphism and dynamic dispatch
+for (Function f : functions)
+plot(f, a, b, 50);
+}
+
+}
+--- Assignment #3 (Individual Assignment)------------------------------------
+Extend the plot method of the FunctionGraph program so that it takes
+a Color parameter, which controls the color of the line. Use this extended
+plot method to create a graph showing the growth curves of the most common
+complexity classes --- constant, logarithmic, linear, N log N, quadratic,
+and exponential -- each in a different color. Use a lambda expression to define
+each function.
+
+
+-- FunctionGraph.java (Modifiy this program).
+-- Function.java **** Use the exact version from the book site. ****
+-- Only use classes found in stdlib.jar
+
+The execution instructions for your program:
+
+%java -cp .:../../stdlib.jar FunctionGraph 1 25 50
+
+produces the picture : ComplexityGraph.png
+
+Put your name in the documentation of FunctionGraph.java and submit only
+this program.
+
+
+============================================================================
+The Comparable interface
+============================================================================
+--- Review the Documentation
+
+https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html
+
+Comparable.java is simply:
+
+public interface Comparable<T>{
+
+public int abstract compareTo(T obj);
+
+}
+
+
+--- Generics
+Java includes support for writing generic classes and methods that can
+operate on a variety of data types while often avoiding the need for explicit
+casts. The generics framework allows us to define a class in terms of a set
+of formal type parameters, which can then be used as the declared type for
+variables, parameters, and return values within the class definition. Those
+formal type parameters are later specified when using the generic class as
+a type elsewhere in a program.
+
+
+ex. Comparable<T> the <T> is the formal parameter.
+
+--- Behavior
+negative when rhs < lhs
+rhs.compareTo(lhs) -> 0 when rhs is equivalent to lhs
+positive when rhs > lhs
+
+--- Strings are Comparable.(see StringCompareToExample.java)
+
+"apple".compareTo("apple") -> 0
+"apple".comparetTo("banana")-> -1
+"apple".compareTo("ape") -> 11
+
+
+--- Download and review the files
+-- Rational.java
+-- SortedRationals.java
+
+---- Rational.java ----------------------------------------------------------------
+
+example order relation: 1/2 < 3/4
+Rational a = new Rational(1,2);
+Rationa b = new Rational(3,4);
+
+
+a.compareTo(b) => 1 * 4 - 2 * 3 => 4 - 6 => -2
+b.compareTo(a) => 3 * 2 - 1 * 4 => 6 - 4 => 2
+
+
+
+
+public final class Rational implements Comparable<Rational>{
+...
+@Override
+public int compareTo(Rational rhs){
+return this.n * rhs.d - rhs.n * this.d;
+}
+}
+
+
+---- SortedRationals.java ---------------------------------------------------------
+import java.util.Collections;
+import java.util.ArrayList;
+import java.util.List;
+
+public class SortedRationals{
+
+public static void main(String [] args){
+List<Rational> rats = new ArrayList<Rational>();
+rats.add(new Rational(3,5));
+rats.add(new Rational(-3,5));
+rats.add(new Rational(4,5));
+rats.add(new Rational(1,5));
+
+// unsorted rats: [3/5, -3/5, 4/5, 1/5]
+System.out.println("unsorted rats: " + rats);
+
+Collections.sort(rats); // sorts in ascending order
+
+//sorted rats: [-3/5, 1/5, 3/5, 4/5]
+System.out.println(" sorted rats: " + rats);
+}
+
+}
+--------------OUTPUT -------------------------------------------------------
+$ java SortedRationals
+unsorted rats: [3/5, -3/5, 4/5, 1/5]
+sorted rats: [-3/5, 1/5, 3/5, 4/5]
+
+
+============================================================================
+Assignment #4: The Postal Bar Code Lab (Group assignment)
+============================================================================
+-- Read the PostalBarCodeLab.txt
+-- Download the client program BarCodes.java program.
+
+-- Submit PostalBarCode.java (include your names in the documentation).
+Your code will be tested with the BarCodes program.
+
+
+----------------------- Output ----------------------------------------------
+$ java BarCodes
+Unsorted codes:
+11111: |:::||:::||:::||:::||:::||:|:|:|
+08451: |||:::|::|::|::|:|:|::::|||::|:|
+11701: |:::||:::|||:::|||::::::||||:::|
+10282: |:::||||:::::|:||::|:::|:|::||:|
+min code: 08451: |||:::|::|::|::|:|:|::::|||::|:|
+max code: 11701: |:::||:::|||:::|||::::::||||:::|
+Sorted codes:
+08451: |||:::|::|::|::|:|:|::::|||::|:|
+10282: |:::||||:::::|:||::|:::|:|::||:|
+11111: |:::||:::||:::||:::||:::||:|:|:|
+11701: |:::||:::|||:::|||::::::||||:::|
+binary search 11111: |:::||:::||:::||:::||:::||:|:|:| found at: 2
+
+ComplexityGraph.png
+Image
+
+Rational.java
+Java
+
+SortedRationals.java
+Java
+
+StringCompareToEx.java
+Java
+Class comments
+
+Lesson-02

@@ -1,0 +1,65 @@
+Data Structures
+Period 6
+Assignment-06 (Group Work)
+Rick Platek
+•
+8:29 AM
+10 points
+Due Feb 11
+Submit : Diamond.java ( Put your names in the documentation).
+
+Diamond.java
+Java
+
+DiamondLab.txt
+Text
+
+DiamondTester.java
+Java
+Class comments
+
+Your work
+Assigned
+Private comments
+
+Assignment-06 (Group Work)
+
+Files:
+=======
+  - Diamond.java
+  - DiamondTester.java
+
+This lab is based on the exercises found at:
+  https://chortle.ccsu.edu/Java5/Notes/chap53B/progExercises53B.html
+
+Examine the following Diamond class.
+
+
+The size of a diamond is measured in carets, usually less than 5.0.
+The clarity grade of a diamond is give as a two or three letter code,
+FL, IF, VVS1, VVS2, VS1, VS2, SI1, SI2, I1, I2, I3. FL (flawless) is
+the best, I3 is the worst. The color grade is a one letter code, D
+through Z. D is the best, Z is the worst. The cut is the name of the
+pattern the diamond has been cut into.
+
+Finish the toString() and the compareTo() methods. Write compareTo()
+so that diamonds are ordered first by caret, then by clarity OR color,
+whichever is better for the particular diamond. Since there are 23 grades
+of color, but only 11 grades of clarity, regard the first two color grades
+as equal in grade to the first grade of clarity, the next two color grades
+equal in grade to the second grade of clarity, and so on.
+Write compareTo() so that better diamonds are to the left of poor diamonds.
+This means that
+
+     goodDiamond.compareTo( poorDiamond )
+
+returns a negative value. Notice that large caret diamonds will appear
+first on the list, the reverse of the usual order for numbers.
+
+In comparing the codes for clarity, you will need a series of if statements.
+It might be useful to write a separate compareClarity() method as part of
+
+the class. Use the DiamondTester program to test your code.
+
+DiamondLab.txt
+Displaying Employee.java.Turning in…

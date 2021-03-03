@@ -1,0 +1,12 @@
+AP COMP SCI A 1 OF 2
+8
+Assignment-03
+Rick Platek
+•
+Oct 1
+Due Oct 5
+Complete web exercise #18, Ordered.java. You will submit this assignment via google classroom
+	   to be graded.
+Class comments
+
+Assignment-03

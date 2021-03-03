@@ -1,0 +1,209 @@
+AP COMP SCI A 1 OF 2
+8
+Lesson-23
+Rick Platek
+•
+Dec 1 (Edited Dec 3)
+
+=============================================================================
+Task #1: Fully testing the majority function.
+=============================================================================
+
+
+   Write a static method majority() that takes exactly three boolean
+   arguments and returns true if at least two of the argument values
+   are true, and false otherwise. Do not use an if or switch statement.
+
+
+   *** Test your code on the domain of the majority function.
+       Do this by creating a text file of all possible inputs.
+       In Functions.java, use StdIn.readBoolean() to
+       read the inputs from standard input.
+       When you run the program, use the Unix shell
+       redirection operator,<, to place the inputs onto the the
+       standard input stream.
+
+     ex.
+
+         $javac -cp .:stdlib.jar Functions.java
+	 $java -cp .:stdlib.jar Functions < test-cases.txt
+
+==============================================================================
+Task #2: The eq() function.
+==============================================================================
+
+
+
+   Write a static method eq() that takes two int arrays as arguments
+   and returns true if the arrays have the same length and all corresponding
+   pairs of elements are equal, and false otherwise.
+
+
+   Test your code.
+
+
+
+
+
+===========================================================================
+Task #3: More function practice.
+===========================================================================
+
+
+1. Write a static method scale() that takes a double array as its
+   argument and has the side effect of scaling the array so that each
+   element is between 0 and 1 (by subtracting the minimum value from
+   each element and then dividing each element by the distance
+   between the minimum and maximum values).
+
+
+   *** From the StdStats library use the functions
+	    min(double[])
+	    max(double[]).
+       Test your code.
+
+------------------------------------------------------------------------------
+
+2. Write a static method reverse() that takes an array of strings as its
+   argument and returns an array with the strings in reverse order. (Do
+   no change the order of the strings in the argument array).
+------------------------------------------------------------------------------
+
+3. Write a static method reverseInplace() that takes an array of strings
+   as its argument and produce the side effect of reversing the order
+   of the strings in the argument array.
+
+
+
+
+
+
+===========================================================================
+Task #4: Recursive Functions
+===========================================================================
+1. Download, review and run the Factorial.java program (section 2.3).
+
+  Call Stack Trace Diagram for factorial(5)
+
+
+
+
+
+
+
+	 empty		               push    factorial(5)
+         ------------------		       -----------------------
+
+                                       push    factorial(3)
+ push    factorial(4)                          return 4 * factorial(3)
+         return 5 * factorial(4)               return 5 * factorial(4)
+         -----------------------               -----------------------
+
+   		      	               push    factorial(1)
+ push    factorial(2)      	               return 2 * factorial(1)
+         return 3 * factorial(2)               return 3 * factorial(2)
+         return 4 * factorial(3)               return 4 * factorial(3)
+         return 5 * factorial(4)               return 5 * factorial(4)
+         ------------------------              -------------------------
+
+
+push     factorial(0)
+         return 1 * factorial(0)       pop     return 1 * 1
+	 return 2 * factorial(1)               return 2 * factorial(1)
+	 return 3 * factorial(2)	       return 3 * factorial(2)
+	 return 4 * factorial(3)	       return 4 * factorial(3)
+	 return 5 * factorial(4)	       return 5 * factorial(4)
+        ------------------------               -----------------------
+
+
+ pop     return 2 * 1
+         return 3 * factorial(2)       pop     return 3 * 2
+	 return 4 * factorial(3)               return 4 * factorial(3)
+	 return 5 * factorial(4)               return 5 * factorial(4)
+	 -----------------------               -----------------------
+
+
+
+ pop     return 4 * 6
+         return 5 * factorial(4)       pop     return 5 * 24
+	 -----------------------               -----------------------
+
+ pop     empty
+         -----------------------
+============================================================================
+Task #5: Practice with recursion.
+=============================================================================
+
+ a.Spherical objects, such as cannonballs, can be stacked to form a pyramid
+   with one cannonball at the top, sitting on top of a square composed of
+   four cannonballs, sitting on top of a square composed of nine cannonballs,
+   and so forth. Write a recursive method cannonball that takes as its
+   argument the height of the pyramid and returns the number of cannonballs
+   it contains. Your method must operate recursively and must not use any
+   iterative constructs such as while or for.
+
+ b. Write a program Cannonball.java that takes one command-line argument n
+    and uses the recursive function from part(a) to print the height of the
+    pyramid. Throw a run time exception when necessary.
+
+
+ c. Draw a stack frame diagram for cannonball(3).
+
+
+
+===============================================================================
+Task #6: More practice with recursion.
+===============================================================================
+
+  Write a program that takes a positive integer n (in decimal) as a
+  command-line argument and prints its binary representation. Use this simple
+  method: repeatedly divide 2 into n and read the remainders backward.
+
+  a. First write a function toReverseBinary(int) that uses a while loop to
+     carry out this computation and returns a String with the bits in the
+     wrong order.
+
+  b. Then write a function toBinary(int) that uses recursion to arrange the bits
+     in the correct order.
+
+
+================================================================================
+Hw: Due Monday
+================================================================================
+
+1. Compose a program to rearrange a deck of n cards using the
+   Gilbert-Shannon-Reeds model of a "riffle-shuffle." First, generate
+   a random integer r according to a binomial distribution: flip a fair
+   coin n times and let r be the number of heads. Now, divide the deck
+   into two piles: the first r cards and the remaining n-r cards. To
+   complete the shuffle, repeatedly take the top card from one of the
+   two piles and put it on the bottom of a new pile. If there are n1 cards
+   remaining in the first pile and n2 cards remaining in the second pile,
+   choose the next card from the first pile with probability n1 / (n1 + n2)
+   and from the second pile with probability n2 / (n1 + n2).
+
+   Watch this video :https://www.youtube.com/watch?v=AxJubaijQbI
+   to determine how many riffle shuffles you need to apply to a deck
+   of 52 cards to produce a (nearly) uniformly shuffled deck.
+
+   Write the program RiffleShuffle.java to demonstrate the result. Represent
+   the 52 cards in an integer array(card[0], ... ,card[51) and your program
+   should include a method riffleShuffe(int [] cards) that performs
+   exactly 1 riffle shuffle via a side effect.
+
+   Look up the bernoulli() method from the StdRandom library and use it
+   in your program.
+
+
+2. Write the program ChromaticScale.java that plays each note, starting with A,
+   in the chromatic scale for 1 second.
+      -- Use the StdAudio library
+      -- Refer to the Standard Audio section on this page of the book site:
+         https://introcs.cs.princeton.edu/java/15inout/
+
+lesson.txt
+Text
+Class comments
+
+Lesson-23
+Displaying lesson.txt.

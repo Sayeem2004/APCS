@@ -1,0 +1,91 @@
+AP COMP SCI A 1 OF 2
+8
+Assignment-29
+Rick Platek
+•
+2:09 PM
+Due Dec 20, 11:59 PM
+
+I. Review StringEx.java
+
+II. Review this code:
+
+   Write the free standing method countSpaces(String) that returns
+   the number of space characters contained in the argument.
+
+   Version #1: use the method charAt(int)
+   public static int countSpaces(String s){
+          int ans = 0;
+	  for (int i = 0; i < s.length(); i++){
+	      if (s.charAt(i) == ' ') ans++;    // char is a primitive type
+          }
+	  return ans;
+   }
+
+
+
+   Version #2: use the substring method.
+    public static int countSpaces(String s){
+          int ans = 0;
+	  for (int i = 0; i < s.length(); i++){
+	      String c = s.substring(i,i+1);
+	      if (c.equals(" ")) ans++;    // String is an Object
+          }
+	  return ans;
+   }
+
+
+
+III. Prepare to present solutions to the following:
+
+
+1. What is the result of each of the following expressions? For calls
+   to compareTo, simply indicate the sign of the result.
+
+   a. "ABC".equals("abc")
+   b. "ABC".equalsIgnoreCase("abc")
+   c. "ABC".compareTo("ABC")
+   d. "ABC".compareTo("AB")
+   e. "ABC".compareTo("abc")
+   f. "ABC".endsWith("c")
+
+
+2. Without producing a side effect, implement the method
+
+      // precondition : s is not in order.
+      public static String lastWord(String[] s)
+
+   to return the string that would appear last if
+   the String[] s was in lexiographic order.
+
+
+3. Suppose that the endsWith method did not exist in the String class.
+   How would you implement your own method endsWith(str,suffix) that
+   performs the same function? Your implementation should use no methods
+   other than length, charAt, and the concatenation operator.
+
+
+4. Adherring to the same restrictions as in exercise 1, write your own
+   version of the indexOf method. As in the case of the implementation
+   from the String class, your implementation should overload indexOf
+   so that the pattern argument can be either a string or a character
+   and so that the method takes an optional second argument that
+   specifies the starting position.
+
+
+
+5. Design and implement a method scramble(String s) to produce
+   a shuffled version of s. Can this be done via a side effect?
+   Explain.
+
+
+hw.txt
+Text
+
+StringEx.java
+Java
+Class comments
+
+Your work
+Assigned
+Private comments

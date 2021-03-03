@@ -1,0 +1,197 @@
+AP COMP SCI A 1 OF 2
+8
+Lesson-09
+Rick Platek
+•
+Oct 14
+==================================================================================
+Task #1: Previous lesson: PowersOfK
+==================================================================================
+ Question #1:
+
+           PowersOfK
+           Review the code that is intended to take an integer command-line argument
+           k and prints all the positive powers of k in the Java long data
+           type. Assume k > 1. Note: The constant Long.MAX_VALUE is the value of the largest
+           integer in the long data type.
+
+        I.
+	    public static void main(String [] args){
+	    	   long k = Long.parseLong(args[0]);
+       	           long powers = k;
+		   long max = Long.MAX_VALUE;
+		   while ( powers <= max){
+	    	   	 System.out.println(powers);
+	    		 powers = k * powers ;
+	            }
+	     }
+
+
+
+        II.
+    	    	   public static void main(String [] args){
+        	   	  long k = Long.parseLong(args[0]);
+       			  long powers = k;
+       	        	  while ( powers > 0){
+            		  	System.out.println(powers);
+            			powers = k * powers ;
+        		   }
+
+                    }
+
+
+        III.
+		public static void main(String [] args){
+	               long k = Long.parseLong(args[0]);
+       		       long powers = k;
+       		       long max = Long.MAX_VALUE;
+        	       while ( powers <= max / k){
+            	       	     System.out.println(powers);
+            	       	     powers = k * powers ;
+        	       }
+        	       System.out.println(powers);
+
+                 }
+
+        IV.
+	       public static void main(String [] args){
+	       	      long k = Long.parseLong(args[0]);
+		      int i = 1;
+		      long powers = k;
+		      long max = Long.MAX_VALUE;
+		      while ( powers <= max / k){
+	    	      	    System.out.println(powers);
+			    i++;
+	    		    powers = (long) Math.pow(k,i);
+	               }
+
+		      System.out.println(powers);
+	        }
+
+
+   Identify the code that not only prints the correct values but also
+   produces the widest range of correct values. Explain the shortcomings
+   of the other code. Experiment by running the code with different inputs.
+
+
+===================================================================================
+Task #2:  The for loop.
+===================================================================================
+    - alternative to the while loop
+
+    - Syntax of the for statement
+
+           for(<initialize_variables>; <test> ; <update>) statement
+
+
+    ex. Sum the integers 1 to 10.
+
+    	--- Version using a while statement.
+        int sum = 0;
+	int i = 1;
+	while ( i <= 10){
+	      sum += i;
+	      i++;
+	}
+	System.out.println(sum);
+
+	**** Important: the scope of i extends beyond the while statement.
+
+        --- Version using a for statement.
+
+        int sum = 0;
+	for (int i = 1; i <= 10; i++)
+	    sum += i;
+
+        System.out.println(sum);
+
+        **** Important: the scope of i is restricted to the for statement.
+
+
+
+ Question #2:
+
+      What is wrong with this code which is intended to compute the sum of
+      the  integers from 1 to 10?
+
+
+      for (int sum = 0, int i = 1; i <= 10; i++)
+      	  sum += i;
+
+      System.out.println(sum);
+
+
+
+
+
+================================================================================
+Task #3: Nesting
+================================================================================
+    - read the Nesting section from the booksite
+    - Review the DivisorPattern.java program.
+    - Review the MarginalTaxRate.java program.
+
+
+Question #3:
+
+   Write a program using a loop and four conditionals to print
+
+    12 midnight
+    1am
+    2am
+    ...
+    12 noon
+    1pm
+    ...
+    11pm
+
+Question #4:
+
+ Write a program Triangle.java that takes a command-line argument N and
+ prints an N-by-N triangular pattern like the one below.
+
+    * * * * * *
+    . * * * * *
+    . . * * * *
+    . . . * * *
+    . . . . * *
+    . . . . . *
+
+
+===================================================================================
+Task #4:  Monte Carlo Simulations
+===================================================================================
+--- A Monte Carlo Simulation is broadly used to encompass any computational
+    technique that employs randomness to estimate an unknown quantity by
+    performing multiple trials (simulations). Rather than develop a
+    mathematical model or measure all possible outcomes of an experiment,
+    we rely on the laws of probability.
+
+-- Math.random() gives a uniformly distributed double between 0 and 1
+
+Question #5:
+
+  Suppose a, b, and c are random number uniformly distributed between 0 and 1.
+  What is the probability that a, b, and c form the side length of some
+  triangle? Hint: they will form a triangle if and only if the sum of every
+  two values is larger than the third.
+
+  Write the program TriangleProbability that uses a Monte Carlo Simulation to
+  determine the answer.
+
+Question #6:
+
+  Boys and girls. A couple beginning a family decides to keep having children
+  until they have at least one of either sex. Estimate the average number of
+  children they will have via simulation. Also estimate the most common outcome
+  (record the frequency counts for 2, 3, and 4 children, and also for 5 and above).
+  Assume that the probability p of having a boy or girl is 1/2. Print a table of
+  the frequency counts (use "\t" to align the columns of the table).
+
+
+
+
+
+Class comments
+
+Lesson-09

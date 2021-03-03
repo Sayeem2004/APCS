@@ -1,0 +1,96 @@
+AP COMP SCI A 1 OF 2
+8
+Assignment-25: RiffleShuffle, ChromaticScale Submission
+Rick Platek
+•
+Dec 7
+10 points
+Due Dec 10
+I. Review the programs:
+
+       - EuclidPiEstimate.java
+       - Lame.java
+       - WrapperEx.java
+
+
+II. Submit the RiffleShuffle.java and ChromaticScale.java
+    programs. On or before Monday 12/07.
+
+
+III. Be prepared to present your solution to  the Titius-Bode problem.
+     You may work with a partner.
+
+
+
+   In the 18th century, the astronomer Johann Daniel Titius proposed a rule,
+   later recorded by Johann Elert Bode, for calculating the distance from
+   the sun to each of the planets known at the time. To apply that rule,
+   which is know as the "Titius-Bode-Law", you begin by writing down the
+   sequence
+
+        b_1 = 1    b_2 = 3   b_3 = 6  b_4 = 12   b_5 = 24   b_6 = 48 ...
+
+   where each subsequent element in the sequence is twice the preceding one.
+   It turns out that an approximate distance to the ith planet can be computed
+   from this series by applying the formula
+
+
+      d_i = 4 + b_i
+           ---------
+              10
+
+
+    The distance d_i is expressed in astronomical units (AUs), which correspond
+    to the average distance from the earth to the sun (approximately 93E6 miles).
+    Except for a disconcerting gap between Mars and Jupiter, the "Titius-Bode" law
+    gives reasonable approximations for the distances to the seven planets known
+    at the time.
+
+
+           Mercury      0.5AU
+           Venus        0.7AU
+           Earth        1.0AU
+           Mars         1.6AU
+           ?            2.8AU
+           Jupiter      5.2AU
+           Saturn       10.0AU
+           Uranus       19.6AU
+
+    Concern about the gap in the sequence led astronomers to discover the asteroid
+    belt, which they suggested might have been the remains of a planet that had
+    once orbited the sun at the distance specified by the missing entry in the
+    table.
+
+    Write a recursive method getTitiusBodeDistance(k) that calculates the expected
+    distance between the sun and the kth planet, numbering outward from Mercury
+    starting at 1. Test your method by writing a program that displays the
+    distances to each of these planets in tabular form.
+
+EuclidPiEstimate.java
+Java
+
+GCD.java
+Java
+
+hw.txt
+Text
+
+Lame.java
+Java
+
+WrapperEx.java
+Java
+Class comments
+
+Your work
+Turned in
+
+RiffleShuffle.java
+Java
+
+ChromaticScale.java
+Java
+Private comments
+
+Assignment-25: RiffleShuffle, ChromaticScale Submission
+Displaying hw.txt.

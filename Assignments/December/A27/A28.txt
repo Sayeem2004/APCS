@@ -1,0 +1,30 @@
+AP COMP SCI A 1 OF 2
+8
+Assignment-27
+Rick Platek
+•
+Dec 11
+Due Dec 14
+For the next class.
+
+1. Study the AdditiveSequence.java program.
+
+2. Prepare to present the programs:
+
+       a. AcitivationFunctions.java (see Assignment-26)
+       b. Divisors.java             (see Assignment-26)
+       c. AudioCollage.java	    (see Assignment-26)
+       d. LG.java                   (see Lesson-27)
+       d. Histogram.java            (see Lesson-27)
+
+AdditiveSequence.java
+Java
+Class comments
+
+Your work
+Turned in
+No work attached
+Private comments
+
+Assignment-27
+Displaying hw.txt.

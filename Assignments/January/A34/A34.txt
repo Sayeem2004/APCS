@@ -1,0 +1,93 @@
+AP COMP SCI A 1 OF 2
+8
+Assignment-34: complete parts 1,2,and 3 for the next class.
+Rick Platek
+•
+12:50 PM
+Due Jan 15, 9:00 AM
+1. Review Hw.java
+
+2. Review solutions below.
+
+-------------------------------------------------------------------------------------
+ 2.4 Substitue this code :
+      (a) int k = 0;
+          for (int i = 1; i < 1000; i++){
+              k = k + i * j;
+          }
+
+      f(n) = 1000 so O(f(n)) is constant.  O(1).
+
+
+      (b) int k = 0;
+          for (int i = 1; i < N; i++){         // O(n)
+              for (int j = 1; j < N; j++){     // O(n)
+                  k = k + i * j;
+              }
+          }
+
+        Thus O(N^2).
+
+      (c) int k = 0;
+          while ( N > 0){    // O(logN)
+                N = N / 2;   // O(1)
+                k = k + 1;   // O(1)
+          }
+
+         ans: O(logN).
+         when will (a) runs more quickly than (c).
+           logN > 1000
+              N > 2^1000
+--------------------------------------------------------------------------------------------------
+    2.5
+         [ 1x1 + 2x2 + 3x4 + 4x8 + ... + G x 2^(G-1)] / N
+
+         where G = logN complete parts 1,2,and 3 for the next class.
+
+
+   From 2.2.c
+        1x1 + 2x2 + 3x4 + 4 x 8 + ... + N x 2^(N-1) = (N-1)2^N + 1
+
+          [(G-1)2^G + 1] / N = [(logN - 1) 2^logN + 1] / N
+                             = [(logN -1)N + 1 ] / N
+                             = [NlogN - N + 1 ] / N
+                             = logN - 1 + 1/N
+                             As n -> large  then it approaches logN
+
+
+
+
+---------------------------------------------------------------------------------------------------
+3. Design change for the Point class. It will be mutable.
+
+
+  a. Add the following methods (capabilities) to the Point class.
+
+   --  void 	translate​(int dx, int dy)
+
+     Translates this point, at location (x,y), by dx along the x axis and dy along the y axis so
+     that it now represents the point (x+dx,y+dy).
+
+   --  void 	move​(int x, int y)
+      Moves this point to the specified location in the (x,y) coordinate plane.
+
+
+   b. Add the static method distance(Point x, Point y) to the PointClient program.
+      The method computes the distance between points x and y.
+
+Hw.java
+Java
+
+Point.java
+Java
+
+PointClient.java
+Java
+Class comments
+
+Your work
+Assigned
+Private comments
+
+
+Displaying Hw.java.

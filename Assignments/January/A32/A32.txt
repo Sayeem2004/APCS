@@ -1,0 +1,167 @@
+AP COMP SCI A 1 OF 2
+8
+Assignment-32 : Be prepared to present solutions to the following exercises.
+Rick Platek
+•
+8:43 AM
+Due Jan 7, 9:00 AM
+=============================================================================
+Task #1: Hw
+=============================================================================
+Useful ArrayList Constructor and Methods
+------------------------------------------------------------------------------
+ Constructor:
+         new ArrayList<E>()
+
+ Methods
+
+  int     size()              : returns the length of the list
+  boolean isEmpty()           : returns true if empty
+  E       get(int i)          : returns the element at index i
+  E       set(int i,E val)    : places val at index i and
+                                returns the replaced val
+  boolean add(E val)          : adds to the end
+  void    add(int i, E val)   : inserts val at i
+  E       remove(int i)       : returns and removes the element at i
+  boolean remove(E val)       : removes the first occurrence if found
+                                returns true if val is removed
+  void    clear()             : removes all elements
+  boolean contains(E val)     : returns true if list contains val
+  int     indexOf(E val)      : returns the first index of val or -1
+                                if not found
+  int     lastIndexOf(E val)  : returns the last index of val or -1
+                                if not found
+
+Use only the above methods in your solutions.
+
+5. Write a method named addStars that accepts as a parameter an ArrayList of strings, and
+   modifies the list by placing a "*" element between elements, as well as at the start
+   and end of the list. For example, if a list named list contains
+   {"the", "quick", "brown", "fox"}, the call of addStars(list);
+   should modify it to store {"*", "the", "*", "quick", "*", "brown", "*", "fox", "*"}.
+
+
+6. Write a method named deleteDuplicates that accepts as a parameter a sorted ArrayList of
+   Strings and that removes any duplicate values from the list. For example, suppose that
+   an ArrayList named list contains the values
+   {"be", "be", "is", "not", "or", "question", "that", "the", "to", "to"}
+   After calling deleteDuplicates(list); the list should store the following values:
+   {"be", "is", "not", "or", "question", "that", "the", "to"}
+   You should assume that the values in the list are sorted, and that therefore all of the
+   duplicates will be grouped together.
+
+
+
+7. Write a method named mirror that accepts an ArrayList of strings as a parameter and
+   produces a mirrored copy of the list as output, with the original values followed by those
+   same values in the opposite order. For example, if an ArrayList variable named list
+   contains the values ["a", "b", "c"], after a call of mirror(list);
+   it should contain ["a", "b", "c", "c", "b", "a"].
+
+   You may assume that the list is not null and that no element of the array is null.
+
+8. Write a method named removeAll that accepts as a parameter an ArrayList of strings along
+   with an element value string, and modifies the list to remove all occurrences of that
+   string. For example, if the list v contains {"a", "b", "c", "b", "b", "a", "b"}, the call
+   of removeAll(v, "b"); should modify it to store {"a", "c", "a"}.
+
+9. Write a method named removeEvenLength that accepts an ArrayList of strings as a parameter
+    and that removes all of the strings of even length from the list. For example, if an
+    ArrayList variable named list contains the values
+    ["hi", "there", "how", "is", "it", "going", "good", "sirs"], the call of
+    removeEvenLength(list); would change it to store ["there", "how", "going"].
+
+10. Write a method named repeat that accepts an ArrayList of Strings and an integer k as
+    parameters and that replaces each element with k copies of that element. For example,
+    if the list stores the values ["how", "are", "you?"] before the method is called and
+    k is 4, it should store the values
+    ["how", "how", "how", "how", "are", "are", "are", "are", "you?", "you?", "you?", "you?"]
+    after the method finishes executing. If k is 0 or negative, the list should be empty
+    after the call.
+
+
+hw.txt
+Text
+Class comments
+
+Your work
+Assigned
+Private comments
+
+
+=============================================================================
+Task #1: Hw
+=============================================================================
+Useful ArrayList Constructor and Methods
+------------------------------------------------------------------------------
+ Constructor:
+         new ArrayList<E>()
+
+ Methods
+
+  int     size()              : returns the length of the list
+  boolean isEmpty()           : returns true if empty
+  E       get(int i)          : returns the element at index i
+  E       set(int i,E val)    : places val at index i and
+                                returns the replaced val
+  boolean add(E val)          : adds to the end
+  void    add(int i, E val)   : inserts val at i
+  E       remove(int i)       : returns and removes the element at i
+  boolean remove(E val)       : removes the first occurrence if found
+                                returns true if val is removed
+  void    clear()             : removes all elements
+  boolean contains(E val)     : returns true if list contains val
+  int     indexOf(E val)      : returns the first index of val or -1
+                                if not found
+  int     lastIndexOf(E val)  : returns the last index of val or -1
+                                if not found
+
+Use only the above methods in your solutions.
+
+5. Write a method named addStars that accepts as a parameter an ArrayList of strings, and
+   modifies the list by placing a "*" element between elements, as well as at the start
+   and end of the list. For example, if a list named list contains
+   {"the", "quick", "brown", "fox"}, the call of addStars(list);
+   should modify it to store {"*", "the", "*", "quick", "*", "brown", "*", "fox", "*"}.
+
+
+6. Write a method named deleteDuplicates that accepts as a parameter a sorted ArrayList of
+   Strings and that removes any duplicate values from the list. For example, suppose that
+   an ArrayList named list contains the values
+   {"be", "be", "is", "not", "or", "question", "that", "the", "to", "to"}
+   After calling deleteDuplicates(list); the list should store the following values:
+   {"be", "is", "not", "or", "question", "that", "the", "to"}
+   You should assume that the values in the list are sorted, and that therefore all of the
+   duplicates will be grouped together.
+
+
+
+7. Write a method named mirror that accepts an ArrayList of strings as a parameter and
+   produces a mirrored copy of the list as output, with the original values followed by those
+   same values in the opposite order. For example, if an ArrayList variable named list
+   contains the values ["a", "b", "c"], after a call of mirror(list);
+   it should contain ["a", "b", "c", "c", "b", "a"].
+
+   You may assume that the list is not null and that no element of the array is null.
+
+8. Write a method named removeAll that accepts as a parameter an ArrayList of strings along
+   with an element value string, and modifies the list to remove all occurrences of that
+   string. For example, if the list v contains {"a", "b", "c", "b", "b", "a", "b"}, the call
+   of removeAll(v, "b"); should modify it to store {"a", "c", "a"}.
+
+9. Write a method named removeEvenLength that accepts an ArrayList of strings as a parameter
+    and that removes all of the strings of even length from the list. For example, if an
+    ArrayList variable named list contains the values
+    ["hi", "there", "how", "is", "it", "going", "good", "sirs"], the call of
+    removeEvenLength(list); would change it to store ["there", "how", "going"].
+
+10. Write a method named repeat that accepts an ArrayList of Strings and an integer k as
+    parameters and that replaces each element with k copies of that element. For example,
+    if the list stores the values ["how", "are", "you?"] before the method is called and
+    k is 4, it should store the values
+    ["how", "how", "how", "how", "are", "are", "are", "are", "you?", "you?", "you?", "you?"]
+    after the method finishes executing. If k is 0 or negative, the list should be empty
+    after the call.
+
+hw.txt
+Displaying hw.txt.

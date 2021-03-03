@@ -1,0 +1,122 @@
+AP COMP SCI A 1 OF 2
+8
+Assignment-20
+Rick Platek
+•
+Nov 19
+10 points
+Due Nov 22
+===========================================================================
+Hw: complete parts I - IV
+===========================================================================
+I.  From  Coursera, watch the week 5 video lectures:
+        - Basic Concepts
+	- Case Study: Digital Audio
+
+----------------------------------------------------------------------------
+II. On codingbat.com
+
+    i. Change the Memo to:  period-lastName-firstName
+
+       ex. If John Doe is in period 3, then the memo should
+           be :
+	          3-Doe-John
+
+    ii. Complete any 5 function exercises of your choosing.
+        (5 points)
+---------------------------------------------------------------------------
+III. For the next class, be prepared to discuss and present solutions to the following
+     questions:
+
+
+
+     i. Add the method goo() to the FunctionDemo progam. The goo function
+        justs unguardedly calls itself.
+        What happens?
+
+     ii. From the book site section 2.1, download Harmonic.java.
+     	 Change StdOut to System.out.
+   	 Modify the Harmonic program to produce the following trace.
+
+   $ java Harmonic 1 2 4
+   i = 0
+   arg = 1
+   harmonic(1)
+        sum = 0.0
+        sum = 1.0
+        return 1.0
+   value = 1.0
+   i = 1
+   arg = 2
+   harmonic(2)
+        sum = 0.0
+        sum = 1.0
+        sum = 1.5
+        return 1.5
+   value = 1.5
+   i = 2
+   arg = 4
+   harmonic(4)
+        sum = 0.0
+        sum = 1.0
+        sum = 1.5
+        sum = 1.8333333333333333
+        sum = 2.083333333333333
+        return 2.083333333333333
+   value = 2.083333333333333
+
+----------------------------------------------------------------------------
+IV. (5 points)
+    Submit via Google Classroom Sqrt.java that contains one method
+    sqrt(double) which implements the algorithm described below. You will not
+    receive credit if your name is not in the documentation.
+
+    To compute the square root of x, clients of your program will invoke the
+    method by issuing the following statement:
+
+          Sqrt.sqrt(x);
+
+
+
+
+
+
+   Even though clients of the Math class typically don't need to understand
+   how methods like sqrt work internally, the implementers of that library
+   have to be able to design an effective algorithm and write the necessary
+   code. If you were asked to implement the sqrt method without using the
+   library version, there are many strategies you could adopt. One of the
+   easiest strategies to understand is successive approximation, in which
+   you make a guess at the solution and then refine that guess by choosing
+   new values that move closer to the solution.
+
+   You can use successive approximation to determine the square root of x
+   by adopting the following strategy:
+
+   1. Begin by guessing that the square root is x/2. Call that guess g.
+
+   2. The actual square root must lie between g and x / g. At each step
+      in the successive approximation, generate a new guess by averaging
+      g and x / g.
+
+   3. Repeat step 2 until the values g and x / g are as close together
+      as the precision of the hardware allows. In Java, the best way to
+      check for this condition is to test whether the average is equal
+      to either of the vales used to generate it.
+
+   Use this strategy to write your our implementation of the sqrt method.
+
+
+
+
+Class comments
+
+Your work
+Turned in
+
+Sqrt.java
+Java
+Private comments
+
+Assignment-20
+Displaying hw.txt.

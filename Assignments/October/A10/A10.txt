@@ -1,0 +1,213 @@
+AP COMP SCI A 1 OF 2
+8
+Assignment-10
+Rick Platek
+•
+Oct 16
+99/100
+99 points out of possible 100
+Due Oct 20
+=========================================================================Group Size: 2 or 3 members.
+
+Points: 100
+
+Have one group member submit the following files:
+
+       1. Checkerboard.java
+       2. RandomWalker.java
+       3. RandomWalkers.java
+       4. Gambler.java
+       5. GamblerV2.java
+       6. GamblerPlot.java
+       7. GamblerV3.java
+       8. GamblerV4.java
+
+Each of your programs must include documentation
+that includes:
+      - The name of each group member.
+      - Compilation instructions.
+      - Execution instructions.
+      - The problem statement.
+      - Sample runs.
+      - For RandomWalkers, the hypothesis made.
+      - For each problem, the name of your program
+        must exactly match the name specified in
+	the question.
+
+--------------------------------------------------------------------------------
+ I. Checkerboard. (20 pts)
+
+   Write a program Checkerboard.java that takes an integer command-line
+   argument N, and uses two nested for loops to print an N-by-N "checkerboard"
+   pattern like the one below: a total of NxN asterisks, where each row has
+   2N characters (alternating between asterisks and spaces).
+
+    % java Checkerboard 4             % java Checkerboard 5
+    * * * *                           * * * * *
+     * * * *                           * * * * *
+    * * * *                           * * * * *
+     * * * *                           * * * * *
+                                      * * * * *
+
+--------------------------------------------------------------------------------
+ II. A drunkard's walk. (30 pts)
+
+    A drunkard begins walking aimlessly, starting at a lamp post. At each
+    time step, the drunkard forgets where he or she is, and takes one step
+    at random, either north, east, south, or west, with probability 25%.
+    How far will the drunkard be from the lamp post after N steps?
+
+    (10 pts)
+    (A) Write a program RandomWalker.java that takes an integer command-line
+        argument N and simulates the motion of a random walker for N steps.
+	After each step, print the location of the random walker, treating
+	the lamp post as the origin (0, 0). Also, print the square of the
+	final distance from the origin.
+
+        % java RandomWalker 10             % java RandomWalker 20
+        (0, -1)                           (0, 1)
+        (0, 0)                            (-1, 1)
+        (0, 1)                            (-1, 2)
+        (0, 2)                            (0, 2)
+        (-1, 2)                           (1, 2)
+        (-2, 2)                           (1, 3)
+        (-2, 1)                           (0, 3)
+        (-1, 1)                           (-1, 3)
+        (-2, 1)                           (-2, 3)
+        (-3, 1)                           (-3, 3)
+        squared distance = 10             (-3, 2)
+                                          (-4, 2)
+                                          (-4, 1)
+                                          (-3, 1)
+                                          (-3, 0)
+                                          (-4, 0)
+                                          (-4, -1)
+                                          (-3, -1)
+                                          (-3, -2)
+                                          (-3, -3)
+                                          squared distance = 18
+    (15 points)
+    (B) Write a program RandomWalkers.java that takes two integer command-line
+        arguments N and T. In each of T independent experiments, simulate a
+	random walk of N steps and compute the squared distance. Output the
+	mean squared distance (the average of the T squared distances).
+
+        % java RandomWalkers 100 100000         % java RandomWalkers 400 100000
+        mean squared distance = 100.15086       mean squared distance = 401.22024
+
+        % java RandomWalkers 100 100000         % java RandomWalkers 800 100000
+        mean squared distance = 99.95274        mean squared distance = 797.5106
+
+        % java RandomWalkers 200 100000         % java RandomWalkers 1600 100000
+        mean squared distance = 199.57664       mean squared distance = 1600.13064
+
+        (5 points)
+        As N increases, we expect the random walker to end up further and further
+	away from the origin. But how much further? Use RandomWalkers to formulate
+	a hypothesis as to how the mean squared distance grows as a function of N.
+	Use T = 100,000 trials to get a sufficiently accurate estimate.
+
+   Remark: this process is a discrete version of a natural phenomenon known as Brownian
+   motion. It serves as a scientific model for an astonishing range of physical processes
+   from the dispersion of ink flowing in water, to the formation of polymer chains in
+   chemistry, to cascades of neurons firing in the brain.
+
+--------------------------------------------------------------------------------
+
+III. The Gambler's Ruin simulation. (50 pts)
+
+     1. Download and review the Gambler's Ruin simulation Gambler.java from
+        the book site.
+      **** Place your answers to question 2,3 and 4 in the documentation
+           of Gambler.java. Submit Gambler.java.
+      ***
+     (4 points)
+     2. Run the simulation and determine the following results.
+
+     	a. If you go to Monte Carlo to try to turn $500 into $2,500
+           what is your chance of success?
+
+
+     	b. How many bets should you expect to make?
+
+	c. If you try to turn $1 into $1000 what is your chance of success?
+
+     	d. How many bets should you expect to make?
+
+     ( 1 point)
+     3. Use empirical results from the simulation, determine the probability of
+     	success in terms of the stake and the goal.
+
+     ( 1 point )
+     4. Empirically determine the expected number of bets in terms
+   	of the stake and the goal.
+
+     ( 5 points)
+     5. Write a version of the Gambler that uses two nested while loops or two
+        nested for loops instead of a while loop inside a for loop.
+        Name the program GamblerV2.java.
+
+     ( 15 points)
+     6. Write a program GamblerPlot that traces a gambler's ruin simulation
+        by printing a line after each bet in which one asterisk corresponds
+        to each dollar held by the gambler and prints  "end of trial #" after
+        the conclusion of each trial.
+
+        Pipe the output of GamblerPlot to the less command to view each run.
+        ex.
+        $ java GamblerPlot 10 20 10 | less
+
+       (10 points)
+     7. Modify Gambler to take an extra command-line argument that specifies
+        the (fixed) probability that the gambler wins each bet.
+        Name the program GamblerV3.java.
+
+	(4 points)
+        Use your program to try to learn how this probability affects the
+	chance of winning and the expected number of bets. Try a value of p
+	close to 0.5 (say, 0.48).
+
+       (10 points)
+     8. Modify Gambler to take an extra command-line argument that specifies
+        the number of bets the gambler is willing to make, so that there are
+        three possible ways for the game to end; the gambler wins, loses, or runs
+        out of time. Add to the output to give the expected amount of money
+        the gambler will have when the game ends.
+        Name the program GamblerV4.java.
+
+
+
+Class comments
+
+Your work
+Graded
+
+Checkerboard.java
+Java
+
+RandomWalker.java
+Java
+
+RandomWalkers.java
+Java
+
+Gambler.java
+Java
+
+GamblerV2.java
+Java
+
+GamblerPlot.java
+Java
+
+GamblerV3.java
+Java
+
+GamblerV4.java
+Java
+1 private comment
+
+Rick PlatekNov 9
+4. stake * (goal - stake) (1 pt) Gambler.java
+
+Assignment-10

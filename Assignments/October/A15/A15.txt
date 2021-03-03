@@ -1,0 +1,33 @@
+AP COMP SCI A 1 OF 2
+8
+Assignment-15
+Rick Platek
+•
+Oct 30
+10/10
+10 points out of possible 10
+Due Nov 3
+1. Your program name must be named: Minima.java
+    Compilation instructions must be: $javac Minama.java
+    Execution instruction must be :  $java Minama  n
+    Your name must appear in the documentation.
+
+2. Your program name must be named: Rumors.java
+    Compilation instructions must be: $javac Rumors.java
+    Execution instruction must be :  $java Rumors  n  trials
+    n is the number of guests
+     rials is the number of trials performed.
+   Your name must appear in the documentation.
+Class comments
+
+Your work
+Graded
+
+Minima.java
+Java
+
+Rumors.java
+Java
+Private comments
+
+Assignment-15

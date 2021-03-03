@@ -1,0 +1,45 @@
+AP COMP SCI A 1 OF 2
+8
+Assignment-19
+Rick Platek
+•
+Nov 17
+25 points
+Due Nov 19
+===========================================================================
+On the Coursera site.
+============================================================================
+
+From week 4:
+
+   a. Watch the lectures :
+
+              -- Video: Fractal Drawing
+	      -- Video: Animation
+
+   b. Take the quiz.
+
+         - Submit a screen shot of your results (5 pts).
+
+   c. Complete the Programming Assignments for week4 and
+      submit via Google Classroom the files
+
+           - ShannonEntropy.java (10 pts)
+	   - WorldMap.java       (10 pts)
+Class comments
+
+Your work
+Turned in
+
+Week4Quiz.PNG
+Image
+
+ShannonEntropy.java
+Java
+
+WorldMap.java
+Java
+Private comments
+
+Assignment-19
+Displaying hw.txt.

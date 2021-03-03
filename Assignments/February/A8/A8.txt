@@ -1,0 +1,56 @@
+Data Structures
+Period 6
+Assignment-08 (Group work)
+Rick Platek
+•
+8:43 AM
+25 points
+Due Mar 1
+Write a Java program to simulate an ecosystem containing two types of
+creatures, bears and fish. The ecosystem consists of a river, which is
+modeled as a relatively large array. Each cell of the array should contain
+an Animal object, which can be a Bear object, a Fish object, or null. In
+each time step, based on a random process, each animal either attempts to
+move into an adjacent array cell or stay where it is. If two animals of
+the same type are about to collide in the same cell, then they stay where
+they are, but they create a new instance of that type of animal, which is
+placed in a random empty (i.e., previously null) cell in the
+array. If a bear and a fish collide, however, then the fish dies
+(i.e., it disappears).
+
+Use actual object creation, via the new operator, to model the creation of new
+objects, and provide a visualization of the array after each time step.
+
+Your submission must include the following files:
+      - Animal.java
+      - Bear.java
+      - Fish.java
+      - Simulator.java
+      - Summary.pdf
+
+Compilation Instructions
+$ javac  Simulator.java
+
+Runtime instructions
+$ java   Simulator bear-population fish-population river-length steps
+
+/* Here is a sample run.
+
+  $ java   Simulator 2 5 100 1
+
+   output:
+   # bears:2
+   # fish: 5
+   B        F B     F                      F       F                                  F
+   # bears:2
+   # fish: 5
+   B       F   B   F                       F        F                                F
+*/
+
+Your names must be included within the documentation of Simulator.java.
+
+Submit a 1 page summary detailing the design of your simulator.
+Class comments
+Your work
+Assigned
+Private comments

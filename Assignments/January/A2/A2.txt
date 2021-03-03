@@ -1,0 +1,44 @@
+Data Structures
+Period 6
+Assignment 2: Group Work for lesson 1
+Rick Platek
+•
+7:32 AM
+10 points
+Due Tomorrow
+        1. 1 Submission per group.
+	 2. Include your names in the documentation.
+	 3. Complete questions 1 - 7 (see below).
+         4. Files to submit:
+	        -Function.java
+		-Square.java
+		-Half.java
+		-FunctionClient.java
+                -PredicateFunction.java
+		-IsEven.java
+Class comments
+
+Your work
+Turned in
+
+Square.java
+Java
+
+Half.java
+Java
+
+PredicateFunction.java
+Java
+
+IsEven.java
+Java
+
+FunctionClient.java
+Java
+
+Function.java
+Java
+Private comments
+
+Assignment 2: Group Work for lesson 1
+Displaying FunctionClient.java.

@@ -1,0 +1,51 @@
+For the week 1/26 - 1/29
+=========================
+
+--- I will be hosting live Zoom sessions this week.
+    You must attend to be marked present.
+    However, I will not require you to be present for the entire session.
+
+--- These sessions will be used to answer questions
+    about previous assignments. If you received a 0 for any assignment
+    this is your opportunity to get help and submit a solution. There will
+    be a late penalty on these submissions.
+
+
+---  Assignment #38: Linear Feedback Shift Register
+     No late penalty if submitted before 1/28.
+
+--- First Assignment For the Spring Semester
+    Due on the first day of class.
+    You may work with a partner.
+    Go to Happy Coding :Inheritance
+            https://happycoding.io/tutorials/java/inheritance
+    Read the tutorial.
+
+    From this tutorial, complete the first homework assignment.
+
+    Implement the following:
+
+      - Zoo.java          (A program )
+      - Animal.java       (An Abstract class)
+      - Mammal.java       (An abstract class that is a subclass of Animal)
+      - Reptile.java      (An abstract class that is a subclass of Animal)
+      - Cat.java          (A non-abstract class)
+      - Reptile.java      (A non-abstract class)
+      - Carnivore.java    (An interface)
+      - Herbivore.java    (An interface)
+
+
+
+    Additional Material (Optional).
+    Go to : https://chortle.ccsu.edu/Java5/index.html#54
+    In Part 10: Advanced Object Oriented Programming
+      Read
+         Chapter 50 : Introduction to Inheritance
+     Chapter 51 : Abstract Classes and Polymorphism
+     Chapter 52 : More about Polymorphism
+     Chapter 53 : Interfaces
+
+
+--- Highly recommended for the Spring semester.
+    Start training at https://visualgo.net/en
+           Start with the Sorting Modulex

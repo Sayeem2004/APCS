@@ -1,0 +1,253 @@
+AP COMP SCI A 1 OF 2
+8
+Lesson-10
+Rick Platek
+•
+Oct 20
+============================================================================
+Task #1: Join the coursera course : Computer Science : Programming with a
+                                    Purpose
+============================================================================
+  -- access all the lectures
+  -- additional assignments and quizzes
+
+
+=============================================================================
+Task #2: The break statement.
+=============================================================================
+
+ A break statement is legal only inside a switch or a  loop and has the
+ form:
+                break;
+
+
+Executing break exits the innermost enclosing loop and continues execution
+after the switch of loop.
+
+
+1. Assignment Review the Primes.java program.
+
+/******************************************************************************
+ *  Compilation:  javac Primes.java
+ *  Execution:    java Primes n
+ *
+ *  Determines whether or not n is prime.
+ *
+ *   % java Prime 81
+ *   81 is not prime
+ *
+ *   % java Prime 17
+ *   17 is prime
+ *
+ *   % java Prime 30864324691489
+ *   30864324691489 is not prime
+ *
+ *
+ ******************************************************************************/
+
+public class Prime {
+
+    public static void main(String[] args) {
+        long n = Long.parseLong(args[0]);
+        boolean isPrime = true;
+        if (n < 2) isPrime = false;
+
+        // try all possible factors of n
+        // if if n has a factor, then it has one less than or equal to sqrt(n),
+        // so for efficiency we only need to check factor <= sqrt(n) or
+        // equivalently factor*factor <= n
+        for (long factor = 2; factor*factor <= n; factor++) {
+
+            // if factor divides evenly into n, n is not prime,
+	    // so break out of loop
+            if (n % factor == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+
+        // print out whether n is prime
+        if (isPrime) System.out.println(n + " is prime");
+        else         System.out.println(n + " is not prime");
+    }
+}
+
+
+==================================================================================
+Task #3: 1.4 Arrays
+==================================================================================
+--- From the book site read up to Typical array-processing code.
+
+--- Model of Arrays Stored in Memory
+
+
+    Consider this code:
+
+    int [] a = new int[5];
+
+    for (int i = 0; i < 5; i++)
+      	a[i]  = 2 * i;
+
+--   Two step process to allocate memory for the array.
+
+    1. The variable a refers to a memory address whose element
+       is the address of the first element in the
+       array. The memory address directly following a stores
+       the length of the array.
+
+    2. The memory will be scanned for a contiguous
+       unoccupied block of memory to store the
+       elements of the array.
+
+
+
+
+ Model of Memory Allocation
+--------------------------------------------------------
+    memory address        element stored at this address
+    (Hexadecimal)
+        0x001              occupied
+        0x002              open
+    	0x003              open
+    	0x004              occupied
+    	0x005              occupied
+    	0x006              open
+    	0x007              open
+    	0x008              open
+    	0x009              open
+    	0x00A              open
+    	0x00B              open
+    	0x00C              open
+    	0x00D              occupied
+    	0x00E              open
+    	0x00F		   occupied
+    	0x010              open
+    	0x011		   open
+
+
+
+
+
+
+
+ Question #1:
+
+         What is wrong with the following code fragment?
+
+             int [] a;
+	     for (int i = 0; i < 10; i++)
+	     	 a[i] = i * i;
+
+
+ Question #2:
+
+          Given the statement:
+
+              double [] a = new double[10];
+
+          What does the statement
+	                         System.out.println(a);
+	  print?
+
+  Question #3:
+
+          Write a program that reads an integer command-line
+	  argument, n, declares and creates the integer array a[]
+	  with length n. Use the bash command time to observe the
+	  effect of creating arrays as the length increases.
+
+
+          ex. $ time java CreateArray 10
+
+
+   Question #4:
+           Using the program from above,
+           find out what happens if n is negative?
+
+--- From the book site, reveiw ArrayExamples.java.
+
+
+   Question #5:
+
+       Modify ArrayExamples.java to include the following computation.
+
+       Given two vectors of length n that are represented with one-
+       dimensional arrays, write code that computes the Euclidean
+       distance between them (the square root of the sums of the
+       squares of the differences between corresponding elements).
+
+
+   Question #6:
+
+       Consider the following three statements, determine
+       the elements of a[] after each statement is executed?
+
+       	    int [] a = new int[10];
+       	    for (int i = 0; i < 10 ; i++)
+       	         a[i] = 9 - i;
+            for (int i = 0; i < 10; i++)
+                  a[i] = a[a[i]];
+
+
+
+   Question #7:
+
+        Do the same for this code:
+
+          int n = 10;
+	  int [] a = new int[10];
+	  a[0] = 1;
+	  a[1] = 2;
+	  for (int i = 2 ; i < n; i++)
+	       a[i] = a[i-1] + a[i - 2];
+
+
+
+==================================================================================
+Task #4:
+==================================================================================
+ --- Read the section: Programming with Arrays
+
+
+  Question #8:
+
+           What does the following code fragment print?
+
+           int [] a = {1,2,3};
+	   int [] b = {1,2,3};
+	   System.out.println(a == b);
+
+
+  Question #9:
+
+            Write a program HowMany that takes a variable number of command-line
+	    arguments and prints how many there are.
+
+
+  Question #10:
+
+            Write a program DiscreteDistribution that takes a variable number of
+	    integer command-line arguments and prints the integer i with probability
+	    proportional to the ith command-line argument.
+
+	    Sample runs:
+    	    // six equally likely events
+   	    $ java DiscreteDistribution 1 1 1 1 1 1
+   	    3
+
+ 	    $ java DiscreteDistribution 1 1 1 1 1 1
+            0
+
+            // six events, one 3x more likely than the others
+            $ java DiscreteDistribution 1 1 1 1 1 3
+            5
+
+            $ java DiscreteDistribution 1 1 1 1 1 3
+            2
+
+            $ java DiscreteDistribution 1 1 1 1 1 3
+            5
+
+Class comments
+
+Lesson-10

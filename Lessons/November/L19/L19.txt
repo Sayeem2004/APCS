@@ -1,0 +1,97 @@
+AP COMP SCI A 1 OF 2
+8
+Lesson-19
+Rick Platek
+•
+Nov 17
+==========================================================================
+Task #1: Homework
+==========================================================================
+	1. Circles.java
+	2. Diamonds.java
+	3. TakagiGraph.java
+	4. BulgingSquares.java
+
+==========================================================================
+Task #2: Application : Iterated Function System : Sierpinski's Triangle
+==========================================================================
+
+   Consider the following simple process:
+
+  Start by plotting a point at one of the vertices of a given
+  equilateral triangle. Then pick one of the three vertices at random
+  and plot a new point halfway between the point just plotted and that
+  vertex. Continue performing this same operation. Each time, we pick
+  a random vertex from the triangle to establish the line whose midpoint
+  will be the next point plotted. Since we make random choices, the set
+  of points should have some of the characteristics of random points.
+
+
+Question #1:
+
+  Write the program Chaos.java that takes one command-line argument,n,
+  and plots n points in a unit square using the process described above.
+  Use 2 arrays to store the vertices of the triangle.
+
+
+===========================================================================
+Task #3: Animation
+===========================================================================
+ An important use of double buffering is to produce computer
+   animations, where we create the illusion of motion by rapidly
+   displaying static drawing. Such effects can provide compelling
+   and dynamic visualizations of scientific phenomenon. We
+   can produce animations by repeating the following four steps:
+
+       i. Clear the offscreen canvas.
+      ii. Draw objects on the offscreen canvas.
+     iii. Copy the offscreen canvas to the onscreen canvas.
+      iv. Wait for a short while.
+
+    The "Hello World" progam for animation is to produce a ball
+    bouncing animation according to the laws of inelastic collision.
+
+
+Question #2:
+
+    Compile and run the BouncingBall.java program.
+     $ java BouncingBall
+
+
+Question #3:
+
+    Modify BouncingBall.java to produce the image BouncingBallWithTracks.png
+    which show the track of the ball on a gray background.
+
+
+Question #4:
+
+     Download and run the BouncingBallDeluxe.java program.
+
+===========================================================================
+Hw: From the Coursera site.
+============================================================================
+
+From week 4:
+
+   a. Watch the lectures :
+
+              -- Video: Fractal Drawing
+	      -- Video: Animation
+
+   b. Take the quiz.
+
+         - Submit a screen shot of your results (5 pts).
+
+   c. Complete the Programming Assignments for week4 and
+      submit via Google Classroom the files
+
+           - ShannonEntropy.java (10 pts)
+	   - WorldMap.java       (10 pts)
+
+lesson.txt
+Text
+Class comments
+
+Lesson-19
+Displaying lesson.txt.

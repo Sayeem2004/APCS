@@ -1,0 +1,49 @@
+Data Structures
+Period 6
+Assignment-05 (Group Work)
+Rick Platek
+•
+8:28 AM
+10 points
+Due Tomorrow
+Submit 1 File : Employee.java (Put your names in the documentation).
+
+Employee.java
+Java
+
+EmployeeLab.txt
+Text
+
+EmployeeTester.java
+Java
+Class comments
+
+Your work
+Assigned
+Private comments
+
+
+Files:
+-------
+      - Employee.java
+      - EmployeeTeste.java
+
+Based on the exercises found here:
+  https://chortle.ccsu.edu/Java5/Notes/chap53B/progExercises53B.html
+
+
+Examine the following Employee class.
+
+
+Finish the toString(), equals(), and compareTo() method using all three of
+the instance variables.
+Access them using the getX() methods. Compare two employees by first looking
+at their last names. If the names are different, return the value the String
+method compareTo() returns with the last names. If the names are equal,
+look at the first name and return the value the String method compareTo()
+returns. If both parts of the name are equal, return the difference of the
+birthYears so that the older employee precedes the younger employee.
+
+Test your implementation using the EmployeeTester program.
+EmployeeLab.txt
+Displaying PostalBarCodeLab.txt.

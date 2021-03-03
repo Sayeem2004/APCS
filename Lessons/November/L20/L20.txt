@@ -1,0 +1,333 @@
+AP COMP SCI A 1 OF 2
+8
+Lesson-20
+Rick Platek
+•
+Nov 19
+
+==============================================================================
+Topic #1: Creating an account at codingbat.com
+==============================================================================
+	1. Go to codingbat.com and create an account.
+	2. Click on prefs
+	3. In teacher share, put my work email.
+
+	    rick.platek@stuy.edu
+
+        4. In Memo, put
+
+            Pd-LastName-FirstName
+
+
+           ex. John Doe is in period 3.
+	       3-Doe-John
+
+==============================================================================
+Topic #2: Pure and Impure Functions in Java
+==============================================================================
+
+In mathematics, a function maps input type(s) (the domains)
+to an output type (codomain).
+
+      ex. Number -> Number
+          f(x) = 3x + 2
+          maps 2 to 8
+	       3 to 11
+
+      ex. Number Number -> Number
+          g(x,y) = x + y
+
+A pure function has the property that given the same arguments,
+it always returns the same value, without producing any observable
+side effects.
+
+Examples of pure functions in Java.
+
+  - Math.abs(int)       maps an integer to an integer (int -> int)
+  - Math.sqrt(double)   maps a double to a double (double -> double)
+
+
+
+Question #1:
+
+      What data type does Math.abs(double) map to?
+
+
+
+Question #2: Why are the following functions impure?
+
+  - Math.random()
+  - System.out.println()
+
+
+
+Question #3:
+
+    Is the Integer.parseInt(String) function pure or impure?
+
+
+
+Question #4:
+
+     Is the StdIn.readInt() function pure or impure?
+
+==============================================================================
+Topic #3: Representing mathematical functions in Java
+==============================================================================
+
+
+In Java, a mathematical function is typically represented by a static method.
+
+
+To represent the function f(x) = 3x + 2 is Java, we will call the function
+"foo" which is an old programming convention used to name entities such as
+variables, functions, and commands whose purpose is unimportant and serve
+only to demonstrate a concept.
+
+   public static int foo(int x) {
+     	    return 3 * x + 2;
+     }
+
+The Anatomy of a method.
+
+ public static int foo(int x) <-------------- the method signature.
+
+  int is the return type
+  foo is the method name
+  int is the argument type
+  x is the parameter variable
+  {return 3 * x + 2;} is the method body
+  return 3 * x + 2; is the return statement
+
+
+
+
+
+
+------------------------------------------------------------------------------
+public class FunctionDemo{
+
+
+    public static int foo(int x ) {
+	return 3 * x + 2;
+
+    }
+
+    public static void main(String [] args){
+	int n = Integer.parseInt(args[0]);
+	System.out.println("foo(" + n + ") = " + foo(n));
+     }
+}
+------------------------------------------------------------------------------
+Question #5:
+
+     Try swapping the positions of foo(int) and main().
+     What happens?
+
+Question #6:
+
+    Change the return type of foo(int) to double. What happens?
+
+Question #7:
+
+  Try passing a double to the foo(int) method call.
+  What happens?
+
+Question #8:
+
+   Add a statement after the return statement of foo(int).
+   What happens?
+
+Question #9:
+
+   In foo(int) guard the return statement with if(true), what happens?
+
+
+
+Question #10:
+
+    Add the statement
+
+    return;
+
+    to the end of the main method.
+
+    What happens?
+
+Question #11:
+
+   Change the foo(int) call to FunctionDemo.foo(n).
+   What happens?
+
+Question #12:
+
+   Overload the foo function, by defining a second version of the foo
+   function to map a double to a double. Test both versions.
+
+
+Question #13:
+
+   Try adding a third version of foo that with the mapping: int -> double.
+   What happens?
+
+
+
+===========================================================================
+Topic #3: A Function Call Stack Diagram
+===========================================================================
+In Java, when the foo(int) is called the transfer of control goes from
+the main method to the foo(int) method. The foo(int) returns control
+back to them main method when the return statement is executed.
+
+
+
+
+In computer memory, a stack is used to transfer control between
+method calls.
+
+A stack is characterized by the behavior of its insertion and deletion
+operations.
+  - insertion at the top (known as a "push").
+  - deletion from the top (known as a "pop").
+  - LIFO is last in first out
+
+
+When a method is called, a self-contained stack frame is pushed on to the
+call stack. The stack frame contains the parameters and local variables
+used by the method.
+
+When a method's return statement is executed the stack frame is "popped"
+for the call stack.
+
+
+------------------------------------------------------------------------------
+public class FunctionDemo{
+
+
+    public static int foo(int x ) {
+	return 3 * x + 2;
+
+    }
+
+    public static void main(String [] args){
+	int n = Integer.parseInt(args[0]);
+	System.out.println("foo(" + n + ") = " + foo(n));
+     }
+}
+------------------------------------------------------------------------------
+A Function Call Stack Diagram
+
+ $ java FunctionDemo 5
+   foo(5) = 17
+
+call			         parseInt()                        foo()
+stack:  empty ----> main() ---->   main()     -----> main() -----> main()
+
+
+
+                       println()
+   -----> main() -----> main() ------> main() ------> empty
+
+Note: foo() is called before println().
+
+Question #13:
+
+ In FunctionDemo,
+ devise a test to verify the order in which the methods are called
+
+  main
+  parseInt
+  foo
+  println
+
+
+Question #14:
+
+      Add the method goo() to the FunctionDemo progam. The goo function
+      justs unguardedly calls itself.
+      What happens?
+
+
+
+Question #15:
+
+   From the book site section 2.1, download Harmonic.java.
+   Change StdOut to System.out.
+   Modify the Harmonic program to produce the following trace.
+
+   $ java Harmonic 1 2 4
+   i = 0
+   arg = 1
+   harmonic(1)
+        sum = 0.0
+        sum = 1.0
+        return 1.0
+   value = 1.0
+   i = 1
+   arg = 2
+   harmonic(2)
+        sum = 0.0
+        sum = 1.0
+        sum = 1.5
+        return 1.5
+   value = 1.5
+   i = 2
+   arg = 4
+   harmonic(4)
+        sum = 0.0
+        sum = 1.0
+        sum = 1.5
+        sum = 1.8333333333333333
+        sum = 2.083333333333333
+        return 2.083333333333333
+   value = 2.083333333333333
+
+
+
+Question #16:
+
+   Even though clients of the Math class typically don't need to understand
+   how methods like sqrt work internally, the implementers of that library
+   have to be able to design an effective algorithm and write the necessary
+   code. If you were asked to implement the sqrt method without using the
+   library version, there are many strategies you could adopt. One of the
+   easiest strategies to understand is successive approximation, in which
+   you make a guess at the solution and then refine that guess by choosing
+   new values that move closer to the solution.
+
+   You can use successive approximation to determine the square root of x
+   by adopting the following strategy:
+
+   1. Begin by guessing athat the square root is x/2. Call that guess g.
+
+   2. The actual square root must lie between g and x / g. At each step
+      in the successive approximation, generate a new guess by averaging
+      g and x / g.
+
+   3. Repeat step 2 until the values g and x / g are as close together
+      as the precision of the hardware allows. In Java, the best way to
+      check for this condition is to test whether the average is equal
+      to either of the vales used to generate it.
+
+   Use this strategy to write your our implementation of the sqrt method.
+
+
+
+===========================================================================
+Hw:
+===========================================================================
+From  Coursera, watch the week 5 video lectures:
+        - Basic Concepts
+	- Case Study: Digital Audio
+
+Complete all the questions in this lesson.
+
+
+
+
+
+
+Class comments
+
+Lesson-20
+Displaying lesson.txt.

@@ -1,0 +1,61 @@
+AP COMP SCI A 1 OF 2
+8
+Assignment-02
+Rick Platek
+•
+Sep 24
+Due Sep 28
+
+
+
+
+
+
+
+
+
+
+****************************************************************************
+****************************************************************************
+
+        From the book site : 1.2 Bult-in Types of Data
+
+           https://introcs.cs.princeton.edu/java/12types/
+
+****************************************************************************
+****************************************************************************
+
+1.Read up to the Ruler.java Program.
+
+  Review the Ruler Program - prints the relative lengths of the subdivisions
+                              on a ruler.
+
+2. Try   Creative Exercise :  #35. Dragon Curves. The solution is posted on the
+   book site.
+
+   Suggested Video:
+
+        https://www.youtube.com/watch?v=v678Em6qyzk
+
+
+3. Web Exercise : #10. Fibonacci Word:
+   Submit FibonacciWord.java on google classroomm.
+
+
+4. Book Lectures hosted by the author Robert Sedgewick
+
+    https://introcs.cs.princeton.edu/java/lectures/
+
+   We are currently Lecture 1: Basics
+
+   By Monday, I suggest you watch 1A, 1B, 1C.
+
+assignment-02.txt (END)
+
+
+
+
+
+Class comments
+
+Assignment-02

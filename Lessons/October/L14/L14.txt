@@ -1,0 +1,121 @@
+AP COMP SCI A 1 OF 2
+8
+Lesson-14
+Rick Platek
+•
+Oct 30
+Go over Spreadsheet.java
+=======================================================================
+
+
+
+1. Review the program Sample.java that demonstrates how to take a
+   sample without replacement from an array.
+
+
+2. Consider the code:
+
+        String [] suits = {"clubs", "diamonds", "hearts", "spades" };
+        String [] ranks = {"2", "3", "4", "5", "6", "7" , "8",
+                           "9", "10", "Jack", "Queen", "King" , "Ace"};
+
+        String [] deck = new String[52];
+        int k = 0;
+        for (int i = 0; i < suits.length; i++)
+            for (int j = 0; j < ranks.length; j++)
+                deck[k++] = ranks[j] + "\tof " + suits[i];
+
+
+   Write code to simulate printing a random 5 card poker hand. You
+   many not alter the order of the deck[].
+
+     	// PRESERVE THE ORDER OF THE DECK
+
+
+
+
+
+3. Write a program that takes an integer command-line argument n, generates
+   a random permutation of the integers from [0,n), prints the permutation,
+   and prints the number of left-to-right minima in the permuation
+   (the number of times an element is the smallest seen so far).
+
+
+   Your program name must be named: Minima.java
+   Compilation instuctions must be: $javac Minama.java
+   Execution instruction must be :  $java Minama  n
+   Your name must appear in the documentation.
+
+
+
+   $java Minama 2
+    0 1
+    left-to-right minima: 1
+
+   $java Minama 2
+    1 0
+    left-to-right minima: 2
+
+
+    $java Minama 3
+     0 1 2
+     left-to-right minima: 1
+
+    $java Minama 3
+     1 0 2
+     left-to-right minima: 2
+
+
+    $java Minama 5
+     4 3 1 0 2
+     left-to-right minima: 4
+
+     $java Minima 5
+      3 4 2 0 1
+      left-to-right minima: 3
+
+
+4. Alice is throwing a party with n other guests, including
+   Bob. Bob starts a rumor about Alice by telling it to one of the other
+   guests. A person hearing this rumor for the first time will immediately
+   tell it ot one other guest, chosen uniformly at random from all the
+   people at the party except Alice and the person from whom they heard it.
+   If a person (including Bob) hears the rumor for a second time, he or she
+   will not propagate it further. Write a program to estimate the probability
+   that everyone at the party (except Alice) will hear the rumor before it
+   stops propagating. Also calculate an estimate of the expected number
+   of people to hear the rumor.
+
+
+   Your program name must be named: Rumors.java
+   Compilation instuctions must be: $javac Rumors.java
+   Execution instruction must be :  $java Rumors  n  trials
+     n is the number of guests
+     trials is the number of trials performed.
+   Your name must appear in the documentation.
+
+   $ java Rumors 1 100
+     P(all heard) : 1.0
+     expect number of people who heard rumor: 1.0
+
+   $ java Rumors 2 100
+     P(all heard): 1.0
+     expect number of people who heard rumor: 2.0
+
+
+   $ java Rumors 3 100
+     P(all heard): 1.0
+     expect number of people who heard rumor: 3.0
+
+   $ java Rumors 4 100000
+     P(all heard): 0.50072
+     expect number of people who heard rumor: 3.50072
+
+
+   $ java Rumors 5 100000
+     P(all heard): 0.2254
+     expect number of people who heard rumor: 3.8966
+
+Class comments
+
+Lesson-14

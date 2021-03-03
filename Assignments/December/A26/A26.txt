@@ -1,0 +1,56 @@
+AP COMP SCI A 1 OF 2
+8
+Assignment-26
+Rick Platek
+•
+Dec 9
+15 points
+Due Dec 14
+1. Review : TitiusBode.java, Rumors.java, RiffleShuffle.java.
+2.  Complete the rest of lesson-26. Be prepared to present fib(int),additiveSequence(int,int,int).
+
+3. Points: 15 points
+
+ Due: end of the day 12/14 Monday.
+
+
+
+ From Coursera: week 5/ Functions/ programming assignment
+
+  Three Files to submit via Google Classroom.
+  - ActivationFunction.java
+  - Divisors.java
+  - AudioCollage.java
+
+
+ Include your name in the documentation of each file.
+
+
+FibTrace.txt
+Text
+
+RiffleShuffle.java
+Java
+
+Rumors.java
+Java
+
+TitiusBode.java
+Java
+Class comments
+
+Your work
+Turned in
+
+ActivationFunction.java
+Java
+
+Divisors.java
+Java
+
+AudioCollage.java
+Java
+Private comments
+
+Assignment-26
+Displaying hw.txt.

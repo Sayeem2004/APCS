@@ -1,0 +1,78 @@
+AP COMP SCI A 1 OF 2
+8
+Assignment 11
+Rick Platek
+•
+Oct 20
+Due Oct 21
+1. Enroll in the Coursera course: Computer Science: Programming with
+   a purpose.  (It is free).
+
+
+2. From this course, watch the following lectures from week 3:
+
+     - Basic Concepts (16 min)
+     - Typical array-processing code (23 min).
+
+
+3. Don't sumbit your solutions, but complete these exercise before the start of the next class.
+
+    Question #1:
+
+        Draw the state of a[] after each statement that modifies a[].
+
+          int n = 10;
+	  int [] a = new int[10];
+	  a[0] = 1;
+	  a[1] = 2;
+	  for (int i = 2 ; i < n; i++)
+	       a[i] = a[i-1] + a[i - 2];
+
+
+  Question #2:
+
+           What does the following code fragment print?
+
+           int [] a = {1,2,3};
+	   int [] b = {1,2,3};
+	   System.out.println(a == b);
+
+
+  Question #3:
+
+            Write a program HowMany that takes a variable number of command-line
+	    arguments and prints how many there are.
+
+
+  Question #4:
+
+            Write a program DiscreteDistribution that takes a variable number of
+	    integer command-line arguments and prints the integer i with probability
+	    proportional to the ith command-line argument.
+
+	    Sample runs:
+    	    // six equally likely events
+   	    $ java DiscreteDistribution 1 1 1 1 1 1
+   	    3
+
+ 	    $ java DiscreteDistribution 1 1 1 1 1 1
+            0
+
+            // six events, one 3x more likely than the others
+            $ java DiscreteDistribution 1 1 1 1 1 3
+            5
+
+            $ java DiscreteDistribution 1 1 1 1 1 3
+            2
+
+            $ java DiscreteDistribution 1 1 1 1 1 3
+            5
+
+Class comments
+
+Your work
+Turned in
+No work attached
+Private comments
+
+Assignment 11

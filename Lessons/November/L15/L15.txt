@@ -1,0 +1,161 @@
+AP COMP SCI A 1 OF 2
+8
+Lesson-15
+Rick Platek
+•
+Nov 3
+=============================================================================
+Task #1:  Standard Input and Output
+=============================================================================
+  -- From the book site, download: StdIn.java and StdOut.java
+
+          https://introcs.cs.princeton.edu/java/code/
+
+  -- Review : AddInts.java
+  -- Review : Average.java
+
+  -- To terminate the input stream.
+      - Ctrl-d  (linux)
+      - Ctrl-z  (windows)
+
+
+Question #1:
+
+   Write a program MaxMinPos.java that reads in integers (as many as the
+   user enters) from standard input and prints the maximum and minimum
+   values. Insist that the integers must be positive ( by prompting) the
+   user to enter positive integers whenever the value entered is not
+   positive).
+
+
+
+Question #2:
+
+   Write a program that takes an integer command-line argument n, reads
+   n floating-point numbers from standard input, and prints the mean
+   (average value) and sample standard deviation (square root of the
+   sum of the squares of their differences from the average, divided
+   by n-1). Create a filter that prints those values that are further
+   than 1.5 standard deviations from the mean. Use the printf() method
+   to create the output.
+
+
+  Sample Run:
+
+  $ java Stats 10
+  2.1
+  3.5
+  -0.825
+  4
+  -132.452
+  11.5
+  67.89
+  23.675
+  34.4543
+  4.1
+
+  mean                  1.79423
+  standard deviation   51.69397
+
+  Values further than 1.5 standard deviations from mean
+  -132.45200
+
+
+
+=============================================================================
+Task #2: Redirection
+=============================================================================
+--- Download RandomSeq.java
+
+--- Redirection standard output to a file
+
+
+
+      $ java RandomSeq 1000 > data.txt
+
+        RandomSeq -> standard output -> data.txt
+
+--- Redirecting standard output from a file
+
+      $ java Average < data.txt
+
+      data.txt -> standard input -> Average
+
+
+      $ java Stats 1000 < data.txt
+
+
+--- Use dickens.txt and WordCount.java
+
+      unix command:
+
+              $ wc dickens.txt          lines words bytecount
+
+      Java program:
+
+      $ java WordCount < dickens.text
+
+
+Question #3: RandomWord.java
+
+  Print a random word. Read a list of N words from standard input, where N is
+  unknown ahead of time, and print out one of the N words uniformly at random.
+  Do not store the word list. Instead, use Knuth's method: when reading in the
+  ith word, select it with probability 1/i to be the selected word, replacing
+  the previous champion. Print out the word that survives after reading in all
+  of the data.
+
+==============================================================================
+	Piping : connecting two programs
+==============================================================================
+
+	$ java RandomSeq 1000 | java Average
+
+       RandomSeq -> standard output -> standard input -> Average
+
+        $ java RandomSeq 5 | sort
+
+        $ java RandomSeq 1000 | more
+
+
+Question #4:
+
+  Consider Dragon.java
+
+	 public class Dragon{
+
+    	 public static void main(String [] args){
+         	String dragon = StdIn.readString();
+        	String nogard = StdIn.readString();
+
+        	System.out.print(dragon + "L" + nogard);
+        	System.out.print(" ");
+        	System.out.print(dragon + "R" + nogard);
+        	System.out.println();
+
+         }
+
+        }
+
+
+      Create the file input.txt containing the two strings F and F.
+
+      What does the following command do?
+
+      $ java Dragon < input.txt | java Dragon | java Dragon
+
+
+
+Question #5:
+
+	 Write a filter TenPerLine that reads from standard input a
+	 sequence of integers between 0 and 99 and prints them back,
+	 10 integers per line, with columns aligned. Then write a
+	 program RandomIntSeq that takes two integer command-line
+	 arguments m and n and prints random integers between 0 and
+	 m-1. Test your programs with the command
+
+         $ java RandomIntSeq 200 100 | java TenPerLine
+Class comments
+
+Lesson-15

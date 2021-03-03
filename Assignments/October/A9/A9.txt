@@ -1,0 +1,39 @@
+AP COMP SCI A 1 OF 2
+8
+Assignment-09
+Rick Platek
+•
+Oct 14
+10/10
+10 points out of possible 10
+Due Oct 16
+1. Complete the AP Unit test.
+
+2. Watch the Princeton lectures:
+        2c An alternative: the for loop
+	2D Nesting
+
+
+3.Suppose a, b, and c are random number uniformly distributed between 0 and 1.
+  What is the probability that a, b, and c form the side length of some
+  triangle? Hint: they will form a triangle if and only if the sum of every
+  two values is larger than the third.
+
+  Write the program TriangleProbability that uses a Monte Carlo Simulation to
+  determine the answer.
+
+  Use Math.random() to generate the uniformly distributed random values
+  between 0 and 1.
+1 class comment
+
+Joseph KimOct 14
+Is the AP Unit test the "Unit 1 Progress Check: MCQ Part B" assignment?
+
+Your work
+Graded
+
+TriangleProbability.java
+Java
+Private comments
+
+Assignment-09

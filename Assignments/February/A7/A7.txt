@@ -1,0 +1,360 @@
+Data Structures
+Period 6
+Assignment-07
+Rick Platek
+•
+8:56 AM
+10 points
+Due Feb 23
+
+assignment-07.txt
+Text
+Class comments
+Your work
+Assigned
+Private comments
+Assignment-07
+============================================================================
+    Codestepbystep.com
+============================================================================
+ 1. Create an account at : https://www.codestepbystep.com/
+    Use your Stuyvesant credentials.
+
+ 2. Go to  https://www.codestepbystep.com/course/list
+
+   Join the Course:
+
+   Stuyvesant High School
+
+   CS AP2-Spring 2021      Mr. Platek
+
+
+===========================================================================
+Task #1 (Group Work) Subclassing: Inheritance
+===========================================================================
+
+ Read the page "Inheritance"
+
+  https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html
+
+
+ A Counter is an object that starts at an initial value with the capability
+ to increment to the next value.
+
+ A Counter is represented as an interface.
+
+
+
+ Counter Interface API
+===========================================================================
+
+     public interface Counter {
+     	     public void reset();
+    	     public void increment();
+    	     public int  getValue();
+     }
+
+************************* START PART A ************************************
+ An IntCounter is a subtype of Counter. If an IntCounter starts
+ at n, when incremented, the value becomes n+1.
+
+
+
+Here's the IntCounter Documentation:
+
+ IntCounter API
+============================================================================
+
+   public IntCounter()                  - counter starts at 0
+   public IntCounter(int initialValue)  - starts at initialValue
+
+   public int getValue()                - returns the current value
+
+   public void reset()                  - resets to 0
+   public void increment()              - increment the counter by 1
+
+   public String toString()             - returns the same as getValue()
+                                          as a String
+
+
+Study the CounterTester program.
+============================================================================
+/ *  Compilation instructions: $ javac CounterTester.java
+  *  Execution instructions:   $ java  CounterTester
+  *  $ java CounterTester
+  *  counters: [0, 5]
+  *  increment the counters
+  *  counters: [1, 6]
+  *  counters: [2, 7]
+  *  counters: [3, 8]
+  *  reset the counters
+  *  counters: [0, 0]
+*/
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class CounterTester{
+
+    public static void main(String [] args){
+	List<Counter> counters = new ArrayList<Counter>();
+
+	counters.add(new IntCounter());
+	counters.add(new IntCounter(5));
+
+	System.out.println("counters: " + counters);
+
+	System.out.println("increment the counters");
+	for (int i = 0; i < 3; i++){
+	    for(Counter c : counters){
+		c.increment();
+	    }
+	    System.out.println("counters: " + counters);
+	}
+
+	System.out.println("reset the counters");
+	for(Counter c : counters){
+	    c.reset();
+	}
+
+	System.out.println("counters: " + counters);
+    }
+}
+
+
+
+
+ Implement the IntCounter class as a subtype of Counter.
+ All of the fields of IntCounter must be private.
+******************** End PART A ***********************************************
+*******************************************************************************
+
+
+
+**********************Start PART B *******************************************
+
+Read the page "Using the Keyword super" :
+
+  https://docs.oracle.com/javase/tutorial/java/IandI/super.html
+
+
+
+A ModularCounter is a subclass of IntCounter. A ModularCounter has
+a modulus value to limit the range of its value to [0, modulus).
+ModularCounter must have 1 additional field, and it must be
+private.
+
+
+
+
+UML Diagram (Unified Markup Language)
+===========================================================================
+
+
+   Object          Counter
+   |                |
+   +-- IntCounter --+
+       |
+       +--ModularCounter
+
+
+IntCounter is an Object.
+IntCounter is a  Counter.
+ModularCounter is an IntCounter.
+ModularCounter is a Counter.
+ModularCounter is an Object.
+
+
+The super class of ModularCounter is IntCounter.
+
+The ModularCounter API
+==============================================================================
+    Constructors
+    ------------
+    public ModularCounter(int modulus)
+                   -- modulus must be positive
+		      throws an IllegalStateException("modulus is bad")
+		   -- starts at 0
+    public  ModularCounter(int value, int modulus)
+                   -- modulus must be positive
+		   -- value must be nonnegative and less than the modulus
+		      throws an IllegalStateException("value is bad")
+
+    Methods
+    --------
+    public int getModulus()            -- returns the modulus
+    public void increment()            -- increment by 1
+    public String toString()           -- value +  modulus
+
+
+
+
+Study the Updated CounterTester program.
+========================================================================
+/* Compilation Instructions: $ javac CounterTester.java
+   Execution instructions:   $ java  CounterTester
+
+
+
+  counters: [0, 0 (5)]
+  increment the counters
+  counters: [1, 1 (5)]
+  counters: [2, 2 (5)]
+  counters: [3, 3 (5)]
+  counters: [4, 4 (5)]
+  counters: [5, 0 (5)]
+  counters: [6, 1 (5)]
+  counters: [7, 2 (5)]
+  counters: [8, 3 (5)]
+  counters: [9, 4 (5)]
+  counters: [10, 0 (5)]
+  reset the counters
+  counters: [0, 0 (5)]
+
+
+ */
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class CounterTester{
+
+    public static void main(String [] args){
+        List<Counter> counters = new ArrayList<Counter>();
+
+        counters.add(new IntCounter());
+        counters.add(new ModularCounter(5));
+
+        System.out.println("counters: " + counters);
+
+        System.out.println("increment the counters");
+        for (int i = 0; i < 10; i++){
+            for(Counter c : counters){
+                c.increment();
+            }
+            System.out.println("counters: " + counters);
+        }
+
+        System.out.println("reset the counters");
+        for(Counter c : counters){
+            c.reset();
+        }
+
+        System.out.println("counters: " + counters);
+    }
+}
+
+
+
+Implement the ModularCounter class as a subclass of IntCounter.
+All of the fields of ModularCounter must be private.
+
+******************** End PART B ***********************************************
+*******************************************************************************
+
+
+**********************Start PART B *******************************************
+
+A BoundedCounter is a second subtype of IntCounter. A BoundedCounter maintains
+a bound that limits its value to the range [x, BOUND], where x is any integer
+and x <= BOUND.
+
+
+UML Diagram (Unified Markup Language)
+========================================================================
+
+  Object            Counter
+  |                  |
+  + -- IntCounter -- +
+       |
+       + --- ModularCounter
+       |
+       + --- BoundedCounter
+
+
+BoundedCounter is a subclass of IntCounter.
+BoundedCounter is not a subclass of ModularCounter.
+
+BoundedCounter API
+=========================================================================
+  Constructors
+  ------------
+  public BoundedCounter(int bound)
+         -- bound must be nonnegative.
+	 -- represents the range [0,bound]
+
+  public BoundedCounter(int value, int bound)
+  	 -- represents the range [value,bound].
+
+  Methods
+  -------
+
+  public int getBound()
+  public String toString()
+
+
+Here's a updated CounterTester program.
+=========================================================================
+/* Compilation Instructions: $ javac CounterTester.java
+   Execution instructions:   $ java  CounterTester
+
+
+   counters: [0, 0 (5), 0[bounded by 7]]
+   increment the counters
+   counters: [1, 1 (5), 1[bounded by 7]]
+   counters: [2, 2 (5), 2[bounded by 7]]
+   counters: [3, 3 (5), 3[bounded by 7]]
+   counters: [4, 4 (5), 4[bounded by 7]]
+   counters: [5, 0 (5), 5[bounded by 7]]
+   counters: [6, 1 (5), 6[bounded by 7]]
+   counters: [7, 2 (5), 7[bounded by 7]]
+   counters: [8, 3 (5), 7[bounded by 7]]
+   counters: [9, 4 (5), 7[bounded by 7]]
+   counters: [10, 0 (5), 7[bounded by 7]]
+   reset the counters
+   counters: [0, 0 (5), 0[bounded by 7]]
+
+ */
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class CounterTester{
+
+    public static void main(String [] args){
+        List<Counter> counters = new ArrayList<Counter>();
+
+        counters.add(new IntCounter());
+        counters.add(new ModularCounter(5));
+        counters.add(new BoundedCounter(7));
+
+        System.out.println("counters: " + counters);
+
+        System.out.println("increment the counters");
+        for (int i = 0; i < 10; i++){
+            for(Counter c : counters){
+                c.increment();
+            }
+            System.out.println("counters: " + counters);
+        }
+
+        System.out.println("reset the counters");
+        for(Counter c : counters){
+            c.reset();
+        }
+
+        System.out.println("counters: " + counters);
+    }
+}
+
+Implement the BoundedCounter class as a subclass of IntCounter.
+BoundedCounter can have 1 additional field which must be private.
+******************** End PART C ***********************************************
+*******************************************************************************
+assignment-07.txt
+Displaying assignment-07.txt.

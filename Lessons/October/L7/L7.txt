@@ -1,0 +1,331 @@
+AP COMP SCI A 1 OF 2
+8
+Lesson-07
+Rick Platek
+•
+Oct 7
+============================================================================
+Task #1: Previous Lesson
+===========================================================================
+--  Join code for AP Classroom
+--- Ordered.java
+
+ / * Compilation: $ javac Ordered.java
+   * Execution:   $ java Ordered arg0 arg1 arg2
+   *
+   *
+   *  Write a program Ordered.java that reads in three integer command line
+   *  arguments, x, y, and z.
+   *  Create a boolean variable b that is true if the three values are either
+   *  in ascending or in descending order, and false otherwise.
+   *  Print the variable b.
+   *  ex.
+   *    $ java Ordered 1 2 3
+   *      true
+   *    $ java Ordered 10 2 -3
+   *      true
+   *    $ java Ordered 3 5 1
+   *      false
+ */
+
+  public class Ordered{
+
+  	 public static void main(String [] args){
+	 	int x = Integer.parseInt(args[0]);
+		int y = Integer.parseInt(args[1]);
+		int z = Integer.parseInt(args[2]);
+		// stricly ascending or descending
+		boolean b = ((x < y) && (y < z)) || ((x > y) && (y > z));
+		System.out.println(b);
+
+
+
+   }
+
+=============================================================================
+Task #2: The if statement
+=============================================================================
+The if statement
+-----------------
+   -- A control statement that uses conditional execution.
+
+
+ Form:
+      if (condition) statement
+
+      if (condition) statement else statement
+
+      ** condition must be a boolean value.
+      ** parenthesis are required.
+
+ex. Determine if a number is even of odd.
+
+   if (n % 2 == 0){
+         System.out.println("even");
+   }
+   else{
+        System.out.println("odd");
+   }
+
+Question #1:
+
+   What will be the result of attempting to compile and run the following class?
+
+     public class IfTest{
+     	    public static void main(String [] args){
+	    	   if (true)
+		   if (false)
+		   System.out.println("a");
+		   else
+		   System.out.println("b");
+	    }
+     }
+
+    Select the one right answer.
+
+     (a) The code will fail to compile because the syntax of the if statement
+         is incorrect.
+     (b) The code will fail to compile because the compiler will not be able to
+         determine which if the else clause belongs to.
+     (c) The code will compile correctly and will display the letter a when run.
+     (d) The code will compile correctly and will display the letter b when run.
+     (e) The code will compile correctly and will not display any output.
+
+
+Question #2:
+
+    Which of these statements are true?
+
+    Select all valid answers.
+
+     (a) The condition expression in an if statement can contain method calls.
+     (b) If a and b are of type boolean, the expression (a = b) can be the
+         condition expression of an if statement.
+     (c) An if statement can have either an if clause or an else clause.
+     (d) The statement if (false) ; else ; is illegal.
+     (e) Only expressions which evaluate to a boolean value can be used as the
+         condition in an if statement.
+
+
+
+
+Question #3:
+
+  Write a program Hurricane.java that that takes the wind speed (in miles per hour)
+  as an integer command-line argument and prints whether it qualifies as a hurricane,
+  and if so, whether it is a Category 1, 2, 3, 4, or 5 hurricane. Below is a table of
+  the wind speeds according to the Saffir-Simpson scale.
+
+    Category 	Wind Speed (mph)
+    	1 	74 - 95
+    	2 	96 - 110
+    	3 	111 - 130
+    	4 	131 - 155
+    	5 	155 and above
+
+  Sample runs:
+    % java Hurricane 25
+    Not a hurricane
+
+    % java Hurricane 135
+    Class 4 hurricane
+
+
+===================================================================================
+Task #3: The switch statement
+====================================================================================
+
+
+--- the switch is  an alternative to nested if statements (Syntactic Sugar)
+
+
+ Consider this nested if statement.
+
+  String ans;
+  int d = < some value >;
+
+  if (d == 0)
+     ans = "Sun";
+  else if (d == 1)
+     ans = "Mon";
+  else if (d == 2)
+     ans = "Tues";
+  else if (d == 3)
+     ans = "Wed";
+  else if (d == 4)
+     ans = "Thurs";
+  else if (d == 5)
+     ans = "Fri"
+  else if (d == 6)
+   ans = "Sat"
+  else
+     ans = "Error";
+
+
+-- switch version
+
+        switch(d){
+                case 0:
+                     ans = "Sun";
+                     break;
+                case 1:
+                     ans = "Mon";
+                     break;
+                case 2:
+                     ans = "Tues";
+                     break;
+                case 3:
+                     ans = "Wed";
+                     break;
+                case 4:
+                     ans = "Thurs";
+                     break;
+                case 5:
+                     ans = "Fri";
+                     break;
+                case 6:
+                     ans = "Sat";
+                     break;
+                default:
+                     ans = "Error";
+         }
+
+---General Form:
+
+      switch(control_expression){
+        case constant1 : branch1
+        case constant2 : branch2
+        ...
+        default : branchN
+      }
+
+
+  ** control_expression must be an int type or a String.
+  ** The constants must be a subtype of the control_expression.
+  ** default is optional but highly recommended.
+  ** Each branch, except for the last, should contain a break statement.
+
+  Evaluation Process:
+     First evaluate the control_expression, then match the value against
+     the constants. Execute the branch corresponding to the matched
+     constant. If that branch does not contain a break statement, then
+     execute all the following branches until either a break statement is
+     encountered or the switch statement ends.
+
+---Multiple Case Lines
+
+
+          case 1:
+          case 2:
+                branch1
+          case 3: case 4: case 5:
+                branch2
+          ...
+
+Question #4:
+
+   Write the program IsVowel.java that takes a letter as a command-line argument
+   and uses a switch statement to identify whether the letter is a vowel or not.
+   Consider the vowels: a,e,i,o,u. (uppercase as well).
+
+
+
+
+
+=======================================================================================
+Task #4: The while statement
+=======================================================================================
+
+---  Review of Statements
+
+
+1. Simple Statements
+
+       a. The empty statement
+
+                 ;
+
+       b. Non-empty statement
+
+             expression;
+
+
+2. Block Statements
+
+      a. Empty Block Statement
+
+              {}
+
+      b. Non-empty Block Statement
+
+             {
+                statement1
+                ...
+                statementN
+             }
+
+3. Conditional Statements.
+
+        a. The if statement
+
+           if (condition) statement
+           if (condition) statement else statement
+
+        b.  The switch statement
+
+
+             switch(control_expression){
+                case constant1:
+                              branch1
+
+                case constantN:
+                              branch(N-1)
+                default:
+                              branchN
+
+             }
+4. Iterative Statements (LOOPS)
+
+        a. The while statement
+
+             while (condition)
+                 statement
+
+           * condition must be a boolean value
+           * statement is commonly referred as the "body"
+           * while the condition is true execute the body
+             of the loop. The condition is evaluated before
+             executing the body.
+
+
+  Question #5 :
+
+        Consider this code:
+
+                 int n = <some value>;
+                 int sum = 0;
+                 while (n > 0){
+                       sum += n % 10;
+                       n /= 10;
+                 }
+
+
+          What is the value of sum after this loop completes
+
+         (a) when n = 123
+
+	 (b) when n = -123
+
+
+   Question #6:
+
+      From the book site review the TenHellos.java program.
+
+      Rewrite TenHellos to make a program Hellos that takes the
+      number of lines to print as a command-line argument. You
+      may assume that the argument is less 1000. Hint: i % 10
+      and i % 100 to determine when to use st, nd, rd, or th
+      for printing the ith Hello.
+Class comments
+
+Lesson-07

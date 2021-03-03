@@ -1,0 +1,147 @@
+AP COMP SCI A 1 OF 2
+8
+Assignment-28
+Rick Platek
+•
+Dec 15
+Due Today
+Prepare to present solutions for #2 - #8.
+
+=========================================================================
+ String Processing Exercises:
+=========================================================================
+
+1. Suppose that you have declared and initialized the variable s as follows:
+
+      String s = "hello, world";
+
+   Given that declaration, what is the value of each of the following calls:
+
+                      h e l l o ,   w o r  l  d
+                      0 1 2 3 4 5 6 7 8 9 10 11
+
+   a. s + "!"         --> "hello, world!"
+
+   b. s.length()      --> 12
+
+   c. s.charAt(5)     --> ','
+
+   d. s.indexOf('l')   --> 2
+
+   e. s.indexOf("l",5);  --> 10
+
+   f. s.replace('h','3') -> "3ello, world"
+
+   g. s.substring(0,3)    -> "hel"
+
+   h. s.substring(7)        -> "world"
+
+   i. s.substring(3,5)      -> "lo"
+
+   j. s.substring(3,3)      -> ""
+
+
+
+2. Write the free standing methond secondHalf(String) that returns the
+   second half of the parameter str, which is defined to include the
+   middle character if the length of str is odd:
+
+
+      public static String secondHalf(String str){
+      	     // Your Code Goes Here
+      }
+
+
+3. Given the format for a file name : base.extension
+
+   For example,   hw.txt
+               base      is hw
+	       extension is txt
+
+   Write a code fragment to extract the file name and extension from
+   a command-line argument.
+
+        String s = args[0];
+
+
+
+4. What does the following code fragment print?
+
+   String string1 = "hello";
+   String string2 = string1;
+   string1 = "world";
+   System.out.println(string1);
+   System.out.println(string2);
+
+
+5. What does the following code fragement print?
+
+   String s = "Hello World";
+   s.toUpperCase();
+   s.substring(6,11);
+   System.out.println(s);
+
+6. Write the free standing method topLevelDomain(String) that
+   takes a string that represents a domain name, returns its
+   top-level domain. For example, the top-level domain
+   of the string cs.princeton.edu is edu.
+
+   public static String topLevelDomain(String domainName){
+   	  // your code goes here
+
+   }
+
+
+7. Write a static method that takes a domain name as its argument
+   an returns the reverse domain name (reverse the order of the strings
+   between periods). For example, the reverse domain name of cs.princeton.edu
+   is edu.princeton.cs. This computation is useful for web log analysis.
+
+
+8. A string s is a circular shift of a string t if it matches when the
+   characters of one string are circularly shifted by some number of positions.
+   For example, "ACTGACG" is a circular shift of "TGACGAC", and vice versa.
+   Detecting this condition is important in the study of genomic sequences.
+   Write a program that checks whether two given strings s and t are circular
+   shifts of one another. Hint:  The solution is a one-liner with indexOf()
+   and concatenation.
+
+=========================================================================
+AP STRING METHODS YOU NEED TO KNOW
+=========================================================================
+
+   1. int length() -> returns the length of a string.
+
+   2. String substring(int from, int to) -> returns a substring of the
+                                            receiver starting at index
+                                            from upto but not including
+                                            the character at index to.
+
+       ex. "chicken".substring(2,5) -> "ick"
+
+       A substring is a consecutive subsequence of a string.
+
+   3. String substring(int from)  -> is equivalent to substring(from,length())
+
+
+   4. int indexOf(String str) -> returns the index of the first occurrence
+                                 of str; -1 if str is not found.
+
+       ex. "chicken".indexOf("ick") -> 2
+           "chicken".indexOf("ci")  -> -1
+
+   5. boolean equals(String str) -> returns true if the receiver is equivalent
+                                     to str; false otherwise.
+
+   6. int compareTo(String str) -> returns 0 when equal
+                                   returns 1 when receiver is larger
+				   returns -1 when receiver is smaller
+Class comments
+
+Your work
+Turned in
+No work attached
+Private comments
+
+Assignment-28
+Displaying hw.txt.

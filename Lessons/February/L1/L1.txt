@@ -1,0 +1,164 @@
+Data Structures
+Period 6
+Lesson-01
+Rick Platek
+•
+7:38 AM
+=============================================================================
+Task #1 : Administrative Details
+=============================================================================
+
+  - Join Google Classroom
+  - Course Grade: 85% assignments
+                  15% class participation
+
+=============================================================================
+Task #2: Interfaces Inheritance (subtyping)
+=============================================================================
+ -- Book site Notes:
+
+       https://introcs.cs.princeton.edu/java/33design/
+
+
+ -- Function Interface
+
+     Download and review Function.java.
+
+ -- Examples of Implementing Subtypes
+      -- Square.java
+      -- GaussianPDF.java
+
+
+ -- Using An Interface
+      -- FunctionGraph.java
+
+
+-- When doing the following, you can ignore the GaussianPDF.java function.
+
+===========================================================================
+Group Work:
+         1. 1 Submission per group.
+	 2. Include your names in the documentation.
+	 3. Complete questions 1 - 7 (see below).
+         4. Files to submit:
+	        -Function.java
+		-Square.java
+		-Half.java
+		-FunctionClient.java
+		-PredicateFunction.java
+		-IsEven.java
+
+Individual Work: Question #8
+===========================================================================
+
+Question #1:
+----------------------------------------------------------------------------
+        In the Function interface overload the evaluate() method to take
+	an integer and return an integer.
+
+
+Question #2:
+---------------------------------------------------------------------------
+
+	 Make the necessary changes to the Square.java
+	  Example,
+
+                Function f1 = new Square();
+		System.out.println(f1.evaluate(3));   //   9
+		System.out.println(f1.evaluate(3.0)); // 9.0
+
+
+
+Question #3:
+---------------------------------------------------------------------------
+         Implement the Half function.
+                  f(x) = x / 2
+
+
+Question #4 :
+---------------------------------------------------------------------------
+  Here's the FunctionClient.java program.
+
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class FunctionClient{
+
+
+    public static List<Integer> map(Function f, List<Integer> list){
+        // YOUR CODE GOES HERE
+    }
+
+
+    public static void main(String [] args){
+	Integer [] array = {3,52,23,5,21,78};
+	List<Integer> list = new ArrayList<Integer>();
+	Collections.addAll(list,array);
+
+	System.out.println(list);   // [3, 52, 23, 5, 21, 78]
+
+	System.out.println(map(new Square(), list)); // [9, 2704, 529, 25, 441, 6084]
+	System.out.println(map(new Half(), list)); // [1, 26, 11, 2, 10, 39]
+	//System.out.println(filter(new IsEven(), list)); // [52, 78]
+    }
+
+
+}
+
+Implement the map function.
+
+	  - free function with no side effects
+
+
+Question #5:
+--------------------------------------------------------------------------------
+      A predicate function returns a boolean value. Implement an appropriate
+      PredicateFunction interface.
+
+
+
+Question #6:
+--------------------------------------------------------------------------------
+      Implement the predicate function IsEven.
+
+
+Question #7:
+--------------------------------------------------------------------------------
+      The filter function takes a predicate function and a list of integers
+      and returns a list of the integers identified by the predicate function.
+      Implement the filter function.
+
+
+
+
+======================================================================================
+Task #3: Lambda Expressions
+======================================================================================
+
+   --- read the book site notes
+
+
+
+
+Question #8: This is an individual assignment.
+--------------------------------------------------------------------------------------
+ Extend the plot method of the FunctionGraph program so that it takes
+ a Color parameter, which controls the color of the line. Use this extended
+ plot method to create a graph showing the growth curves of the most common
+ complexity classes --- constant, logarithmic, linear, N log N, quadratic,
+ and exponential -- each in a different color. Use a lambda expression to define
+ each function.
+
+
+    -- FunctionGraph.java (Modifiy this program).
+    -- Function.java **** Use the version from the book site. Not the one you modified
+                          in questions 1 - 7. ****
+    -- Only use classes found in stdlib.jar
+
+lesson.txt
+Text
+Class comments
+
+
+Displaying Herbivore.java.Turning in…

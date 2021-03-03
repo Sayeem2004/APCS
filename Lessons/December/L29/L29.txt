@@ -1,0 +1,242 @@
+AP COMP SCI A 1 OF 2
+8
+Lesson-29
+Rick Platek
+•
+8:38 AM
+=========================================================================
+Task #1: Presentations The String Processing Exercises:
+=========================================================================
+
+
+1. Write the free standing methond secondHalf(String) that returns the
+   second half of the parameter str, which is defined to include the
+   middle character if the length of str is odd:
+
+
+      public static String secondHalf(String str){
+      	     // Your Code Goes Here
+      }
+
+
+2. Given the format for a file name : base.extension
+
+   For example,   hw.txt
+               base      is hw
+	       extension is txt
+
+   Write a code fragment to extract the file name and extension from
+   a command-line argument.
+
+        String s = args[0];
+
+
+
+3. What does the following code fragment print?
+
+   String string1 = "hello";
+   String string2 = string1;
+   string1 = "world";
+   System.out.println(string1);
+   System.out.println(string2);
+
+
+4. What does the following code fragement print?
+
+   String s = "Hello World";
+   s.toUpperCase();
+   s.substring(6,11);
+   System.out.println(s);
+
+5. Write the free standing method topLevelDomain(String) that
+   takes a string that represents a domain name, returns its
+   top-level domain. For example, the top-level domain
+   of the string cs.princeton.edu is edu.
+
+   public static String topLevelDomain(String domainName){
+   	  // your code goes here
+
+   }
+
+
+6. Write a static method that takes a domain name as its argument
+   an returns the reverse domain name (reverse the order of the strings
+   between periods). For example, the reverse domain name of cs.princeton.edu
+   is edu.princeton.cs. This computation is useful for web log analysis.
+
+
+7. A string s is a circular shift of a string t if it matches when the
+   characters of one string are circularly shifted by some number of positions.
+   For example, "ACTGACG" is a circular shift of "TGACGAC", and vice versa.
+   Detecting this condition is important in the study of genomic sequences.
+   Write a program that checks whether two given strings s and t are circular
+   shifts of one another. Hint:  The solution is a one-liner with indexOf()
+   and concatenation.
+
+
+============================================================================
+Task #2:           COMPARING STRINGS
+============================================================================
+
+
+
+With primitive data types( boolean, char, int, double, etc.) == is used
+for checking equivalence.
+
+Do not use the operator == to check the equivalence of 2 strings.
+Use the equals method instead.
+
+        If lhs and rhs are object references
+
+        then
+	       lhs == rhs   returns true if each
+                            operand is the same object;
+			    false otherwise.
+
+               lhs.equals(rhs) return true when the objects
+	                       are equivalent; false otherwise.
+
+
+1. Consider the following program:
+
+public class StringEq{
+
+    public static void main(String[] args){
+	String a = "hi";
+	String b = new String(a);
+	String c = args[0];
+
+
+	System.out.println("a = " + a);
+	System.out.println("b = " + b);
+	System.out.println("c = " + c);
+
+
+	System.out.println("a == a " + (a == a));
+	System.out.println("a == b " + (a == b));
+	System.out.println("a == c " + (a == c));
+	System.out.println("b == c " + (b == c));
+
+	System.out.println("a.equals(a) " + (a.equals(a)));
+	System.out.println("a.equals(b) " + (a.equals(b)));
+	System.out.println("a.equals(c) " + (a.equals(c)));
+	System.out.println("b.equals(c) " + (b.equals(c)));
+
+    }
+
+}
+
+Determine the output of $java StringEq hi.
+a = hi
+b = hi
+c = hi
+a == a true
+a == b false
+a == c false
+b == c false
+a.equals(a) true
+a.equals(b) true
+a.equals(c) true
+b.equals(c) true
+
+
+
+2. Write the free standing method countSpaces(String) that returns
+   the number of space characters contained in the argument.
+
+   Version #1: use the method charAt(int)
+
+   Version #2: use the substring method.
+
+
+============================================================================
+Task #3:  String Order
+============================================================================
+
+Strings can be ordered based on the Unicode characters of the String.
+
+Lexiographic order is used when comparing strings.
+
+Differences between lexiographic and alphabetical order
+-------------------------------------------------------
+   1. Alphabetical Order ignores case and is generally limited to
+      the letters of an alphabet.
+
+       So,  aardvark comes before Achilles
+
+   2. Lexigraphical does not ignore case and considers other characters
+      such as digits, punctuation marks, etc..
+
+        uppercase before lowercase
+
+            'A' comes before 'a'
+
+            So, Achilles comes before aardvark
+
+ The compareTo method
+---------------------------------------
+   Given s1 and s2 are String objects
+
+
+      s1.compareTo(s2)
+        -  if s1 precedes s2 in lexiographic order, then a negative integer
+           is returned.
+        -  if s1 follows s2 in lexiographic order, then a positive integer
+           is returned.
+        -  if the 2 strings are exactly the same, then 0 is returned.
+
+   Example Usage:
+      // does s1 precede s2?
+      if (s1.compareTo(s2) < 0)
+
+
+1. What is the result of each of the following expressions? For calls
+   to compareTo, simply indicate the sign of the result.
+
+   a. "ABC".equals("abc")
+   b. "ABC".equalsIgnoreCase("abc")
+   c. "ABC".compareTo("ABC")
+   d. "ABC".compareTo("AB")
+   e. "ABC".compareTo("abc")
+   f. "ABC".endsWith("c")
+
+
+2. Without producing a side effect, implement the method
+
+      // precondition : s is not in order.
+      public static String lastWord(String[] s)
+
+   to return the string that would appear last if
+   the String[] s was in lexiographic order.
+
+
+
+
+
+
+==========================================================================
+Task #4: More String Practice
+===========================================================================
+1. Suppose that the endsWith method did not exist in the String class.
+   How would you implement your own method endsWith(str,suffix) that
+   performs the same function? Your implementation should use no methods
+   other than length, charAt, and the concatenation operator.
+
+
+2. Adherring to the same restrictions as in exercise 1, write your own
+   version of the indexOf method. As in the case of the implementation
+   from the String class, your implementation should overload indexOf
+   so that the pattern argument can be either a string or a character
+   and so that the method takes an optional second argument that
+   specifies the starting position.
+
+
+
+3. Design and implement a method scramble(String s) to produce
+   a shuffled version of s. Can this be done via a side effect?
+   Explain.
+
+Class comments
+
+
+Page 3 of 4 Page 4 of 4

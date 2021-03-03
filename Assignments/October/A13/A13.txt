@@ -1,0 +1,23 @@
+AP COMP SCI A 1 OF 2
+8
+Assignment-13
+Rick Platek
+•
+Oct 26
+Due Oct 27
+Nothing to submit.
+Bring your solution of Histogram.java to class.
+
+DiceSimulation.java
+Java
+
+hw.txt
+Text
+Class comments
+
+Your work
+Turned in
+No work attached
+Private comments
+
+Assignment-13

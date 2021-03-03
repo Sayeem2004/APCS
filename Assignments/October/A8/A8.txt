@@ -1,0 +1,31 @@
+AP COMP SCI A 1 OF 2
+8
+Assignment-08
+Rick Platek
+•
+Oct 9
+10/10
+10 points out of possible 10
+Due Oct 14, 11:59 PM
+ From the book site : https://introcs.cs.princeton.edu/java/13flow/
+
+Exercises:     21, 22             (submit #21 via Google Classroom).
+Web Exercises: 6,9,11,14,16,18,37 (submit #37 via Google Classroom).
+
+Submission File Names:
+      Kary.java
+      Binary2.java
+
+Class comments
+
+Your work
+Graded
+
+Binary2.java
+Java
+
+Kary.java
+Java
+Private comments
+
+Assignment-08

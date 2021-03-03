@@ -1,0 +1,268 @@
+AP COMP SCI A 1 OF 2
+8
+Lesson-08
+Rick Platek
+•
+Oct 9
+
+=======================================================================================
+Task #1: The while statement
+=======================================================================================
+
+---  Review of Statements
+
+
+1. Simple Statements
+
+       a. The empty statement
+
+                 ;
+
+       b. Non-empty statement
+
+             expression;
+
+
+2. Block Statements
+
+      a. Empty Block Statement
+
+              {}
+
+      b. Non-empty Block Statement
+
+             {
+                statement1
+                ...
+                statementN
+             }
+
+3. Conditional Statements.
+
+        a. The if statement
+
+           if (condition) statement
+           if (condition) statement else statement
+
+        b.  The switch statement
+
+
+             switch(control_expression){
+                case constant1:
+                              branch1
+
+                case constantN:
+                              branch(N-1)
+                default:
+                              branchN
+
+             }
+4. Iterative Statements (LOOPS)
+
+        a. The while statement
+
+             while (condition)
+                 statement
+
+           * condition must be a boolean value
+           * statement is commonly referred as the "body"
+           * while the condition is true execute the body
+             of the loop. The condition is evaluated before
+             executing the body.
+
+
+  Question #5 :
+
+        Consider this code:
+
+                 int n = <some value>;
+                 int sum = 0;
+                 while (n > 0){
+                       sum += n % 10;
+                       n /= 10;
+                 }
+
+
+          What is the value of sum after this loop completes
+
+         (a) when n = 123
+
+
+
+	 (b) when n = -123
+
+
+
+
+   Question #6:
+
+      From the book site review the TenHellos.java program.
+
+      Rewrite TenHellos to make a program Hellos that takes the
+      number of lines to print as a command-line argument. You
+      may assume that the argument is less 1000. Hint: i % 10
+      and i % 100 to determine when to use st, nd, rd, or th
+      for printing the ith Hello.
+
+   To view the output one page at a time use:
+
+     $ java Hellos 1000 | less
+
+   To create a permanent record of the output
+
+     $ java Hellos 1000 > hellos.txt
+     $ less hellos.txt
+
+==============================================================================
+Task #2: Tracing Your Code
+==============================================================================
+--- review PowersOfTwo.java
+
+  public class PowersOfTwo {
+    public static void main(String[] args) {
+
+        // read in one command-line argument
+        int n = Integer.parseInt(args[0]);
+
+        int i = 0;                // count from 0 to N
+        int powerOfTwo = 1;       // the ith power of two
+
+
+        // repeat until i equals n
+        while (i <= n) {
+	    System.out.println(i + " " + powerOfTwo);   // print out the power of two
+            powerOfTwo = 2 * powerOfTwo;                // double to get the next one
+            i = i + 1;
+        }
+
+    }
+
+
+
+  -- Trace Diagram by hand for $ java PowersOfTwo 6
+
+                                            test
+     n             i         powerOfTwo    i <= n             output
+     6             0              1         true              0   1
+                   1              2         true              1   2
+		   2              4         true              2   4
+		   3              8         true              3   8
+		   4             16         true              4   16
+                   5             32         true              5   32
+                   6             64         true              6   64
+		   7            128         false
+
+
+-- Computer generated trace
+
+   - Java allows you to write special characters in a multicharacter form beginning with
+     backward slash (\). This form is called an escape sequence.
+           Java escape sequences
+	    \n       Newline (moves to the beginning of the next line)
+	    \t       Tab (moves horizontally to the next tab stop)
+	    \\       The character \ itself.
+	    \"       The character " (requires the backslash only in string constants
+	    \ddd     The character whose ASCII value is the octal number ddd.
+	    \uxxxx   The character whose Unicode value is the hexadecimal number xxxx.
+
+
+  Question #1:
+              What is the output of the following code?
+
+		System.out.print("cat\t\"sat\"\nmat");
+	     	System.out.println("\t\\rat\\");
+
+
+  Question #2:
+              Add print statements to the PowerOfTwo program to produce a
+	      computer generated trace. The output of $java PowersOfTwo 6
+	      should be the following table:
+
+	      n	        i             powerOfTwo	       i<=n	     output
+	      ------------------------------------------------------------------------------
+	      6		0	       1		                true	0 1
+	      6		1	       2		                true	1 2
+	      6		2	       4	                	true	2 4
+	      6		3	       8	                	true	3 8
+	      6		4	     16	                	true	4 16
+	      6		5	      32		                true	5 32
+	      6		6	      64		                true	6 64
+	      6		7	    128		                false
+
+
+
+   Question #3:
+
+           Write a program PowersOfK that takes an integer command-line argument
+           k and prints all the positive powers of k in the Java long data
+           type. Note: The constant Long.MAX_VALUE is the value of the largest
+           integer in the long data type.
+
+           Sample runs:
+
+	   $ java PowersOfK 3
+           3
+	   9
+	   27
+	   81
+	   243
+	   729
+	   2187
+	   6561
+	   19683
+	   59049
+	   177147
+	   531441
+	   1594323
+	   4782969
+	   14348907
+	   43046721
+	   129140163
+	   387420489
+	   1162261467
+	   3486784401
+	   10460353203
+	   31381059609
+	   94143178827
+	   282429536481
+	   847288609443
+	   2541865828329
+	   7625597484987
+	   22876792454961
+	   68630377364883
+	   205891132094649
+	   617673396283947
+	   1853020188851841
+	   5559060566555523
+	   16677181699666569
+	   50031545098999707
+	   150094635296999121
+	   450283905890997363
+	   1350851717672992089
+	   4052555153018976267
+
+   	   $java PowersOfK 10000
+   	   10000
+   	   100000000
+   	   1000000000000
+   	   10000000000000000
+
+
+===================================================================================
+Task #3:  Assignment.
+===================================================================================
+
+  From the book site : https://introcs.cs.princeton.edu/java/13flow/
+
+Exercises:     21, 22             (submit #21 via Google Classroom).
+Web Exercises: 6,9,11,14,16,18,37 (submit #37 via Google Classroom).
+
+2 class comments
+
+Bryan ZhangOct 9
+@rick.platek@stuy.edu , where do we submit the exercises?
+
+Noakai AronestyOct 9
+yeah, where?
+
+Lesson-08

@@ -1,0 +1,67 @@
+AP COMP SCI A 1 OF 2
+8
+Assignment-12
+Rick Platek
+•
+Oct 22
+5/5
+5 points out of possible 5
+Due Oct 26
+1. Princeton Lectures:  Typical array-processing code
+   Watch before the next lesson.
+
+
+
+2. Review the program DiscreteDistribution.java posted below.
+   Complete both the DiceSimulation program and modify the
+   DiscreteDistribution program as specified in the lesson.
+   Submit the modified DiscreteDistribution program.
+
+public class DiscreteDistribution{
+
+
+    public static void main(String [] args){
+	// $ java DiscreteDistribution 1 2 1
+	int [] a = new int[args.length];
+	// a = { 0, 0, 0}
+
+	int sum = 0;
+	for (int i = 0; i < a.length; i++){
+	    a[i] = Integer.parseInt(args[i]);
+	    sum += a[i];
+	}
+	// a = { 1, 2, 1}
+	// Three regions, the second region is twice as long as the
+	// other two.                         1      2     1
+	// the corresponding number line :  0----1--------3----4
+	// sum = 4
+	double r = Math.random() * sum;  //  0.0 <= r < 4
+	                                 // r randomly placed
+	                                 // on the number line
+
+
+	int i = 0;
+	while (r > 0){
+	    if (r < a[i]) break;
+	    r -= a[i];
+	    i++;
+	}
+	// Here's a trace.
+	// let r = 1.25 so it falls within the second region
+	// i    r     a[i]  r < a[i]
+	// 0   1.25    1      false   not in the first region
+	// 1   0.25    2      true    within the second region
+	System.out.println(i);
+    }
+
+}
+Class comments
+
+Your work
+Graded
+
+DiscreteDistribution.java
+Java
+Private comments
+
+Assignment-12

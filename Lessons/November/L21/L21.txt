@@ -1,0 +1,109 @@
+AP COMP SCI A 1 OF 2
+8
+Lesson-21
+Rick Platek
+•
+Nov 23
+Write the solutions to questions 1 - 9 in a library named Functions.
+Question 10 should be in a separate file.
+
+1. Write a static method max3() that takes three int arguments and returns
+   the value of the largest one. Add an overloaded function that does the
+   same thing with three double values.
+
+
+2. Write a static method odd() that takes three boolean arguments and returns
+   true if an odd number of the argument values are true, and false
+   otherwise.
+
+
+
+3. (Variadic Parameter Lists)
+   Programmers have been able to use arrays to indicate that a method
+   takes a list containing an arbitrary number of values of the same
+   type. The syntax, which applies only to the last parameter in the
+   list, consists of the element type, three consecutive dots, and the
+   parameter name. Parameter lists that use this syntax are said to
+   be variadic.
+
+   An example, the following method returns the maximum of any number of
+   integer arguments:
+
+         public int max(int n1, int ... args){
+	 	int result = n1;
+		for (int n : args){
+		    if (result < n) result = n;
+		}
+	 	return result;
+	 }
+
+     max(1,2,3) -> 3
+     max(1,2) -> 2
+
+
+    Rewrite the odd function with a version using a variadic parameter list.
+
+
+4. Write a static method createIntegerArray that uses a variadic parameter
+   list and returns an integer array of the arguments.
+
+
+    Example:
+            createIntegerArray(1,2,3) -> {1,2,3}
+
+
+5. Write a static method majority() that takes exactly three boolean
+   arguments and returns true if at least two of the argument values
+   are true, and false otherwise. Do not use an if or switch statement.
+
+
+6. Write a static method eq() that takes two int arrays as arguments
+   and returns true if the arrays have the same length and all corresponding
+   pairs of elements are equal, and false otherwise.
+
+
+7. Write a static method scale() that takes a double array as its
+   argument and has the side effect of scaling the array so that each
+   element is between 0 and 1 (by subtracting the minimum value from
+   each element and then dividing each element by the distance
+   between the minimum and maximum values).
+
+
+8. Write a static method reverse() that takes an array of strings as its
+   argument and returns an array with the strings in reverse order. (Do
+   no change the order of the strings in the argument array).
+
+
+9. Write a static method reverseInplace() that takes an array of strings
+   as its argument and produce the side effect of reversing the order
+   of the strings in the argument array.
+
+10.Compose a program to rearrange a deck of n cards using the
+   Gilbert-Shannon-Reeds model of a "riffle-shuffle." First, generate
+   a random integer r according to a binomial distribution: flip a fair
+   coin n times and let r be the number of heads. Now, divide the deck
+   into two piles: the first r cards and the remaining n-r cards. To
+   complete the shuffle, repeatedly take the top card from one of the
+   two piles and put it on the bottom of a new pile. If there are n1 cards
+   remaining in the first pile and n2 cards remaining in the second pile,
+   choose the next card from the first pile with probability n1 / (n1 + n2)
+   and from the second pile with probability n2 / (n1 + n2).
+
+   Watch this video :https://www.youtube.com/watch?v=AxJubaijQbI
+   to determine how many riffle shuffles you need to apply to a deck
+   of 52 cards to produce a (nearly) uniformly shuffled deck.
+
+   Write the program RiffleShuffle.java to demonstrate the result. Represent
+   the 52 cards in an integer array(card[0], ... ,card[51) and your program
+   should include a method riffleShuffe(int [] cards) that performs
+   exactly 1 riffle shuffle via a side effect.
+
+Goo.java
+Java
+
+lesson.txt
+Text
+Class comments
+
+Lesson-21
+Displaying lesson.txt.

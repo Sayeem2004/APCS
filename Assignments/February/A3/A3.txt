@@ -1,0 +1,43 @@
+Data Structures
+Period 6
+Assignment-03: (Individual work)
+Rick Platek
+•
+Feb 5
+10 points
+Due Feb 9
+--- Assignment #3 (Individual Assignment)------------------------------------
+Extend the plot method of the FunctionGraph program so that it takes
+a Color parameter, which controls the color of the line. Use this extended
+plot method to create a graph showing the growth curves of the most common
+complexity classes --- constant, logarithmic, linear, N log N, quadratic,
+and exponential -- each in a different color. Use a lambda expression to define
+each function.
+
+
+-- FunctionGraph.java (Modifiy this program).
+-- Function.java **** Use the exact version from the book site. ****
+-- Only use classes found in stdlib.jar
+
+The execution instructions for your program:
+
+%java -cp .:../../stdlib.jar FunctionGraph 1 25 50
+
+produces the picture : ComplexityGraph.png
+
+Put your name in the documentation of FunctionGraph.java and submit only
+this program.
+
+ComplexityGraph.png
+Image
+Class comments
+
+Your work
+Turned in
+
+FunctionGraph.java
+Java
+Private comments
+
+
+Displaying FunctionGraph.java.Turning in…

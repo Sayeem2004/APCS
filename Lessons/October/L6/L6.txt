@@ -1,0 +1,461 @@
+AP COMP SCI A 1 OF 2
+8
+Lesson-06
+Rick Platek
+•
+Oct 5
+============================================================================
+Task #1: Previous Lesson
+===========================================================================
+
+ Question #1:
+         Evaluate these expressions then use DoubleOps.java to check you work
+
+
+
+
+        a. 0.1 + 0.1
+	b. 0.1 + 0.1 + 0.1
+        c. -0.0 / 3.0
+        d.  1.0 / 0.0
+        e. Math.sqrt(-2)
+	f. Math.round(6.022e23)
+
+	   long Math.round(double)
+
+
+
+ Question #2:
+
+  Indicate the values and types of the following expressions:
+
+   a. 2 + 3
+   b. 19 / 5
+   c. 19.0 / 5
+   d. 3 * 6.0
+   e. 19 % 5
+   f. 2 % 7
+
+
+
+Question #3:
+              Evaluate the following code segments and explain the result.
+
+            (a). int n = Math.PI;
+                       = double
+
+
+
+
+
+            (b). int n = (int) Math.PI;
+
+
+
+Question #4:
+
+    From the book site https://introcs.cs.princeton.edu/java/12types/
+    read the secion on type conversion.
+    Download and run the program RandomInt.java.
+
+    Modify RandomInt to take two command-line arguments a and b, then
+    print a uniform random integer within [a,b).
+
+
+    double r = Math.random();   // r is within [0,1)
+    int value =   ?              // value is with [a, b)
+
+
+
+
+
+
+
+Question #5: From the book site complete exercise 5. (Construct a truth table for
+             the ^ operator).
+
+             A   |  B  |  A ^ B
+	    --------------------
+
+
+
+
+
+
+
+
+Question #6: Suppose that an and b are boolean variables. Show that the expression:
+
+     (!(a && b) && (a || b)) || ((a && b) || !(a || b)) evaluates to true.
+
+
+     DeMorgan's Law
+        not(A or B) = not A and not B
+	not(A and B) = not A or not B
+
+
+
+
+
+
+
+
+
+Question #7: Give the value of the variable a after the execution of each of the following
+             sequence of statements:
+
+              boolean a = true;
+	      a = !a;
+	      a = !a;
+	      a = !a;
+
+
+
+
+Question #8:
+          Complete exercise 4 from the book site.
+
+Question #9:
+           Complete web exercise #2.
+
+Question #10:
+     Complete web exercise #7.
+
+
+Question #11:
+     Given:
+             int x = 4;
+	     double y = 2.5;
+	     boolean a = false;
+             a = ( x = 2) == (int) y;
+
+
+     Determine the values of the variables x, y and a.
+
+
+
+
+
+=============================================================================
+Task #2: Ternary Operator: ?:
+=============================================================================
+--- The Java programming language includes another Boolean operator called ?:
+    that can be extremely useful in certain situations. In programming parlance,
+    the name of this operator is always pronouned as question-mark colon, even
+    though the two characters do not appear adjacent to each other in the code.
+    Unlike the other operators in Java, ?: is written in two parts and requires
+    three operands. The general form of the operation is
+
+           (condition) ? exp1 : exp2
+
+    The parentheses are not technically required, but Java programmers often
+    include them to emphasize the boundaries of the conditional test.
+
+    When a Java program encounters the ?: operator, it first evaluates the
+    condition. If the condition turns out be be true, exp1 is evaluated and
+    used as the value of the entire expression; if the condition is false, the
+    value is the result of evaluating exp2. For example, you can use the ?:
+    operator to assign to max either the value of x or the value of y, whichever
+    is greater, as follows:
+
+         max = ( x > y) ? x : y;
+
+
+Question #1:
+	 Given:
+
+	        boolean isLeapYear = false;
+		int daysInFebruary = (isLeapYear) ? 29 : 28;
+
+
+	 Determine the value of daysInFebruary.
+
+
+
+========================================================================================
+Task #3: The Assignment Operator
+========================================================================================
+      Forms :     name = expression
+                  name op= expression
+
+   * op= : is either : +=, -=, /=, %=, *=
+
+        x -= k
+	x = x - k
+
+   * Java allows assignment statements to convert the value on
+     the right hand side so that it matches the declared type
+     of the variable as long as the conversion involves no loss
+     of accuracy.
+
+
+
+ Consder the code:
+
+          int y = 2.54;
+
+       This statement will cause a compiler error because
+       of the potential loss of data via truncation.
+
+       However,
+
+          int y  = (int) 2.54;   // q
+
+       is a valid statement. The double 2.54 converts to the int 2,
+       then y is assigned 2.
+
+--- Embedded Assignment Example
+
+  Question #2:
+
+     Evaluate this code.
+
+      int x = 0;
+      int y = 0;
+      int z = (x = 6) + (y = 7);
+
+
+      What are the values of x, y and z?
+
+
+
+
+--- Multiple Assignment Example
+
+ Question #3:
+
+   Given:
+   	  int a,b,c;
+   	  a = b = c = 5;
+
+
+   (a) What are the values of a, b, and c?
+
+
+
+
+
+
+   (b) Is the = operator left or right associative?
+
+
+
+
+
+
+
+---  Shorthand assignments
+
+   variable op= expression;  is equivalent to
+
+   variable = variable op expression;
+
+
+  Question #4:
+
+    Given:
+    	   int x = 20;
+    	   int y = 50;
+    	   x /= 2;
+    	   y -= 3;
+
+    What are the values of x and y?
+
+
+
+
+=======================================================================================
+Task #4:INCREMENT AND DECREMENT OPERATORS : ++ and --
+=======================================================================================
+
+--- Adding 1 to a variable is called incrementing( denoted by ++).
+--- Subtracting 1 from a variable is call decrementing (denoted by --).
+
+
+       x++ is equivalent to x += 1 thus equivalent to x = x + 1;.
+       y-- is equivalent to y -= 1 thus equivalent to y = y - 1;.
+
+
+
+-- Two ways to increment or decrement
+
+      x++   is the suffix form (or post increment)
+      ++x   is the prefix form
+
+      x++   Evaluates to the value of x first, and then increments x. The
+      	    value returned to the location is the value of x before incrementing
+      	    it.
+
+      ++x   Increments the value of x first, then returns the new value to
+       	    the locaton of ++x.
+
+      x--, --x works similarly.
+
+ Question #5:
+   	  Given:
+
+		int a = 3;
+    	  	int b = a++;
+
+	   What are the values of a and b?
+
+
+
+
+ Question #6:
+
+ 	  Given :
+     	  	int a = 3;
+     		int b = ++a;
+
+          What are the values of a and b?
+
+
+
+
+ Question #7:
+
+ 	  Given :
+
+    	  	int a = 10;
+    		int b = 20;
+    		int c = (a++) - (b *= 2);
+
+  	   What are the values of a,b and c?
+
+
+
+
+  Question #8: (web exercise #44).
+
+          What is the value of i after the following confusing code is executed?
+
+                 int i = 10;
+		 i = i++;
+		 i = ++i;
+		 i = i++ + ++i
+
+          Moral: don't write code like this.
+
+
+
+
+=========================================================================================
+Task #5: Statements
+=========================================================================================
+  -- section 1.3 Conditionals and loops
+
+--- Two Types of Statements:
+
+     1. Simple statements - perform some action.
+
+     2. Control statements - affect the way other statements are executed.
+
+
+ -- Simple statements
+
+         expression;
+
+      - The expression must be:
+            -  a method call
+	    -  an assignment
+	    -  an invocation of the increment  or decrement operator
+	    -  a declaration
+
+
+ -- Blocks
+         -  used with control statements.
+         - aka. compound statements
+         - are a sequence of statements enclosed in {}.
+
+
+         {
+           statement0;
+           .
+           .
+           .
+           statementN;
+         }
+
+   *** The Java compiler treates a block as a single statement.
+
+ -- The if statement
+
+    -  A control statement that uses conditional execution.
+
+
+    Form:
+         if (condition) statement
+
+         if (condition) statement else statement
+
+         - condition must be a boolean value.
+         - parentheses are required.
+
+ -- Example : Determine if a number is even of odd.
+
+    	    if (n % 2 == 0){
+               System.out.println("even");
+   	    }
+   	    else{
+	       System.out.println("odd");
+            }
+
+======================================================================================
+Task #6:  Homework:
+         -- submit your solutions to 7 and 8 listed below.
+	 -- File names to submit must be :
+	         Distinct.java
+		 RGBTOCMYK.java
+	 -- Include documentation in your source code.
+	 -- Remove any package declarations.
+
+======================================================================================
+
+1. Review the documentation for Java operators :
+
+     https://docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html
+
+2. Read section 1.3 : Conditionals and Loops at least up to the if statement.
+
+3. Review the code Flip.java from section 1.3.
+
+4. Watch Lecture 2A: Conditionals the if statement
+
+5. From section 1.3: try exercise 1. (AllEqual.java).
+
+6. From section 1.3: try exercise 6. (RollLoadedDie.java).
+
+7. Write a program, Distinct.java, that takes three integer command-line arguments
+   a, b, and c and print the number of distinct values (1, 2, or 3) among a, b, and c.
+
+8. Practice Type conversion.
+
+   There are a number of different formats for representing color.
+   RGB format specifies the level of red (R), green (G), and blue (B) on an integer scale
+   from 0 to 255: It is the primary format for LCD displays, digital cameras, and web pages.
+
+   CMYK format specifies the level of cyan (C), magenta (M), yellow (Y), and black (K) on a
+   real scale of 0.0 to 1.0: It is the primary format for publishing books and magazines.
+   Write a program RGBtoCMYK.java that reads in three integers red, green, and blue from the
+   command line and prints out equivalent CMYK parameters. The mathematical formulas for
+   converting from RGB to an equivalent CMYK color are:
+
+       white = max{red/255, green/255, blue/255}
+       cyan  = (white - red/255) / white
+       magenta = (white - green/255) / white
+       yellow = (white - blue/255) / white
+       black = (1 - white)
+
+   Hint. Math.max(x, y) returns the maximum of x and y.
+
+    % java RGBtoCMYK 75 0 130       // indigo
+      cyan    = 0.423076923076923
+      magenta = 1.0
+      yellow  = 0.0
+      black   = 0.4901960784313726
+
+    If all three red, green, and blue values are 0, the resulting color is black (0 0 0 1).
+Class comments
+
+Lesson-06

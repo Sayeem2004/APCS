@@ -1,0 +1,81 @@
+Data Structures
+Period 6
+Assignment-04: (Group work)
+Rick Platek
+•
+Feb 5
+10 points
+Due Today
+
+BarCodes.java
+Java
+
+PostalBarCodeLab.txt
+Text
+Class comments
+
+Your work
+Turned in
+
+PostalBarCode.java
+Java
+Private comments
+
+Assignment-04: (Group work)
+
+Create an immutable and comparable data type to represent Postal Bar Codes.
+
+A bar code is generated from a 5 digit zip code by representing each digit with
+a combination of 3 half bars and 2 full bars. Note that leading 0's are allowed
+for zip codes.
+
+Represent a full bar with "|" and a half bar with ":".
+
+To represent each of the 10 digits uniquely, the codes use a 7-4-2-1-0
+positional placement scheme. A full bar turns on the value associated with
+the position.
+
+1  :::||
+2  ::|:|
+3  ::||:
+4  :|::|
+5  :|:|:
+6  :||::
+7  |:::|
+8  |::|:
+9  |:|::
+0  ||:::   (special case)
+
+A check digit is added to the right of a zip code. The check digit is equal
+to the sum of the digits of the zip code modulo 10.
+
+For example,
+   if the zip code is : 08451
+   then the check digit is : 8
+   thus the zip + check digit is : 084518
+
+A bar code has a 2 guard rails (full bars) that lead and end the code.
+
+So the bar code of 084518 is:
+
+ |||:::|::|::|::|:|:|::::|||::|:|
+
+
+
+Implement the following constructors and methods.
+
+
+PostalBarCode API
+------------------
+
+   public PostalBarCode(String zip)
+
+
+   public String getZip()
+   public String getBarCode()
+   public String toString()
+   public boolean equals(Object obj)
+   public int compareTo(PostalBarCode obj)
+
+PostalBarCodeLab.txt
+Displaying PostalBarCodeLab.txt.

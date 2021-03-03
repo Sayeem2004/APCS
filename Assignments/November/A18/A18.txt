@@ -1,0 +1,42 @@
+AP COMP SCI A 1 OF 2
+8
+Assignment-18
+Rick Platek
+•
+Nov 12
+5/5
+5 points out of possible 5
+Due Nov 16
+From the book site:
+
+   https://introcs.cs.princeton.edu/java/15inout/
+
+  1.  Exercise #26 : Circles.java
+  2.  Web Exercise #12: Diamonds.java
+  3.  Review the program FunctionGraph.java
+      Complete Web exercise #10: TakagiFunction.java
+
+  4.  Review Exercise #17: Checkerboard.java
+      Complete Web exercise #14. BulgingSquares.java
+
+Submit the files: Circles.java, Diamonds.java, TakagiFunction.java, BulgingSquares.java
+Class comments
+
+Your work
+Graded
+
+Circles.java
+Java
+
+Diamonds.java
+Java
+
+TakagiFunction.java
+Java
+
+BulgingSquares.java
+Java
+Private comments
+
+Assignment-18
+Displaying hw.txt.

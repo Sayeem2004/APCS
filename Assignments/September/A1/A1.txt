@@ -1,0 +1,13 @@
+AP COMP SCI A 1 OF 2
+8
+Assignment - 01
+Rick Platek
+•
+Sep 21 (Edited Sep 22)
+Due Sep 24
+From the book site: https://introcs.cs.princeton.edu/java/11hello/
+
+1. Web Exercise #5: Initials.java. (Not group work).
+2. Submit Exercises #2-6. (group work)
+
+Class comments

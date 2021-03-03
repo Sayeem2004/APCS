@@ -1,0 +1,389 @@
+AP COMP SCI A 1 OF 2
+8
+Assignment-31
+Rick Platek
+•
+Dec 23
+Due Jan 5, 2021, 9:00 AM
+1. Review hw.txt, ListDemo.java and Swap.java.
+
+2. Prepare to present PokerAnalysis.java.
+
+3. In hw.txt, prepare to present #3,4,5.
+
+hw.txt
+Text
+
+ListDemo.java
+Java
+
+my-lesson.txt
+Text
+
+Swap.java
+Java
+Class comments
+
+Your work
+Assigned
+Private comments
+
+
+=========================================================================
+Task #1:  Hw Presentations
+============================================================================
+
+============================================================
+ *** NON AP MATERIAL ***
+ Useful  methods from the String class
+============================================================
+	str.charAt(int) : char
+        str.equalsIgnoreCase(String): Boolean
+        str.compareToIgnoreCase(String) : int
+        str.isEmpty() : Boolean
+        str.startsWith(String) : Boolean
+	str.endsWith(String) : Boolean
+        str.contains(String) : Boolean
+        str.lastIndexOf(String) : int
+        str.lastIndexOf(String,int) : int
+        str.replace(Sring old, String) : String
+        str.split(String) : String
+        str.toLowerCase() : String
+        str.toUpperCase() : String
+        str.trim() : String
+
+
+=============================================================
+  *** NON AP MATERIAL ***
+Useful static methods from the Character class:
+=============================================================
+  Predicate Methods
+	Character.isDigit(char) : Boolean
+        Character.isLetter(char) : Boolean
+        Character.isLowerCase(char) : Boolean
+        Character.isUpperCase(char) : Boolean
+        Character.isLetterOrDigit(char) : Boolean
+        Character.isWhiteSpace(char) : Boolean
+	Character.isJavaIdentifierStart(char) : Boolean
+        Character.isJavaIdentifierPart(char) : Boolean
+  Case Conversion Methods
+        Character.toUpperCase(ch) :  String
+        Character.toLowerCase(ch) :  String
+
+
+
+
+2. Implement a method capitalize(str) that returns a string in which
+   the initial character is capitalized (if it is a letter) and all
+   other letters are converted to lowercase. Characters other than
+   letters are not affected. For example, both capitalize("BOOLEAN")
+   and capitalize("boolean") should return "Boolean".
+
+    public static String capitalize(String w){
+        if (w.length() == 0) return w;
+	if (w.length() == 1) return w.toUpperCase();
+        return Character.toUpperCase(w.charAt(0)) +
+               w.substring(1).toLowerCase();
+    }
+
+
+3. In most word games, each letter in a word is scored according to
+   its point value, which is inversely proportional to its frequency
+   in English words. In Scrabble, the points are allocated as follows:
+
+        Points      Letters
+          1         A,E,I,L,N,O,R,S,T,U
+	  2         D,G
+          3         B,C,M,P
+	  4         F,H,V,W,Y
+          5         K
+          8         J,X
+         10         Q,Z
+
+   For example, the word "FARM" is worth 9 points in Scrabble: 4 for the
+   F, 1 each for A and R, and 3 for the M. Write a program that reads in
+   words and prints their score in Scrabble, not counting any of the other
+   bonuses that occur in the game. You should ignore any characters other
+   than uppercase letters in computing the score. In particular, lowercase
+   letters are assumed to represent blank lines, which can stand for any
+   letter but have a score of 0.
+
+  public static int scrabble(String w){
+        int pts = 0;
+        for (int i = 0; i < w.length(); i++){
+            //String ch  = "" + w.charAt(i);
+            String ch = w.substring(i,i+1);
+            if ("AEILNORSTU".contains(ch)) pts++;
+            else if ("DG".contains(ch)) pts += 2;
+            else if ("BCMP".contains(ch)) pts += 3;
+            else if ("FHVWY".contains(ch)) pts += 4;
+            else if ("K".equals(ch)) pts += 5;
+            else if ("JX".contains(ch)) pts += 8;
+            else if ("QZ".contains(ch)) pts += 10;
+        }
+        return pts;
+    }
+
+
+
+4. An acronym is a word formed by combining, in order, the initial letters
+   of a series of words. For example, the word scuba is an acronym formed
+   from the first letters in self-contained underwater breathing apparatus.
+   Similarly, AIDS is an acronym for Acquired Immune Deficiency Syndrome.
+   Write a method acronym(String) and returns the acronym formed from that
+   string. To ensure that your method treats hyphenated compounds like
+   self-contained as two words, it should define the beginning of a word
+   as any alphabetic character that appears either at the beginning of the
+   string or after a nonalphabetic character.
+
+   public static String acronym(String w){
+        // special case : empty string
+        if (w.isEmpty()) return w;
+        // special case : first character has no preceding character
+        String ans = "";
+        if (Character.isLetter(w.charAt(0))) ans += w.charAt(0);
+        // general case: the rest of the characters have a
+        //               preceding character
+        for (int i = 1; i < w.length(); i++){
+            char ch = w.charAt(i);
+            if (!Character.isLetter(w.charAt(i-1)) &&
+                Character.isLetter(w.charAt(i)))
+                ans += ch;
+        }
+        return ans;
+    }
+
+
+5. Write a method
+
+   	 public static String removeCharacters(String str, String remove)
+
+   that returns a new string consisting of the characters in str after
+   removing all instances of the characters in remove. For example, if
+   you call
+
+       removeCharacters("counterrevolutionaries", "aeiou")
+
+   the method should return "cntrrvltnrs", which is the original string
+   after removing all of its vowels.
+
+
+   public static String removeCharacters(String str, String remove){
+        for (int i = 0; i < remove.length(); i++){
+            String ch = remove.substring(i,i+1);
+            str = str.replace(ch, ""); // replace every instance of ch w/ ""
+        }
+        return str;
+    }
+
+
+
+=============================================================================
+		COLLECTIONS
+=============================================================================
+
+ Data Structures can be assembled to form hierarchies.
+
+ Atomic data types like int,char, double are the basic building blocks of
+ those hierarchies.
+
+ To represent more complex information, you combine the atomic types to form
+ larger structures.
+
+ These larger structures can be assembled into even larger ones in an open-ended
+ process.
+
+ Collectively, these assemblages are call "data structures."
+
+
+Abstract Data Types (ADT)
+--------------------
+ It is usually far more important to know how to use a data structure
+ effectively than it is to understand its underlying representation.
+
+
+ A type defined in terms of its behavior rather than its representation
+ is call an "abstract data type"(ADT).
+
+ ADT's are a central component of object-oriented programming.
+
+
+Java's Collection Classes
+--------------------------
+   We will first study the use of Java's collection classes, which is a suite
+   of abstract data types found in the java.util package. Later we will study
+   the representation of these data types.
+
+
+Reasons for seperating the behavior from the implementation of a class
+-----------------------------------------------------------------------
+
+    1. Simplicity
+
+          Clients only need to know how to use a class.
+
+    2. Flexibility
+
+          Since a class is defined by its public behavior, the programmer
+	  is free to change the underlying private representation when
+	  necessary.
+
+    3. Security
+
+          Clients don't have access to the private representation, and thus
+	  are prevented from making harmful changes.
+
+
+=============================================================================
+   THE ARRAYLIST CLASS  - an Iterable Class
+=============================================================================
+	- AP MATERIAL
+
+	- An ADT of a dynamic list (the length varies).
+
+ Syntax for the declaration of a homogenous ArrayList (parameterized class).
+
+          ArrayList<E> name = new ArrayList<E>();
+
+ E is Java short hand for element type.
+
+	  Example:  Decalarng a list of Strings:
+          ---------------------------------------
+       	  	    ArrayList<String> list = new ArrayList<String>();
+
+Useful ArrayList Constructor and Methods
+------------------------------------------------------------------------------
+ Constructor:
+         new ArrayList<E>()
+
+ Methods
+
+  int	  size()	      : returns the length of the list
+  boolean isEmpty()           : returns true if empty
+  E    	  get(int i)          : returns the element at index i
+  E    	  set(int i,E val)    : places val at index i and
+                                returns the replaced val
+  boolean add(E val)	      : adds to the end
+  void    add(int i, E val)   : inserts val at i
+  E    	  remove(int i)       : returns and removes the element at i
+  boolean remove(E val)       : removes the first occurrence if found
+                                returns true if val is removed
+  void    clear()             : removes all elements
+  boolean contains(E val)     : returns true if list contains val
+  int     indexOf(E val)      : returns the first index of val or -1
+                                if not found
+  int     lastIndexOf(E val)  : returns the last index of val or -1
+                                if not found
+
+
+---------------------------------------------------------------------------
+		ListDemo.java
+---------------------------------------------------------------------------
+import java.util.ArrayList;
+
+public class ListDemo{
+
+     public static void main(String [] args){
+      	    ArrayList<String> list = new ArrayList<String>();
+	    System.out.println(list) ;     // []
+	    list.add("a");
+	    System.out.println(list) ;    // [a]
+     }
+}
+
+*****    Use only the ArrayList methods from above to complete the following ****
+
+1. Modify ListDemo that demonstrates the use of each of the ArrayList
+   methods listed above.
+
+2.  Use one statement to interchange (swap) the ith and jth elements
+    of a list of Strings.
+
+     public static void swap(ArrayList<String> list, int i , int j){
+     	    	   list.set(i,list.set(j,list.get(i)));
+
+      }
+
+
+
+3.   Write a  method that takes 2  arraylist of strings
+     and creates a  new list by appending the elements of the second list to the
+     end of the first list.
+         ex. list1 = ["a","b"]
+	     list2 = ["c","d","e"]
+             append(list1,list2) -> ["a","b","c","d","e"]
+	     append(list2, list1) -> ["c","d","e","a","b"]
+
+     // Pre:   list1 and list2 are lists.
+     // Post:  Returns a new list by appending the elements of list2 to the
+     //        end of list1. NO SIDE EFFECTS ARE PRODUCED.
+     publist static  ArrayList<String> append(ArrayList<String> list1, ArrayList<String> list2)
+
+
+4.  Write the method that takes an Arraylist of strings and reverses
+    the order of the list as a side effect.
+
+          ex. list before method call [ "a", "b", "c"]
+	      reverse(list)
+              list after method call [ "c", "b", "a"]
+
+     // Pre:  list != null
+     // Post: Reverses the order of the elments of list
+     public static void reverse(ArrayList<String> list)
+
+
+
+5. Write the method merge(ArrayList<String> list1, ArrayList<String> list2) that takes
+   two sorted lists and creates a new sorted list by merging list1 and list2.
+   NO SIDE EFFECTS ARE PRODUCED.
+
+
+6. Write a method named addStars that accepts as a parameter an ArrayList of strings, and
+   modifies the list by placing a "*" element between elements, as well as at the start
+   and end of the list. For example, if a list named list contains
+   {"the", "quick", "brown", "fox"}, the call of addStars(list);
+   should modify it to store {"*", "the", "*", "quick", "*", "brown", "*", "fox", "*"}.
+
+
+7. Write a method named deleteDuplicates that accepts as a parameter a sorted ArrayList of
+   Strings and that removes any duplicate values from the list. For example, suppose that
+   an ArrayList named list contains the values
+   {"be", "be", "is", "not", "or", "question", "that", "the", "to", "to"}
+   After calling deleteDuplicates(list); the list should store the following values:
+   {"be", "is", "not", "or", "question", "that", "the", "to"}
+   You should assume that the values in the list are sorted, and that therefore all of the
+   duplicates will be grouped together.
+
+
+8. Write a method named mirror that accepts an ArrayList of strings as a parameter and
+   produces a mirrored copy of the list as output, with the original values followed by those
+   same values in the opposite order. For example, if an ArrayList variable named list
+   contains the values ["a", "b", "c"], after a call of mirror(list);
+   it should contain ["a", "b", "c", "c", "b", "a"].
+
+   You may assume that the list is not null and that no element of the array is null.
+
+9. Write a method named removeAll that accepts as a parameter an ArrayList of strings along
+   with an element value string, and modifies the list to remove all occurrences of that
+   string. For example, if the list v contains {"a", "b", "c", "b", "b", "a", "b"}, the call
+   of removeAll(v, "b"); should modify it to store {"a", "c", "a"}.
+
+10. Write a method named removeEvenLength that accepts an ArrayList of strings as a parameter
+    and that removes all of the strings of even length from the list. For example, if an
+    ArrayList variable named list contains the values
+    ["hi", "there", "how", "is", "it", "going", "good", "sirs"], the call of
+    removeEvenLength(list); would change it to store ["there", "how", "going"].
+
+11. Write a method named repeat that accepts an ArrayList of Strings and an integer k as parameters
+    and that replaces each element with k copies of that element. For example, if the list stores
+    the values ["how", "are", "you?"] before the method is called and k is 4, it should store the
+    values ["how", "how", "how", "how", "are", "are", "are", "are", "you?", "you?", "you?", "you?"]
+    after the method finishes executing. If k is 0 or negative, the list should be empty after the call.
+-----------------------------------------------------------------------------------------------
+
+
+
+
+
+hw.txt
+Displaying hw.txt.

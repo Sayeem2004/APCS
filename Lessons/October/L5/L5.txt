@@ -1,0 +1,343 @@
+AP COMP SCI A 1 OF 2
+8
+Lesson-05
+Rick Platek
+•
+Oct 1
+==============================================================================
+Task #1: From the previous lesson, review the solutions.
+==============================================================================
+
+
+Question #7: Suppose that a variables max and min are declared as:
+                 int max  = Integer.MAX_VALUE;
+		 int min  = Integer.MIN_VALUE;
+
+             What does each of the following print?
+
+        a. System.out.println("max =  " + max);
+
+           max =  2147483647    (2^31 - 1)
+
+	b. System.out.println("min = "  + min);
+
+	   min = -2147483648   -2^31
+
+	c. System.out.println("max + 1 = " + (max + 1));
+
+	   max + 1 = -2147483648  (overflow - the numbers wrap around )
+
+	d. System.out.println("min - 1 = " + (min - 1));
+
+	   min - 1 = 2147483647   (overflow - wraps around in the other direction)
+
+	e. System.out.println("-2 - max = " + (-2 - max));
+
+            -2 - max = 2147483647
+           -(2 + max) = - (1 + 1 + max) = -( 1 + min) =-(- max) = max
+
+	f. System.out.println("2 * max = " + (2 * max));
+
+            2 * max = -2
+	    max + max = max + min - 1 = -1 -1 = -2
+
+        g. System.out.println("4 * max = " + (4 * max));
+
+	   4 * max = -4
+	   2 (2 * max) = 2 * -2) = -4
+
+	h. System.out.println("-min = "  + -min);
+
+	   -min = -2147483648
+	   -(max + 1) = -max - 1 = max =  -2147483647 - 1 = min
+
+
+
+I. What will be the result of attempting to compile and run the following
+   class?
+
+    public class Integers{
+
+             public static void main(String args[]){
+	     	    System.out.println(0x10 + 10 + 010);
+             }
+    }
+
+    = 34
+     System.out.println(0x10 + 10 + 010);
+     System.out.println(16 + 10 + 8);
+     System.out.println(26 + 8);
+     System.out.println(34);
+     System.out.println("34");
+
+
+II. What is the value of evaluating this expression:
+
+             - -1-3 * 10 / 5 - 1
+
+    Select the one right answer.
+    (a) -8
+    (b) -6
+    (c) 7
+    (d) 8
+    (e) 10
+    (f) None of the above
+
+
+
+    (b) - 6
+      = - -1-3 * 10 / 5 - 1  <- Unary operators have a higher precedence level than binary operators.
+      = 1-3 * 10 / 5 - 1
+      = 1-30 / 5 - 1
+      = 1-6 - 1
+      = -5 - 1
+      = -6
+
+III. Which of the following statements are true?
+
+     Select all valid answers.
+     (a) The result of the expression (1 + 2 + "3") would be the string "33".
+     (b) The result of the expression ("1" + 2 + 3) would be the string "15".
+     (c) The result of the expression (10/9) would be the int value 1.
+
+     (a) and (c) are true.
+     (b) would be the string "123"
+
+IV. From the book site : 1.2 Built-In Data Types
+
+     Look in the Java 11 Math API for the Math library. Read about Math.max() and Math.min().
+
+     Complete Exercise # 34 ThreeSort.java. Check your work with the posted program.
+
+V. Complete the following Web Exercises:
+
+    # 1 Swap.java
+    # 6
+    #14  - A compiler error is thrown. * is defined for numerical types only.
+
+==============================================================================
+Task #2 : Approximating Real Numbers with Floating Point Numbers
+==============================================================================
+
+--- Read about floating point numbers:
+
+    https://introcs.cs.princeton.edu/java/12types/
+
+
+--- From the book site, download and run the programs:
+
+       - DoubleOps.java
+       - Quadratic.java
+
+-- Java Floating Point Data Types:
+        float    - we will avoid this data type
+   	double  ( conforms to IEEE standard).
+               - uses 64 bits
+	          1 sign
+		  11 exponent
+		  52 fraction
+
+--- Limited Range of the double data type
+    range:
+        Range of the Positive values: (4.90e-324, 1.7976...e+308]
+        Range of the Negative values: same as positive but change the sign
+        There is both a positive and negative zero.
+
+--- Constant precision : 15 decimal places
+
+-- Typical Double Literals
+
+   12.345
+   4.451E2  -> 4.451 x 10^2 (Similar to Scientific Notation)
+
+
+
+--- Operators:  +,-,*, /
+
+
+-- Special Constants
+
+    NaN   : not a number
+    POSITIVE_INFINITY
+    NEGATIVE_INFINITY
+
+    Too access these constants in your source code use Doulbe.NaN etc.
+
+ Question #1:
+         Evaluate these expressions then use DoubleOps.java to check you work
+
+        a. 0.1 + 0.1
+	b. 0.1 + 0.1 + 0.1
+        c. -0.0 / 3.0
+        d.  1.0 / 0.0
+        e. Math.sqrt(-2)
+	f. Math.round(6.022e23)
+
+
+===========================================================================
+Task 3: Type Promotion (Coercion)
+============================================================================
+
+
+
+   -- In Java, you can write an expression that includes values of
+      different numeric types. If Java encounters an operator whose
+      operands are of different types, the compiler automatically
+      converts the operands to a common type as long as the conversion
+      moves along the arrows in the following diagram:
+
+		byte -> short -> int -> long -> float -> double
+
+      The result of applying the operation is always that of the
+      arguments after any conversions are applied.
+
+
+ Question #2:
+
+  Indicate the values and types of the following expressions:
+
+   a. 2 + 3
+   b. 19 / 5
+   c. 19.0 / 5
+   d. 3 * 6.0
+   e. 19 % 5
+   f. 2 % 7
+
+============================================================================
+Task #4: Type Casts
+============================================================================
+In Java, you can convert one type to another by using what is called a type
+cast, which specifies an explicit conversion action. In Java, type casts are
+usually written by specifying the name of the desired type in parentheses,
+followed by the value you wish to convert. For example, if num and den are
+declared as integers, you can compute the floating-point quotient by
+writing
+
+             double quotient = (double) num / den;
+
+The first step in evaluating the expression is to convert num to a double
+(the cast is a unary operator), after which division is performed using
+floating-point arithmetic.
+
+As long as the conversion follows the arrows in the type-conversion
+diagram from the preceding section, the conversion involves no loss of
+information. If however, you convert a value of a more precise type to
+a less precise one, some information may be lost. For example, if you
+use a type cast to convert a value of type double to type int, any
+decimal fraction is simply dropped. Thus the value of the expression
+
+             (int) 1.9999 is the integer 1.
+
+
+Question #3:
+              Evaluate the following code segements and explain the result.
+
+            (a). int n = Math.PI;
+
+            (b). int n = (int) Math.PI;
+
+Question #4:
+
+    From the book site https://introcs.cs.princeton.edu/java/12types/
+    read the secion on type conversion.
+    Download and run the program RandomInt.java.
+
+    Modify RandomInt to take two command-line arguments a and b, then
+    print a uniform random integer within [a,b).
+
+
+
+
+=========================================================================
+Task #5: The Boolean Type and logical operators
+=========================================================================
+  -- From the book site read about the boolean data type.
+
+  -- Java Data type : boolean
+  -- Two values (Domain) : true, false
+  -- Logical Operators : &&, ||, !, ^
+
+  Example, a and b are type boolean.
+
+   -- a && b is true if both a and b are true; false otherwise (Logical and)
+   -- a || b is true if at least a or b is true; false otherwise(Logical or)
+   -- !a is true if a is false; true otherwise (Logical not)
+   -- a ^ b is true whenever exactly one of a or b is true; false otherwise.
+      (Logical exclusive-or aka xor)
+   ** Both && and  || use short circuit evaluation.
+
+Question #5: From the book site complete exercise 5. (Construct a truth table for
+             the ^ operator).
+
+
+Question #6: Suppose that an and b are boolean variables. Show that the expression:
+
+     (!(a && b) && (a || b)) || ((a && b) || !(a || b)) evaluates to true.
+
+     Try applying DeMorgan's Law instead of using a truth table.
+
+
+Question #7: Give the value of the variable a after the execution of each of the following
+             sequence of statements:
+
+              boolean a = true;
+	      a = !a;
+	      a = !a;
+	      a = !a;
+
+
+=========================================================================================
+Task #6 : The boolean  relational (comparison) operators
+=========================================================================================
+
+ --- From the book site, read the section on comparison (relational) operators.
+     Review the isLeapYear.java program.
+
+
+ --- When you test for equality, be careful to use the == operator, which is composed of
+     two equal signs. A single equal sign is the assignment operator. Since the double
+     equal sign violates conventional mathematical usage, replacing it with a single
+     equal sign is a particularly common mistake. This mistake can also be very difficult
+     to track down, because the Java compiler does not always catch it as an error. A
+     single equal sign turms the expression into an embedded assignment, which is
+     perfectly leagal in Java; it just isn't at all what you want.
+
+ -- The relational operators can be used to compare primitive dat values like:
+    integers, floating-point numbers, Boolean values and characters. As you will
+    discover later, these operators do not work with object types such as String
+    and must instead be implemented using method calls.
+
+
+
+Question #8:
+          Complete exercise 4 from the book site.
+
+Question #9:
+           Complete web exercise #2.
+
+Question #10:
+     Complete web exercise #7.
+
+
+Question #11:
+     Given:
+             int x = 4;
+	     double y = 2.5;
+	     boolean a = false;
+
+             a = (x = 2) == (int) y;
+
+     Determine the values of the variables x, y and a.
+
+========================================================================================================
+Task #7: Graded Assignement - be prepared to go over questions 1-11 for the next class. Do not submit
+                              your solutions to these questions.
+========================================================================================================
+
+Question #12:
+           Complete web exercise #18, Ordered.java. You will submit this assignment via google classroom
+	   to be graded.
+
+Class comments
+
+Lesson-05

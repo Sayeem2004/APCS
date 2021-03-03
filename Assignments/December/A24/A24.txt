@@ -1,0 +1,57 @@
+AP COMP SCI A 1 OF 2
+8
+Assignment-24: Be prepared to present the web exercises 1 and 23 for the next class.(hw.txt)
+Rick Platek
+•
+Dec 3
+Due Dec 7
+
+Binary.java
+Java
+
+Cannonball.java
+Java
+
+Digits.java
+Java
+
+hw.txt
+Text
+2 class comments
+
+Noakai AronestyDec 5
+he means section 2.3 right
+
+Alyssa ChoiDec 5
++naronesty20@stuy.edu yes
+
+Your work
+Turned in
+No work attached
+Private comments
+
+Assignment-24: Be prepared to present the web exercises 1 and 23 for the next class.(hw.txt)
+Complete for the start of the next class.
+
+===============================================================================
+Task #6: Euclid's Algorithm :
+===============================================================================
+    In section 2.5, read the section Euclid's Algorithm and study and
+    run the program Euclid.java.
+
+    Take Note:
+    Lame’s theorem.
+
+     Using the Euclidean algorithm to find the greatest common divisor of two
+     positive integers the number of divisions is less than or equal to five
+     times the number of decimal digits in the minimum of the two integers.
+
+
+
+    Complete Web exercise #1.
+
+
+
+    Complete Web exercise #23.
+hw.txt
+Displaying hw.txt.

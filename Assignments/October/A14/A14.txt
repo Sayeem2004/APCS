@@ -1,0 +1,36 @@
+AP COMP SCI A 1 OF 2
+8
+Assignment-14
+Rick Platek
+•
+Oct 28
+10/10
+10 points out of possible 10
+Due Oct 30
+For this assignment submit the following files on Google Classroom:
+    1. LongestPlateau.java
+   2. GeneralizedHarmonic.java
+   3. BandMatrix.java
+
+*********IMPORTANT **************************************************
+FOR EACH PROGRAM PUT YOUR NAME IN THE DOCUMENTATION.
+************************************************************************
+
+hw.txt
+Text
+Class comments
+
+Your work
+Graded
+
+LongestPlateau.java
+Java
+
+GeneralizedHarmonic.java
+Java
+
+BandMatrix.java
+Java
+Private comments
+
+Assignment-14

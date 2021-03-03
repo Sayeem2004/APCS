@@ -1,0 +1,110 @@
+AP COMP SCI A 1 OF 2
+8
+Lesson-18
+Rick Platek
+•
+Nov 12 (Edited Nov 12)
+ ============================================================================
+Task #1: Go over homework.
+============================================================================
+--- Peaks.java
+
+
+---
+   Suppose that a terrain is represented by a two-dimensional grid of
+   elevation values (in meters). A peak is a grid point whose four
+   neighboring cells (left, right, up, and down) have strictly lower
+   elevation values. Write a program Peaks that reads from standard
+   input and then computes and prints the number of peaks in the terrain.
+
+   Create the file Terrains.txt that stores the elevation values.
+   The first line will contain the dimensions of the grid.
+
+   An example of Terrains.txt which stores a 4x5 grid.
+   4 5
+   1 2 3 6 1
+   4 9 2 8 1
+   7 8 9 4 5
+   5 6 3 8 2
+
+   Note: Only interior points may be peaks.
+
+
+
+=============================================================================
+Task #2: The StdDraw Library: Points.java
+============================================================================
+    ---  Download StdDraw.java
+
+    ---  Together build the Points program.
+          - The default canvas is a 1 x 1 square.
+          - The origin is in the lower left corner.
+
+
+      Write a program that takes an integer n from the command-line
+      and draws n random points.
+
+         - To draw a point, use the method.
+
+               void static point(double x, double y)
+
+         - You can send the points drawn to standard output.
+
+         - The default pen size is 0.002.
+         -   You can change the pen size with the method.
+
+               Std.setPenRadius(double r)
+            Add a second command-line argument r for the pen radius.
+
+============================================================================
+Task #3 : The Hello World program for graphics. (Triangle.java)
+============================================================================
+     - To draw a line:
+
+        void static line(x0,y0,x1,y1)
+
+       draws a line from (x0,y0) to (x1,y1).
+
+     - Draw a equilateral Triangle with side length 1.
+     - Place one point in the interior of the triangle.
+
+     -- See the program Triangle.java
+
+============================================================================
+Task #4: Setting the scale  (NLines.java)
+============================================================================
+    --- Review the code for PlotFilter.java
+        -- introduce double buffering
+
+
+     - To set the scale of the x and y axes.
+
+         static void setXscale(double min, double max)
+         static void setYscale(double min, double max)
+
+       (NLines.java)
+     - Write a program that draws the n lines defined below:
+        (0,n), (0,0)
+        (0,n-1),(1,0)
+        (0,n-2),(2,0)
+        (0,n-3),(3,0)
+        ...
+        (0,0), (n,0)
+
+==========================================================================
+Task #5: Homework
+==========================================================================
+  1.  Exercise #26 : Circles.java
+  2.  Web Exercise #12: Diamonds.java
+  3.  Review the program FunctionGraph.java
+      Complete Web exercise #10: TakagiFunction.java
+
+   4. Reveiw Exercise #17: Checkerboard.java
+      Complete Web exercise #14. BulgingSquares.java
+
+
+
+Class comments
+
+Lesson-18
+Displaying lesson.txt.

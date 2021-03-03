@@ -1,0 +1,192 @@
+AP COMP SCI A 1 OF 2
+8
+Lesson-25
+Rick Platek
+•
+Dec 7
+
+=============================================================================
+Task #1:  Web exercise #1
+=============================================================================
+
+Does Euclid.java still work if the inputs can be negative? If not, fix it.
+Hint: Recall that % can return a negative integer if the first input is negative.
+When calling the function, take the absolute value of both inputs.
+
+
+
+
+==============================================================================
+Task #2: Web exercise #23
+==============================================================================
+Euclid's algorithm and π. The probability that two numbers chosen from a large
+random set of numbers have no common factors (other than 1) is 6 / π2. Use this
+idea to estimate π. Robert Matthews use the same idea to estimate π by taken the
+set of numbers to be a function of the positions of stars in the sky.
+
+
+
+
+===========================================================================
+Task #3: Investigate Lame's theorem.
+===========================================================================
+ Lame’s theorem.
+
+     Using the Euclidean algorithm to find the greatest common divisor of two
+     positive integers the number of divisions is less than or equal to five
+     times the number of decimal digits in the minimum of the two integers.
+
+
+  Write a program that takes an integer argument,n, and determines the
+  maximum number of gcd(int,int) function calls made with n and the integers
+  greater than n. Verify that Lame's theorem holds for n.
+
+                       output is <= to
+
+   $ java Lame 234          15
+
+
+===========================================================================
+Task #4:  Wrapper methods.
+===========================================================================
+
+  Def: A wrapper method hides or "abstracts away" the details of another
+     method.
+
+
+   Write a recursive method to compute the sum of the elements in a
+   double array. Use the sum(double [])  method as a wrapper method
+   for the recursive method.
+
+   public static double sum(double[] a){
+   	  // YOUR CODE GOES HERE
+   }
+
+
+
+
+============================================================================
+Task #5: Titius-Bode
+============================================================================
+
+   In the 18th century, the astronomer Johann Daniel Titius proposed a rule,
+   later recorded by Johann Elert Bode, for calculating the distance from
+   the sun to each of the planets known at the time. To apply that rule,
+   which is know as the "Titius-Bode-Law", you begin by writing down the
+   sequence
+
+	b_1 = 1    b_2 = 3   b_3 = 6  b_4 = 12   b_5 = 24   b_6 = 48 ...
+
+   where each subsequent element in the sequence is twice the preceding one.
+   It turns out that an approximate distance to the ith planet can be computed
+   from this series by applying the formula
+
+
+      d_i = 4 + b_i
+           ---------
+              10
+
+
+    The distance d_i is expressed in astronomical units (AUs), which correspond
+    to the average distance from the earth to the sun (approximately 93E6 miles).
+    Except for a disconcerting gap between Mars and Jupiter, the "Titius-Bode" law
+    gives reasonable approximations for the distances to the seven planets known
+    at the time.
+
+
+       	   Mercury	0.5AU
+	   Venus	0.7AU
+	   Earth	1.0AU
+	   Mars		1.6AU
+	   ?		2.8AU
+	   Jupiter	5.2AU
+	   Saturn	10.0AU
+	   Uranus	19.6AU
+
+    Concern about the gap in the sequence led astronomers to discover the asteroid
+    belt, which they suggested might have been the remains of a planet that had
+    once orbited the sun at the distance specified by the missing entry in the
+    table.
+
+    Write a recursive method getTitiusBodeDistance(k) that calculates the expected
+    distance between the sun and the kth planet, numbering outward from Mercury
+    starting at 1. Test your method by writing a program that displays the
+    distances to each of these planets in tabular form.
+
+
+
+
+============================================================================
+Task #6: Random Noise with StdAudio
+=============================================================================
+  Read the Section 1.5  Standard Audio.
+
+  Write the program RandomNoise.java that takes one command-line argument
+  duration (in seconds) and uses a sampling rate of 44,100 samples per second
+  to play random noise for the specified duration.
+
+
+
+
+===============================================================================
+Task #6: Euclid's Algorithm
+===============================================================================
+    In section 2.5, read the section Euclid's Algorithm and study and
+    run the program Euclid.java.
+
+    Take Note:
+    Lame’s theorem.
+
+     Using the Euclidean algorithm to find the greatest common divisor of two
+     positive integers the number of divisions is less than or equal to five
+     times the number of decimal digits in the minimum of the two integers.
+
+
+
+    Complete Web exercise #1.
+
+
+
+    Complete Web exercise #23.
+
+
+================================================================================
+Hw: Due Tuesday
+================================================================================
+
+1. Compose a program to rearrange a deck of n cards using the
+   Gilbert-Shannon-Reeds model of a "riffle-shuffle." First, generate
+   a random integer r according to a binomial distribution: flip a fair
+   coin n times and let r be the number of heads. Now, divide the deck
+   into two piles: the first r cards and the remaining n-r cards. To
+   complete the shuffle, repeatedly take the top card from one of the
+   two piles and put it on the bottom of a new pile. If there are n1 cards
+   remaining in the first pile and n2 cards remaining in the second pile,
+   choose the next card from the first pile with probability n1 / (n1 + n2)
+   and from the second pile with probability n2 / (n1 + n2).
+
+   Watch this video :https://www.youtube.com/watch?v=AxJubaijQbI
+   to determine how many riffle shuffles you need to apply to a deck
+   of 52 cards to produce a (nearly) uniformly shuffled deck.
+
+   Write the program RiffleShuffle.java to demonstrate the result. Represent
+   the 52 cards in an integer array(card[0], ... ,card[51) and your program
+   should include a method riffleShuffe(int [] cards) that performs
+   exactly 1 riffle shuffle via a side effect.
+
+   Look up the bernoulli() method from the StdRandom library and use it
+   in your program.
+
+
+2. Write the program ChromaticScale.java that plays each note, starting with A,
+   in the chromatic scale for 1 second.
+      -- Use the StdAudio library
+      -- Refer to the Standard Audio section on this page of the book site:
+         https://introcs.cs.princeton.edu/java/15inout/
+
+lesson.txt
+Text
+Class comments
+
+Lesson-25
+Displaying lesson.txt.

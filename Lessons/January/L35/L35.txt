@@ -1,0 +1,196 @@
+AP COMP SCI A 1 OF 2
+8
+Lesson-35
+Rick Platek
+•
+9:01 AM
+
+
+==================================================================================================
+Topics #1:  Using Big Oh to classify runtime performance.
+==================================================================================================
+
+Here's a good math-cs reference:
+
+   https://www.cs.princeton.edu/courses/archive/spr10/cos433/mathcs.pdf
+
+
+
+-------------------------------------------------------------------------------------
+ 2.4 Substitue this code :
+      (a) int k = 0;
+          for (int i = 1; i < 1000; i++){
+              k = k + i * j;
+          }
+
+
+
+
+      (b) int k = 0;
+          for (int i = 1; i < N; i++){
+              for (int j = 1; j < N; j++){
+                  k = k + i * j;
+              }
+          }
+
+
+
+      (c) int k = 0;
+          while ( N > 0){
+                N = N / 2;
+                k = k + 1;
+          }
+
+
+	 when will (a) runs more quickly than (c).
+
+--------------------------------------------------------------------------------------------------
+    2.5
+         [ 1x1 + 2x2 + 3x4 + 4x8 + ... + G x 2^(G-1)] / N
+
+         where G = logN
+
+
+   From 2.2.c
+        1x1 + 2x2 + 3x4 + 4 x 8 + ... + N x 2^(N-1) = (N-1)2^N + 1
+
+          [(G-1)2^G + 1] / N = [(logN - 1) 2^logN + 1] / N
+                             = [(logN -1)N + 1 ] / N
+			     = [NlogN - N + 1 ] / N
+			     = logN - 1 + 1/N
+			     As n -> large  then it approaches logN
+
+
+
+
+---------------------------------------------------------------------------------------------------
+    2.6
+       Here's an explanation.
+       https://www.youtube.com/watch?v=D3E5CKebKuQ
+
+       A second explanation can be found here:
+       https://www.cs.princeton.edu/courses/archive/spr10/cos433/mathcs.pdf
+        - second faluty induction proof.
+
+=================================================================================================
+Task #2: Making our own data types. (ADT)
+=================================================================================================
+
+Def: A data type is a set of values and a set of operations defined on those
+     values.
+
+Def: A Abstract Data Type (ADT) is a data type defined by it operations not
+     by its implementation.
+
+--------------------------------------------------------------------------------
+Building Our Own ADT's
+--------------------------------------------------------------------------------
+
+    We will build a Point ADT that represents a point of the Cartesian Plane.
+
+    In Java, there is a hierarchy of class whereby subclass inherited
+    behavior from superclasses.
+
+    The Object class is the superclass of all classes.
+
+    Point "is an" Object
+
+1. In the same directory, create the files Point.java and PointClient.java.
+
+2. Show the default behavior of the inherited constructor Point()
+   and the method  toString().
+
+3. Add private instance variables (fields) x and y.
+
+4. Overwrite the toString method.
+
+   A subclass can override a non-final non-static method inherited from
+   its superclass by declaring a new non-static method with the exact
+   same signature.
+
+   Use the super reference to gain access to method implementation
+   of the super class.
+
+   Use the @Override annotation.
+
+
+5. Overload the constructor Point(int,int). Explain the this reference.
+   Note the default constructor will have to be redefined.
+
+
+6. The Point API (similar to Java's Point class).
+
+Constructors
+
+     Point()               // places Point a (0,0)
+     Point(x,y)
+     Point (Point p)
+
+
+Methods
+        // Accessor methods
+        Point   getLocation()  Returns the location of this point.
+        int     getX()         Returns the X coordinate of this Point.
+        int     getY()	       Returns the Y coordinate of this Point.
+
+
+        // Mutator Methods
+	void 	move​(int x, int y)              Moves this point to the specified location
+	                                        in the (x,y) coordinate plane.
+
+	void 	setLocation​(int x, int y)       Changes the point to have the specified location.
+        void 	setLocation​(Point p) 	        Sets the location of the point to the specified
+	                                        location.
+
+        void 	translate​(int dx, int dy) 	Translates this point, at location (x,y), by dx
+	                                        along the x axis and dy along the y axis so that
+						it now represents the point (x+dx,y+dy).
+
+
+
+
+        // override
+	String  toString()
+	boolean equals(Object)
+
+7. Implement the Accessor Methods
+     - getX()
+     - getY()
+     - getLocation()
+
+   Test your code in PointClient.java.
+
+
+8. Implement the Mutator Methods
+
+      - move(int,int)
+      - setLocation(int,int)
+      - setLocation(Point)
+      - translate(int,int)
+
+   Test your code in PointClient.java.
+
+9. Implement the constructor Point(Point).
+
+10. Override the equals method.
+
+    Method Signature :
+
+         public boolean equals(Object rhs).
+
+    equals should satisfy the following 4 properties:
+       1. Reflexive
+            a.equals(a) should be true
+       2. Symmetric
+           a.equals(b) should be the same as b.equals(a)
+       3. Transitive
+           If a.equals(b) is true and b.equals(c) is true,
+	   then a.equals(c) should be true.
+       4. Nulls
+           a.equals(null) should be false
+
+Link
+https://www.cs.princeton.edu/courses/archive/spr10/cos433/mathcs.pdf
+Class comments
+
+Lesson-35

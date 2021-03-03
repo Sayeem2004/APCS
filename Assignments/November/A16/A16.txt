@@ -1,0 +1,148 @@
+AP COMP SCI A 1 OF 2
+8
+Assignment-16
+Rick Platek
+•
+Nov 3 (Edited Nov 3)
+10/10
+10 points out of possible 10
+Due Nov 5
+
+hw.txt
+Text
+
+MaxMinPos.java
+Java
+
+Stats.java
+Java
+Class comments
+
+Your work
+Graded
+
+Galton.java
+Java
+Private comments
+
+Assignment-16
+1. Review Stats.java from the lesson.txt.
+
+
+2. Coursera watch the week4 lecture:
+
+        Standard input and output video.
+
+3. Section 1.4:
+
+   Creative exercise #29: Hadamard Matrix
+                     #41: BinomialDistribution.java
+
+
+4. The mechanism depicted below - known as the "Galton board" - can
+   be used to demonstrate important properties of a random process:
+
+
+                                   /   *   \
+                                 /   *   *   \
+                               /   *   *   *   \
+                             /   *   *   *   *   \
+                           /   *   *   *   *   *   \
+                         /   *   *   *   *   *   *   \
+                       /   *   *   *   *   *   *   *   \
+                     /   *   *   *   *   *   *   *   *   \
+                   /   *   *   *   *   *   *   *   *   *   \
+                   |   |   |   |   |   |   |   |   |   |   |
+                   |   |   |   |   |   |   |   |   |   |   |
+                   |   |   |   |   |   |   |   |   |   |   |
+                   |   |   |   |   |   |   |   |   |   |   |
+                   |   |   |   |   |   |   |   |   |   |   |
+                   |   |   |   |   |   |   |   |   |   |   |
+                   |   |   |   |   |   |   |   |   |   |   |
+                   |   |   |   |   |   |   |   |   |   |   |
+                   -----------------------------------------
+
+   The mechanism works as follows. You start by dropping a marble in the
+   hole at the top. The marble falls down and hits the uppermost peg, indicated
+   by the topmost asterisk in the diagram. The marble bounces off the
+   peg and falls, with equal probability, to the left or right. Whichever
+   way it goes, it then hits a peg on the second level and bounces again,
+   one direction or the other. The process continues until the marble passes
+   all the pegs and drops into one of the channels at the bottom. For example,
+   the dotted line in the following diagram shows one possible path for the
+   first marble:
+                                       .
+                                    .
+                                       .
+                                   /   *.  \
+                                 /   *   * . \
+                               /   *   * . *   \
+                             /   *   *   * . *   \
+                           /   *   *   *   * . *   \
+                         /   *   *   *   *  .*   *   \
+                       /   *   *   *   *  .*   *   *   \
+                     /   *   *   *   *   * . *   *   *   \
+                   /   *   *   *   *   * . *   *   *   *   \
+                   |   |   |   |   |   | . |   |   |   |   |
+                   |   |   |   |   |   | . |   |   |   |   |
+                   |   |   |   |   |   | . |   |   |   |   |
+                   |   |   |   |   |   | . |   |   |   |   |
+                   |   |   |   |   |   | . |   |   |   |   |
+                   |   |   |   |   |   | . |   |   |   |   |
+                   |   |   |   |   |   | . |   |   |   |   |
+                   |   |   |   |   |   | O |   |   |   |   |
+                   -----------------------------------------
+
+   Write a program that simulates the operation of dropping M marbles into a
+   probability board with N channels along the bottom and k levels of pegs.
+   The progam displays the number of marbles in each column. Part of the point
+   of this exercise is to show that the columns near the center tend to get more
+   marbles, as in the following diagram.
+
+                                   /   *   \
+                                 /   *   *   \
+                               /   *   *   *   \
+                             /   *   *   *   *   \
+                           /   *   *   *   *   *   \
+                         /   *   *   *   *   *   *   \
+                       /   *   *   *   *   *   *   *   \
+                     /   *   *   *   *   *   *   *   *   \
+                   /   *   *   *   *   *   *   *   *   *   \
+                   |   |   |   |   | 0 |   |   |   |   |   |
+                   |   |   |   |   | 0 |   |   |   |   |   |
+                   |   |   |   |   | 0 | 0 |   |   |   |   |
+                   |   |   |   | 0 | 0 | 0 | 0 |   |   |   |
+                   |   |   |   | 0 | 0 | 0 | 0 | 0 |   |   |
+                   |   |   | 0 | 0 | 0 | 0 | 0 | 0 |   |   |
+                   |   | 0 | 0 | 0 | 0 | 0 | 0 | 0 |   |   |
+                   | O | 0 | 0 | 0 | 0 | 0 | 0 | 0 |   | 0 |
+                   -----------------------------------------
+
+
+    The printed output of dropping 35 marbles into the Galton board
+    with 10 channels is:
+
+    $ java Galton 35 10
+
+    Channel        Marbles
+    ------------------------
+    0              *
+    1              **
+    2              ***
+    3              *****
+    4              ********
+    5              ******
+    6              *****
+    7              ****
+    8
+    9              *
+
+
+Submit Galton.java
+
+  - Compilation instructions:   $javac Galton.java
+  - Execution instructions:     $java Galton marbles channels
+
+
+hw.txt
+Displaying hw.txt.

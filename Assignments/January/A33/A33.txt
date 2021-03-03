@@ -1,0 +1,82 @@
+AP COMP SCI A 1 OF 2
+8
+Assignment-33
+Rick Platek
+•
+8:57 AM
+15 points
+Due Jan 11
+1. Complete question 1-5 in hw.txt, be prepared to present for the next class.
+2. In CodingBat, score 15 points by Monday.
+
+hw.txt
+Text
+Class comments
+
+Your work
+Assigned
+Private comments
+
+
+1. Write a method named countInRange that accepts three parameters: an
+   ArrayList of integers, a minimum and maximum integer, and returns the
+   number of elements in the list within that range inclusive. For example,
+   if the list v contains {28, 1, 17, 4, 41, 9, 59, 8, 31, 30, 25}, the call
+   of countInRange(v, 10, 30) should return 4. If the list is empty, return 0.
+   Do not modify the list that is passed in.
+
+2. Write a method named cumulative that accepts as a parameter an ArrayList
+   of integers, and modifies it so that each element contains the cumulative
+   sum of the elements up through that index. For example, if the list passed
+   contains {1, 1, 2, 3, 5}, your method should modify it to store
+   {1, 2, 4, 7, 12}.
+
+
+3. Write a method named findKeithNumbers that accepts minimum and maximum
+   integers as parameters and prints all of the "Keith numbers in that range
+   (inclusive) in the format shown below. If the given range contains no Keith
+   numbers, print no output. For example, the call of findKeithNumbers(47, 742);
+   would print the following output:
+
+   47: [4, 7, 11, 18, 29, 47]
+   61: [6, 1, 7, 8, 15, 23, 38, 61]
+   75: [7, 5, 12, 17, 29, 46, 75]
+   197: [1, 9, 7, 17, 33, 57, 107, 197]
+   742: [7, 4, 2, 13, 19, 34, 66, 119, 219, 404, 742]
+
+
+
+4. Write a method named indexOfAll that accepts two ArrayLists of integers a1
+   and a2 as parameters and that returns a new ArrayList of integers
+   representing all starting indexes where a2's sequence of elements appear in
+   a1. The sequence of elements in a2 may appear anywhere in a1 but must
+   appear consecutively and in the same order. For example, if variables
+   called a1 and a2 store the following values:
+
+   //   index
+   //   0  1  2  3  4  5  6  7  8  9 10 11
+
+   a1: [1, 6, 1, 2, 1, 4, 1, 2, 1, 2, 1, 8]
+
+   a2: [1, 2, 1]
+
+  Then the call of indexOfAll(a1, a2) should return the list [2, 6, 8] because
+  a2's sequence of values [1, 2, 1] is contained in a1 starting at those
+  indexes. Any two lists with identical elements are considered to contain
+  each other, so a call such as indexOfAll(a1, a1) should return [0]. If a1
+  does not contain a2, return an empty list.
+
+  You may assume that both lists passed to your method will have lengths of at
+  least 1. You may not use any strings to help you solve this problem, nor
+  methods that produce strings such as toString on a list.
+
+5. Write a method named insertInterval that inserts a new interval into a list
+   of intervals, merging as needed. Your method accepts two parameters: a
+   list of two-element lists of integers representing a set of non-overlapping
+   intervals, sorted by starting number; and a single two-element list
+   representing a new interval to insert. For example, if the list of existing
+   intervals is [[1, 2], [3, 5], [6, 7], [8, 10], [12, 16]] and the new
+   interval to insert is [4, 8], you should return [[1, 2], [3, 10], [12, 16]].
+   You may assume the input data is valid.
+hw.txt
+Displaying hw.txt.

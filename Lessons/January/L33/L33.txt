@@ -1,0 +1,220 @@
+AP COMP SCI A 1 OF 2
+8
+Lesson-33
+Rick Platek
+•
+8:55 AM
+Useful ArrayList Constructor and Methods
+------------------------------------------------------------------------------
+ Constructor:
+         new ArrayList<E>()
+
+ Methods
+
+  int	  size()	      : returns the length of the list
+  boolean isEmpty()           : returns true if empty
+  E    	  get(int i)          : returns the element at index i
+  E    	  set(int i,E val)    : places val at index i and
+                                returns the replaced val
+  boolean add(E val)	      : adds to the end
+  void    add(int i, E val)   : inserts val at i
+  E    	  remove(int i)       : returns and removes the element at i
+  boolean remove(E val)       : removes the first occurrence if found
+                                returns true if val is removed
+  void    clear()             : removes all elements
+  boolean contains(E val)     : returns true if list contains val
+  int     indexOf(E val)      : returns the first index of val or -1
+                                if not found
+  int     lastIndexOf(E val)  : returns the last index of val or -1
+                                if not found
+
+
+============================================================================
+Task # 1: Quick Introduction to Big Oh Notation
+============================================================================
+Used to classfiy the expected  performance of an algorithm.
+
+Classifications:
+  O(1)       constant
+  O(log N)   logarithmic
+  O(N)       linear
+  O(NlogN)   linear logarithmic
+  O(N^2)     quadratic
+
+Note as N gets larger the following oder holds:
+
+   O(1) < O(log N) < O(N) < O(NlogN) < O(N^2)
+
+Big Oh Addition:
+          O(1) + O(N) => O(N)
+          O(N) + O(N^2) => O(N^2)
+          etc..
+
+Big Oh Multiplication:
+        O(1) * O(N) => O(1*N) => O(N)
+	O(N) * O(logN) => O(NlogN)
+
+
+
+Use Big Oh notation to classify the ArrayList Operations
+      Method                       Classification
+      ----------                   ---------------
+      int     size() -> O(1)
+      boolean isEmpty() -> O(1)
+      E       get(i) -> O(1)
+      E       set(int i, E val) -> O(1)
+      boolean add(E val) -> O(1);
+      void    add(int i, E val) -> O(N)
+      E       remove(int i) -> O(N)
+      boolean remove(E val) -> O(N)
+
+      void    clear() -> O(1)
+      boolean contains(E val) -> O(N)
+      int     indexOf(E val) -> O(N)
+      int     lastIndexOf(E val) -> O(N)
+
+
+
+
+
+
+
+============================================================================
+Topic #2: Hw
+============================================================================
+6. Write a method named addStars that accepts as a parameter an ArrayList of
+   strings, and modifies the list by placing a "*" element between elements,
+   as well as at the start and end of the list. For example, if a list named
+   list contains
+   {"the", "quick", "brown", "fox"}, the call of addStars(list);
+   should modify it to store
+   {"*", "the", "*", "quick", "*", "brown", "*", "fox", "*"}.
+
+
+
+ 7. Write a method named deleteDuplicates that accepts as a parameter a sorted
+    ArrayList of Strings and that removes any duplicate values from the list.
+    For example, suppose that an ArrayList named list contains the values
+      {"be", "be", "is", "not", "or", "question", "that", "the", "to", "to"}
+    After calling deleteDuplicates(list); the list should store the following
+    values:
+      {"be", "is", "not", "or", "question", "that", "the", "to"}
+    You should assume that the values in the list are sorted, and that
+    therefore all of the duplicates will be grouped together.
+
+
+
+8. Write a method named mirror that accepts an ArrayList of strings as a
+   parameter and produces a mirrored copy of the list as output, with the
+   original values followed by those same values in the opposite order. For
+   example, if an ArrayList variable named list
+   contains the values ["a", "b", "c"], after a call of mirror(list);
+   it should contain ["a", "b", "c", "c", "b", "a"].
+   You may assume that the list is not null and that no element of the array
+   is null.
+
+
+
+
+9. Write a method named removeAll that accepts as a parameter an ArrayList of
+   strings along with an element value string, and modifies the list to remove
+   all occurrences of that string. For example, if the list v contains
+   {"a", "b", "c", "b", "b", "a", "b"}, the call
+   of removeAll(v, "b");
+   should modify it to store {"a", "c", "a"}.
+
+
+
+10. Write a method named removeEvenLength that accepts an ArrayList of strings
+    as a parameter and that removes all of the strings of even length from the
+    list. For example, if an ArrayList variable named list contains the values
+    ["hi", "there", "how", "is", "it", "going", "good", "sirs"],
+    the call of removeEvenLength(list); would change it to store
+    ["there", "how", "going"].
+
+
+
+
+11. Write a method named repeat that accepts an ArrayList of Strings and an
+    integer k as parameters and that replaces each element with k copies of
+    that element. For example, if the list stores the values
+    ["how", "are", "you?"] before the method is called and k is 4,
+    it should store the values
+    ["how", "how", "how", "how", "are", "are", "are", "are", "you?", "you?",
+     "you?", "you?"]
+    after the method finishes executing. If k is 0 or negative, the list should
+    be empty after the call.
+
+
+
+
+
+
+
+
+
+===========================================================================
+Topic #3: More Practice with ArrayLists
+==========================================================================
+
+1. Write a method named countInRange that accepts three parameters: an
+   ArrayList of integers, a minimum and maximum integer, and returns the
+   number of elements in the list within that range inclusive. For example,
+   if the list v contains {28, 1, 17, 4, 41, 9, 59, 8, 31, 30, 25}, the call
+   of countInRange(v, 10, 30) should return 4. If the list is empty, return 0.
+   Do not modify the list that is passed in.
+
+2. Write a method named cumulative that accepts as a parameter an ArrayList
+   of integers, and modifies it so that each element contains the cumulative
+   sum of the elements up through that index. For example, if the list passed
+   contains {1, 1, 2, 3, 5}, your method should modify it to store
+   {1, 2, 4, 7, 12}.
+
+
+3. Write a method named findKeithNumbers that accepts minimum and maximum
+   integers as parameters and prints all of the "Keith numbers in that range
+   (inclusive) in the format shown below. If the given range contains no Keith
+   numbers, print no output. For example, the call of findKeithNumbers(47, 742);
+   would print the following output:
+
+   47: [4, 7, 11, 18, 29, 47]
+   61: [6, 1, 7, 8, 15, 23, 38, 61]
+   75: [7, 5, 12, 17, 29, 46, 75]
+   197: [1, 9, 7, 17, 33, 57, 107, 197]
+   742: [7, 4, 2, 13, 19, 34, 66, 119, 219, 404, 742]
+
+
+
+4. Write a method named indexOfAll that accepts two ArrayLists of integers a1
+   and a2 as parameters and that returns a new ArrayList of integers
+   representing all starting indexes where a2's sequence of elements appear in
+   a1. The sequence of elements in a2 may appear anywhere in a1 but must
+   appear consecutively and in the same order. For example, if variables
+   called a1 and a2 store the following values:
+
+   //   index
+   //   0  1  2  3  4  5  6  7  8  9 10 11
+
+   a1: [1, 6, 1, 2, 1, 4, 1, 2, 1, 2, 1, 8]
+
+   a2: [1, 2, 1]
+
+  Then the call of indexOfAll(a1, a2) should return the list [2, 6, 8] because
+  a2's sequence of values [1, 2, 1] is contained in a1 starting at those
+  indexes. Any two lists with identical elements are considered to contain
+  each other, so a call such as indexOfAll(a1, a1) should return [0]. If a1
+  does not contain a2, return an empty list.
+
+  You may assume that both lists passed to your method will have lengths of at
+  least 1. You may not use any strings to help you solve this problem, nor
+  methods that produce strings such as toString on a list.
+
+5. Write a method named insertInterval that inserts a new interval into a list
+   of intervals, merging as needed. Your method accepts two parameters: a
+   list of two-element lists of integers representing a set of non-overlapping
+   intervals, sorted by starting number; and a single two-element list
+   representing a new interval to insert. For example, if the list of existing
+   intervals is [[1, 2], [3, 5], [6, 7], [8, 10], [12, 16]] and the new
+   interval to insert is [4, 8], you should return [[1, 2], [3, 10], [12, 16]].
+   You may assume the input data is valid.
+Class comments

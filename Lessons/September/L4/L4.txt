@@ -1,0 +1,206 @@
+AP COMP SCI A 1 OF 2
+8
+Lesson-04
+Rick Platek
+•
+Sep 29
+==============================================================================
+Task #1: The integer data type int.
+==============================================================================
+
+ 1. From : https://introcs.cs.princeton.edu/java/12types/
+
+    read about the Java Integers
+
+ 2. When both operands of a binary operator are int's then the answer
+    will be an integer. With the division operator, /, the integer
+    result is obtain by discarding the decimal fraction. The operation
+    of discarding a decimal fraction is called truncation.
+
+ Question #1: Calculate the result of each of the following expressions:
+
+     a. 6 + 5 / 4 - 3
+
+
+
+
+     b. 2 + 2 * (2 * 2 - 2) % 2 / 2
+
+
+     c.  10 + 9  * (8 + 7 % 6) + 5 * 4 % 3 * 2 + 1
+
+
+     d. 1 + 2 + (3 + 4) * (( 5 * 6 % 7 * 8) - 9 ) - 10
+
+
+
+
+ Question #2 : From the book site, review and discuss exercises 1 and 7
+
+               d. System.out.println("bc" + (2 + 3));
+
+
+
+               e. System.out.println("bc" + 2 + 3);
+
+
+
+
+
+ Question #3: An integer constant is ordinarily written as a string of
+              decimal digits. If the number begins with 0, however, the
+	      compiler interprets the value in base 8, which is called an
+	      octal.
+
+              Consider the statement:
+
+                     int x = 040;
+
+              What is the decimal value of x?
+
+
+
+
+Question #4:  If you prefix a numeric constant with the characters 0x,
+              the compiler interprets that number in base 16, or
+	      hexadecimal.
+
+              Consider the statement:
+
+                     int n = 0xFF;
+
+              What is the decimal value for n?
+
+
+
+===============================================================================
+Task #2: Library Methods From Integer.
+===============================================================================
+
+- Java provides library methods to convert the strings we type as command-
+  line arguments into numeric values for primitive types.
+
+    The Method:
+
+     Integer.parseInt(String) -> int
+
+
+     For example,
+
+          Integer.parseInt("123") -> 123
+
+
+Java provides online documentation for its libraries and classes.
+This documentation is known as an Application Programming Interface, API.
+
+Review the Java 11 API for the Integer class.
+
+  https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html
+
+
+
+Question #5: From the book site review and run the IntOps.java program. What happens
+             when you attempt to divide by zero?
+
+
+
+
+Question #6: How would you use the Integer library in your source code to retrieve
+             the maximum value of an int.
+
+
+
+
+==============================================================================
+Task #3: The other integer data types.
+==============================================================================
+
+
+Like all data, values of type int are stored internally in storage units
+that have a limited capacity. Those values therefore have a maximum size,
+which limits the range of integers you can use. To get around this problem,
+Java defines four integer types - byte, short, int and long - distinguished
+from each other by the size of their domains.
+
+     Type      	  Domain
+     byte         8 - bit integers in the range -128 to 127
+     short       16 - bit integers in the range -32768 to 32767
+     int         32 - bit integers in the range -2147483648 to 2147483647
+     long        62 - bit integers in the range -9223372036854775808 to
+      		      	  	      	  	 9223372036854775807
+
+The AP exam only tests your knowlege of the int data type.
+
+To create a long literal place an L at the end of the sequence of digits.
+
+    ex. long phone = 5558415267L;
+
+
+
+If the int results that we get from arithmetic operations are too large to
+fit into int's 32-bit representation, then an overflow occurs.
+
+
+Question #7: Suppose that a variables max and min are declared as:
+                 int max  = Integer.MAX_VALUE;
+		 int min  = Integer.MIN_VALUE;
+
+             What does each of the following print?
+
+        a. System.out.println("max =  " + max);
+	b. System.out.println("min = "  + min);
+	c. System.out.println("max + 1 = " + (max + 1));
+	d. System.out.println("min - 1 = " + (min - 1));
+	e. System.out.println("-2 - max = " + (-2 - max));
+	f. System.out.println("2 * max = " + (2 * max));
+	g. System.out.println("4 * max = " + (4 * max));
+	h. System.out.println("-min = "  + -min);
+
+
+======================================================================
+Task #4: Practice
+======================================================================
+I. What will be the result of attempting to compile and run the following
+   class?
+
+    public class Integers{
+
+             public static void main(String args[]){
+	     	    System.out.println(0x10 + 10 + 010);
+             }
+    }
+
+II. What is the value of evaluating this expression:
+
+             - -1-3 * 10 / 5 - 1
+
+    Select the one right answer.
+    (a) -8
+    (b) -6
+    (c) 7
+    (d) 8
+    (e) 10
+    (f) None of the above
+
+III. Which of the following statements are true?
+
+     Select all valid answers.
+     (a) The result of the expression (1 + 2 + "3") would be the string "33".
+     (b) The result of the expression ("1" + 2 + 3) would be the string "15".
+     (c) The result of the expression (10/9) would be the int value 1.
+
+IV. From the book site : 1.2 Built-In Data Types
+
+     Look in the Java 11 Math API for the Math library. Read about Math.max() and Math.min().
+
+     Complete Exercise # 34 ThreeSort.java. Check your work with the posted program.
+
+V. Complete the following Web Exercises:
+
+    # 1 Swap.java
+    # 6
+    #14
+
+Class comments
+
+Lesson-04

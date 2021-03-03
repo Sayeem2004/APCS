@@ -1,0 +1,72 @@
+AP COMP SCI A 1 OF 2
+8
+Lesson-02
+Rick Platek
+•
+Sep 21
+
+
+
+Task #1:
+=============================================================================
+   I. From the booksite Programming in Java:
+      1.1 Your First Java Program: Hello World
+
+      - https://introcs.cs.princeton.edu/java/11hello/
+
+      - On the booksite read the notes starting at Programming in Java
+        up to Errors
+
+      - Download the source code: HelloWorld.java
+
+      - Read the source code.
+
+      - Compile and run HelloWorld.java.
+
+      - Complete exercise 1: Write a program TenHelloWorlds.java that
+        prints "Hello, World" ten times.
+
+      - Complete Web Exercise 1. Initials.java. You will submit this
+        program via google classroom.
+
+
+Task #2:
+=============================================================================
+     - Read the section: Errors
+
+     - As a group, complete Web exercises #2-#5. Submit your answers
+       via google classroom. I need one document per group. Include each
+       group members name and your solutions.
+
+
+Task #3:
+=============================================================================
+     - Read the section: Input and output
+
+     - Complete exercise 5: UseThree.java. Don't submit this program. You
+       can see a solution posted on the booksite.
+
+     - Exercise 6: Describe what happpens if you try to execute UseArgument with
+       each of the following command lines:
+
+          a. java UseArgument
+          b. java UseArgument java
+          c. java UseArgument @!&^%
+          d. java UseArgument 1234
+          e. java UseArgument.java Bob
+          f. java UseArgument Alice Bob
+
+
+      - add your response to the group work.
+
+
+Task #4:
+=============================================================================
+ Complete the Software Carpentry tutorial
+
+   Pipes and Filters
+   http://swcarpentry.github.io/shell-novice/04-pipefilter/index.html
+
+Class comments
+
+Lesson-02
