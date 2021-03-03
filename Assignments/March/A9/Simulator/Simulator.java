@@ -33,31 +33,40 @@ public class Simulator {
                 // If There Is No Overlap Animal Can Move Immediately
                 ret.set(q,river.get(i));
             } else {
-                // If There Is Overlap There Are Two Cases
+                // If There Is Overlap There Are Two Cases: Are The Two Species The Same Or Not
                 if (ret.get(q).equals(river.get(i))) {
-                    // If The Two Animals Are The Same, They Will Attempt To Return To Their Original Positions
-                    // And Will Also Attempt To Create A New Animal Of The Same Type In A Previously Null Position
-                    ret.get(q).goBack();
-                    river.get(i).goBack();
-                    // If The Original Position Is Occupied Already, Another Interaction Will Have To Occur.
-                    int r = ret.get(q).getPos()
-                    if (ret.get(r) == null) {
-                        ret.set(r,ret.get(q));
-                    } else if (ret.get(r).equals(ret.get(q))) {
-                        int a = ret.indexOf(null);
-                        if (a != -1)
-                            ret.set(a,ret.get(q));
+                    // If They Are The Same Two Species Are They Different Genders Or Not
+                    if (ret.get(q).getGender() == river.get(i).getGender()) {
+                        if (ret.get(q).getStrength() > river.get(i).getStrength()) continue;
+                        else ret.set(q,river.get(i));
                     } else {
-                        ret.set(r,new Bear(r,rl));
+                        // Pushing Animal On The Right Back To Original Position
+                        river.get(i).goBack();
+                        ret.set(river.get(i).getPos(),river.get(i));
+                        // Attempting To Push Animal On The Left To Original Position
+                        ret.get(q).goBack();
+                        int r = ret.get(q).getPos();
+                        if (ret.get(r) == null) ret.set(r,ret.get(q));
+                        else if (ret.get(r).equals(ret.get(q))) {
+                            if (ret.get(r).getGender() == ret.get(q).getGender()) {
+                                int a = ret.indexOf(null);
+                                if (a != -1) ret.set(a,ret.get(q));
+                            } else {
+                                if (ret.get(r).getStrength() > ret.get(q).getStrength()) continue;
+                                else ret.set(r,ret.get(q));
+                            }
+                        } else {
+                            if (ret.get(r).equals(new Bear())) continue;
+                            else ret.set(r,ret.get(q));
+                        }
+                        // Attempting To Create New Animal
+                        int b = ret.indexOf(null);
+                        if (b != -1) ret.set(b,new Bear(b,rl,(Math.random()<0.5) ? true : false,(int)(Math.random()*101)));
                     }
-                    ret.set(river.get(i).getPos(),river.get(i));
-                    // If There Is No Space For A New Animal A New Animal Will Not Be Created
-                    int b = ret.indexOf(null);
-                    if (b != -1)
-                        ret.set(b,river.get(i).create(q,rl));
                 } else {
                     // If The Two Animals Are Different, The Position Will Be Occupied By A Bear
-                    ret.set(q, new Bear(q,rl));
+                    if (ret.get(q).equals(new Bear())) continue;
+                    else ret.set(q,river.get(i));
                 }
             }
         }
@@ -96,10 +105,12 @@ public class Simulator {
         }
         // Setting Animals
         for (int i = 0; i < rl; i++) {
+            boolean gen = (Math.random() < 0.5) ? true : false;
+            int str = (int)(Math.random()*101);
             if (pos[i] < bp)
-                river.add(i,new Bear(i,rl));
+                river.add(i,new Bear(i,rl,gen,str));
             else if (pos[i] < bp+fp)
-                river.add(i,new Fish(i,rl));
+                river.add(i,new Fish(i,rl,gen,str));
             else
                 river.add(i,null);
         }

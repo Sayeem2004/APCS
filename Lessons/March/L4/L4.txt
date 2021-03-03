@@ -1,0 +1,261 @@
+Data Structures
+Period 6
+Lesson-04
+Rick Platek
+•
+8:10 AM
+==========================================================================
+Group Submission: One submission per group. Put your names in each of the
+                  submitted files.
+   1. The files : Flippable.java, Coin.java, BiasedCoin.java, CoinsClient.java
+   2. Answers to task 2 and 3.
+  ==========================================================================
+
+
+
+
+=========================================================================
+Task #1: Inheritance Exercise (10 - 15 minutes)
+=========================================================================
+
+
+1. Create the interface Flippable that has the abstract method
+
+     String flip();  // Returns "H" or "T"
+
+2. Create a Coin class that represents an unbaised 2 sided coin.
+   Make the Coin a Flippable object.
+
+
+3. Create a BiasedCoin class that extends the Coin class. Users
+   of the BiasedCoin class determine the probability of getting
+   a "H" when flipping a coin.
+
+    ex.  new BiasedCoin(0.2) represents a Biased coin where the
+         chances of getting a "H" is 20%.
+
+
+4. Write the program CoinsClient to test your code.
+   This program takes 1 command-line argument, trials, and
+   simulates flipping each coin trial times.
+
+   Sample Run:
+
+    $ java CoinsClient 100
+    Unbaised coin:
+    TTHTHTHTTHTHTHHTHTTHTTTTTTTTHHTTHHHTTHTHHTHTHHTHHHHTHTHTHTTT
+    THHHHTTHTTHTHHTHTHHTHTHHTHTTHTTTHTHHHHTT
+    observed head %: 0.48
+    Baised coin:
+    TTTTTHHTTTTTHHTTTTTTTTHHTTTTHHTTHTTTTHHTTTTTTTTTTTTTTTHHTHTT
+    TTTTTTTTTTTTTHTTHHTTTTTTTTTTTTTTHHHHTTTH
+    observed head %: 0.22
+
+
+5. Be prepared to demonstrate your solution to the class.
+
+
+
+
+
+
+
+
+
+==========================================================================
+Task #2: With your group mates discuss and answer the 4 questions listed
+         below. (10-15 minutes)
+==========================================================================
+
+
+
+A super class reference can denote objects of its subclasses.
+
+ex.  Coin c1 = new Coin(); // ok
+     Coin c2 = new BiasedCoin(); //ok b/c a BiasedCoin is a Coin
+     BiasedCoin c3 = new Coin(); // Compiler error: b/c Coin is not a BiasedCoin
+
+Polymorphism
+=================================
+Which object a reference will actually denote during runtime cannot be
+determined at compile time. Polymorphism allows a reference to denote different
+objects in the inheritance hierarchy at different times during execution.
+
+ex.
+       Coin c ;
+       if (Math.random() < 0.5)
+           c = new Coin();
+       else
+           c = new BiasedCoin(0.2); // chance of H is 20%
+
+Dynamic Method LookUp (Dynamic Dispatch)
+=========================================
+When a method is invoked using a reference the method definition which actually
+gets executed is determined by the class of the object denoted by the reference
+at runtime.
+
+ex.     Coin c;
+        if (Math.random() < 0.5) c = new Coin();
+        else c = new BiasedCoin(0.2);
+        c.flip();
+
+
+   At Compilation:   The compiler will search the Coin class to ensure
+                     that flip() is defined; therefore the code will compile
+                     successfully.
+   At Run Time :     The verion of flip() is based on the actual Object type.
+
+
+ QUESTIONS: 1 - 4 : Given the code from above.
+-----------------------------------------------
+1. What is the chance of flipping a H?
+
+2. Will this code compile? Explain.
+
+         Object c = new Coin();
+         c.flip();
+
+For quesions 3 and 4 consider this code:
+
+         Flippable c = new BiasedCoin(0.2);
+         c.flip();
+
+3. Will this compile? Explain.
+
+4. Will it run?  Explain.
+
+
+
+
+
+
+
+
+============================================================================
+ Task #3:  Pseudo-Inheritance
+           With your groupmates discuss and answer the 6 questions listed
+           below. (15 minutes)
+============================================================================
+Any instance variable that is declared private in the superclass cannot
+be directly accessed by a subclass, although it is inherited by the subclass.
+
+Ex.
+
+Given
+
+ // Class A
+ public class A{
+
+      private int x;
+      public A(int x) {
+            this.x = x;
+      }
+      public int f() { return x + 2; }
+      public int g() { return x - 2; }
+}
+
+How are these superclass properties initialized, if they can't be accessed
+directly in a subclass? When an object is instantiated, the first thing its
+constructor does is to call the superclass's constructor.
+
+If we do not explicitly invoke the superclass's constructor, Java does it
+for us.
+
+
+ // Class B
+ public class B extends A{
+
+      private int y;
+      public B(int y) {
+           super(1);
+	   this.y = y;
+      }
+      public int g() { return  3 * y;}
+ }
+
+// Class C
+ public class C extends B{
+
+      private int z;
+      public C(int z) {
+             super(2);
+	     this.z = z;
+      }
+      public int h() { return f() + g() + z; }
+ }
+
+
+============================================================================
+ QUESTIONS 5 - 10
+============================================================================
+Identify whether each statement will compile and execute successfully and if so,
+determine the result of each statement.
+
+5. Given :  A a = new A(10);
+
+      (a). a.f();
+      (b). a.g();
+
+6. Given :  A b = new B(10);
+
+      (a). b.f();
+      (b). b.g();
+
+7. Given :    C c = new C(10);
+
+      (a). c.f();
+      (b). c.g();
+      (c). c.h();
+
+8. Given :     A c = new C(10);
+
+      (a). c.f();
+      (b). c.g();
+      (c). c.h();
+
+
+9. Given :     C d = new C(10);
+
+     (a). ((A)d).f();
+     (b). ((A)d).g();
+     (c). ((A)d).h();
+
+10. Consider:
+
+    interface Interface1 {
+              public int f(int x);
+    }
+
+    public class R implements Interface1{
+
+             public int f(int x){
+                return 2 * x;
+             }
+
+             public int g(int x){
+                 return 10;
+             }
+
+             @Override
+             public String toString(){
+                    return "Howdy";
+             }
+   }
+
+  Given :
+          Interface1 t1 = new R();
+          R t2 = (R)t1;
+
+  Evaluate the following:
+        (a). t1.f(1);
+        (b). t2.f(1);
+        (c). t1.g(1);
+        (d). t2.g(1);
+        (e). t1.toString();
+        (f). t2.toString()
+
+
+Class comments
+
+Lesson-04
+Page 2 of 5
