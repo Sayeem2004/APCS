@@ -1,0 +1,51 @@
+Data Structures
+Period 6
+Assignment-11 (Group Work)
+Rick Platek
+•
+8:21 AM
+10 points
+Due Mar 9
+=================================================================================
+Task #3: Group Work :
+
+Submit the file: Matching.java
+- One submission per group.
+- Put your names in the documentation.
+=================================================================================
+Write a program that checks whether the bracketing operators ( parentheses,
+brackets, and curly braces) in a string are properly matched. As an example
+of proper matching, consider the string:
+
+{ s = 2 * ( a[2] + 3); x = (1 + (2)); }
+
+If you go through the string carefully, you will discover that all the bracketing
+operators are correctly nested, with each open parenthesis matched by a close
+parenthesis, each open bracket matched by a close bracket, and so on. On the
+other hand, the following strings are all unbalanced for the reasons indicated:
+
+(([]) The line is missing a close parehthesis.
+)( The close parenthesis comes before the open parenthesis.
+{(}) The bracketing operators are improperly nested.
+
+
+Sample Run:
+$ java -cp .:../stdlib.jar Matching
+> { s = 2 * ( a[2] + 3); x = (1 + (2)); }
+matching bracketing operators
+> (([])
+mismatched bracketing operators
+> )(
+mismatched bracketing operators
+> {(})
+mismatched bracketing operators
+> q
+Class comments
+Your work
+Turned in
+
+Matching.java
+Java
+Private comments
+Turning in…
+Displaying Matching.java.

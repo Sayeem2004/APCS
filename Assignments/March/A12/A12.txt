@@ -1,0 +1,91 @@
+Data Structures
+Period 6
+Assignment-12 (Individual Work)
+Rick Platek
+•
+8:22 AM
+10 points
+Due Mar 9
+==========================================================================================
+Task #4: Individual Work:
+
+Submit the file: PostScript.java
+Put your name in the documentation.
+==========================================================================================
+PostScript is a powerful graphics language developed by the Adobe
+Corporation in the early 1980s. PostScript programs store their data on a
+stack. Many of the operators available in the PostScript language have the
+effect of manipulating the stack in some way. You can, for example,
+invoke the pop operator, which pops the top element off the stack,
+or the exch operator, which swaps the top two elements.
+
+One of the most interesting (and surprisingly useful) PostScript operators
+is the roll operator, which takes two arguments, n and k. The effect of
+applying roll(n,k) is to rotate the top n elements of a stack by k
+positions, where the general direction of the rotation is toward the top
+of the stack. More specifically, roll(n,k) has the effect of removing
+the top n elements, cycling the top element to the last position k times,
+and then replacing the reordered elements on the stack. For example,
+
+roll(4,1) roll(3,2) roll(2,4)
+
+| D | | C | | D | | B | | D | | D |
+| C | | B | | C | | D | | C | | C |
+| B | -> | A | | B | -> | C | | B | -> | B |
+| A | | D | | A | | A | | A | | A |
+
+Write the method
+
+void roll(Stack<String> stack, int n, int k)
+
+that implements the roll(n,k) operation on the specified stack. Your
+implementation should check that n and k are both nonnegative and that
+n is not larger than the stack size; if either of these conditions
+is violated, your implementation should throw a runtime exception
+with the message
+
+roll: argument out of range
+
+PostScript.java
+----------------
+
+import java.util.Stack;
+
+
+public class PostScript{
+
+public static void main(String [] args){
+int n = Integer.parseInt(args[0]);
+int k = Integer.parseInt(args[1]);
+Stack<String> s = new Stack<String>();
+s.push("A"); s.push("B"); s.push("C"); s.push("D");
+System.out.println("Initial : " + s);
+roll(s,n,k);
+System.out.println("after roll(" + n + ", " + k + "): " + s);
+}
+
+public static void roll(Stack<String> stack, int n, int k){
+// YOUR CODE GOES HERE
+}
+
+}
+
+
+Sample Runs:
+
+
+$ java PostScript 4 1
+Initial : [A, B, C, D]
+after roll(4, 1): [D, A, B, C]
+$ java PostScript 3 2
+Initial : [A, B, C, D]
+after roll(3, 2): [A, C, D, B]
+$ java PostScript 2 4
+Initial : [A, B, C, D]
+after roll(2, 4): [A, B, C, D]
+Class comments
+Your work
+Assigned
+Private comments
+Assignment-12 (Individual Work) Turning in…
+Displaying Matching.java.

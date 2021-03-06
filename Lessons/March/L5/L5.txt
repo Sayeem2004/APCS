@@ -1,0 +1,368 @@
+Data Structures
+Period 6
+Lesson-05
+Rick Platek
+•
+8:19 AM (Edited 8:56 AM)
+
+RPNCalculator.java
+Java
+
+lesson.txt
+Text
+
+Data Structure Visualization
+https://www.cs.usfca.edu/~galles/visualization/Algorithms.html
+Class comments
+
+Lesson-05
+============================================================================
+Task #1: Using Data Structures from the Java Collections Framework
+============================================================================
+
+It is usually far more important to know how to use data structures effectively
+than to understand their underlying representation.
+
+
+ADT Definition:
+
+    A type defined in terms of its behavior rather than its implementation
+    is called an abstract data type (ADT).
+
+
+The Java Collections Framework
+   - a suite of ADT's.
+   - found in the java.util package
+   - a few examples
+     	   - ArrayList
+           - Stack
+	   - Queue
+	   - Map
+	   - Set
+
+=============================================================================
+The Stack Abstraction
+=============================================================================
+
+A stack provides storage for a collection of data values, subject to the
+restriction that values must be removed from a stack in the opposite order
+from which they were added. This restriction implies that the last item
+added to a stack is always the first item that gets removed.
+
+
+Stack Terminology
+-----------------
+
+ -- Adding a new value to a stack is called pushing that value
+ -- Removing the most recent item from a stack is called popping
+    the stack.
+ -- The order in which stacks are processed is sometimes called LIFO,
+    which stands for "last in, first out."
+
+
+Examples:
+    - Web browers store your history in a stack.
+    - Text editors use a stack to allow users the option to UNDO.
+    - In programming, nested function calls behave in a stack-oriented
+      fashion.
+
+
+Stack Animation
+
+https://www.cs.usfca.edu/~galles/visualization/Algorithms.html
+
+
+Stack API :
+
+https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Stack.html
+
+Basic Operations For a Stack
+----------------------------
+  Constructor:
+
+       new Stack<type>()         Creates an empty stack
+
+  Methods
+
+   boolean isEmpty() -> Returns true if the stack is empty.
+   int size()        -> Returns the number of elements currently on the stack
+   E peek()          -> Returns the topmost value without removing it.
+                        Calling peek on an empty stack throws a runtime error.
+   E push(E val)     -> Pushes val on the stack so that it becomes the
+                        topmost element.
+   E pop()           -> Pops the topmost value from the stack and returns
+                        it to the caller. Calling pop on an empty
+			stack throws a runtime error.
+   void clear()      -> Removes all the elements from a stack.
+
+
+
+
+Reverse Polish Notation (RPN) Calculator
+----------------------------------------
+
+ /* Use a Stack to represent a reverse polish calculator
+ *
+ * Dependencies: StdIn.java, StdOut.java (stdlib.jar)
+ *
+ * Compilation Instructions:
+ * $ javac -cp .:../stdlib.jar RPNCalculator.java
+ *
+ * Execution Instructions:
+ * $ java -cp .:../stdlib.jar RPNCalculator
+ *
+ * Sample Run
+ *
+ * $ java -cp .:../../../stdlib.jar RPNCalculator
+ * RPN Calculator Simulation (type H for help)
+ * > H
+ * Enter expressions in Reverse Polish Notation,
+ * in which operators follow the operands to which
+ * they apply. Each line consists of a number, an
+ * operator, or one of the following commnads:
+ *     	   Q -- Quit the program.
+ *	   H -- Display this help message.
+ *	   C -- Clear the calculator stack.
+ * []
+ * RPN Calculator Simulation (type H for help)
+ * > 3
+ * [3.0]
+ * RPN Calculator Simulation (type H for help)
+ * > 4
+ * [3.0, 4.0]
+ * RPN Calculator Simulation (type H for help)
+ * > 6
+ * [3.0, 4.0, 6.0]
+ * RPN Calculator Simulation (type H for help)
+ * > +
+ * [3.0, 10.0]
+ * RPN Calculator Simulation (type H for help)
+ * > *
+ * [30.0]
+ * RPN Calculator Simulation (type H for help)
+ * > 2
+ * [30.0, 2.0]
+ * RPN Calculator Simulation (type H for help)
+ * > -
+ * [28.0]
+ * RPN Calculator Simulation (type H for help)
+ * > 4
+ * [28.0, 4.0]
+ * RPN Calculator Simulation (type H for help)
+ * > /
+ * [7.0]
+ * RPN Calculator Simulation (type H for help)
+ * > C
+ * []
+ * RPN Calculator Simulation (type H for help)
+ * > Q
+ * []
+ */
+
+
+
+import java.util.Stack;
+
+
+public class RPNCalculator{
+
+    private static void printHelp(){
+	System.out.println("Enter expressions in Reverse Polish Notation, ");
+	System.out.println("in which operators follow the operands to which ");
+	System.out.println("they apply. Each line consists of a number, an " );
+	System.out.println("operator, or one of the following commnads: ");
+	System.out.println("\tQ -- Quit the program.");
+	System.out.println("\tH -- Display this help message.");
+	System.out.println("\tC -- Clear the calculator stack.");
+    }
+
+    private static void applyOperator(String op, Stack<Double> operandStack){
+	double lhs = operandStack.pop();
+	double rhs = operandStack.pop();
+	double ans = 0.0;
+	switch(op){
+	case "+":
+	    ans = rhs + lhs;
+	    break;
+	case "-":
+	    ans = rhs - lhs;
+	    break;
+	case "*":
+	    ans = rhs * lhs;
+	    break;
+	default:
+	    ans = rhs / lhs;
+	}
+	operandStack.push(ans);
+    }
+
+    public static void main(String [] args){
+	Stack<Double> operandStack = new Stack<Double>();
+	while (true){
+	    System.out.println("RPN Calculator Simulation (type H for help)");
+	    System.out.print("> ");
+	    String line = StdIn.readLine();
+	    if (line.equalsIgnoreCase("H")) printHelp();
+	    else if (line.equalsIgnoreCase("Q"))
+		break;
+	    else if (line.equalsIgnoreCase("C"))
+		operandStack.clear();
+
+	    else if (Character.isDigit(line.charAt(0)))
+		operandStack.push(Double.parseDouble(line));
+	    else if ("+-*/".indexOf(line) != -1)
+		applyOperator(line, operandStack);
+	    else System.out.println("Unidentified input.");
+	    System.out.println(operandStack);
+	}
+	System.out.println(operandStack);
+    }
+
+
+}
+
+==================================================================================================================
+Task #2: Group Work: Warm up exercises. Nothing to submit.
+==================================================================================================================
+1. What does the acronym LIFO stand for? How does it apply to stacks?
+    Last In First Out: This is how a stack operates, the last element to be put in the stack will be the first
+    element to be put out.
+
+2. What are the names of the two fundamental operations for a stack?
+    push(), pop();
+
+3. What does the peek operation do in the stack abstraction?
+    Returns the value of the top element in a stack without removing it.
+
+4. Write a program that uses a stack to reverse a sequence of integers
+   read from the console one number per line, as shown in the following
+   sample run:
+
+   Enter a list of integers, ending with 0:
+   ? 10
+   ? 22
+   ? 34
+   ? 40
+   ? 0
+   Those integers in reverse order are:
+     40
+     34
+     22
+     10
+
+5. Be prepared to present your solution.
+
+=================================================================================
+Task #3: Group Work :
+
+          Submit the file: Matching.java
+	                  - One submission per group.
+			  - Put your names in the documentation.
+=================================================================================
+  Write a program that checks whether the bracketing operators ( parentheses,
+  brackets, and curly braces) in a string are properly matched. As an example
+  of proper matching, consider the string:
+
+            { s = 2 * ( a[2] + 3); x = (1 + (2)); }
+
+   If you go through the string carefully, you will discover that all the bracketing
+   operators are correctly nested, with each open parenthesis matched by a close
+   parenthesis, each open bracket matched by a close bracket, and so on. On the
+   other hand, the following strings are all unbalanced for the reasons indicated:
+
+            (([])    The line is missing a close parehthesis.
+            )(       The close parenthesis comes before the open parenthesis.
+            {(})     The bracketing operators are improperly nested.
+
+
+  Sample Run:
+   $ java -cp .:../stdlib.jar Matching
+   > { s = 2 * ( a[2] + 3); x = (1 + (2)); }
+     matching bracketing operators
+   > (([])
+     mismatched bracketing operators
+   > )(
+     mismatched bracketing operators
+   > {(})
+     mismatched bracketing operators
+   > q
+
+==========================================================================================
+Task #4: Individual Work:
+
+         Submit the file: PostScript.java
+	                  Put your name in the documentation.
+==========================================================================================
+   PostScript is a powerful graphics language developed by the Adobe
+   Corporation in the early 1980s. PostScript programs store their data on a
+   stack. Many of the operators available in the PostScript language have the
+   effect of manipulating the stack in some way. You can, for example,
+   invoke the pop operator, which pops the top element off the stack,
+   or the each operator, which swaps the top two elements.
+
+   One of the most interesting (and surprisingly useful) PostScript operators
+   is the roll operator, which takes two arguments, n and k. The effect of
+   applying roll(n,k) is to rotate the top n elements of a stack by k
+   positions, where the general direction of the rotation is toward the top
+   of the stack. More specifically, roll(n,k) has the effect  of removing
+   the top n elements, cycling the top element to the last position k times,
+   and then replacing the reordered  elements on the stack. For example,
+
+   roll(4,1)            roll(3,2)            roll(2,4)
+
+   | D |    | C |       | D |    | B |       | D |    | D |
+   | C |    | B |       | C |    | D |       | C |    | C |
+   | B | -> | A |       | B | -> | C |       | B | -> | B |
+   | A |    | D |       | A |    | A |       | A |    | A |
+
+   Write the method
+
+         void roll(Stack<String> stack, int n, int k)
+
+   that implements the roll(n,k) operation on the specified stack. Your
+   implementation should check that n and k are both nonnegative and that
+   n is not larger thatn the stack size; if either of these conditions
+   is violated, your implementation should throw a runtime excpetion
+   with the message
+
+            roll: argument out of range
+
+PostScript.java
+----------------
+
+import java.util.Stack;
+
+
+public class PostScript{
+
+    public static void main(String [] args){
+        int n = Integer.parseInt(args[0]);
+        int k = Integer.parseInt(args[1]);
+        Stack<String> s = new Stack<String>();
+        s.push("A"); s.push("B"); s.push("C"); s.push("D");
+        System.out.println("Initial : " + s);
+        roll(s,n,k);
+        System.out.println("after roll(" + n +  ", " + k + "): " + s);
+    }
+
+    public static void roll(Stack<String> stack, int n, int k){
+           // YOUR CODE GOES HERE
+    }
+
+}
+
+
+Sample Runs:
+
+
+$ java PostScript 4 1
+Initial : [A, B, C, D]
+after roll(4, 1): [D, A, B, C]
+$ java PostScript 3 2
+Initial : [A, B, C, D]
+after roll(3, 2): [A, C, D, B]
+$ java PostScript 2 4
+Initial : [A, B, C, D]
+after roll(2, 4): [A, B, C, D]
+lesson.txt
+Displaying RPNCalculator.java.
