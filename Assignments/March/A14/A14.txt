@@ -1,0 +1,107 @@
+Data Structures
+Period 6
+Assignment-14 (Group Work)
+Rick Platek
+•
+Mar 9
+10 points
+Due Tomorrow
+=================================================================================
+Topic #4: Group work
+Queue Application: Checkout Line Simulator
+=================================================================================
+
+Assignment-14
+
+Submit the file : CheckoutLineSimulator.java
+
+Write a program that simulates a checkout line, such as one you might encounter
+in a supermarket. Customers arrive at the checkout stand and get in
+line. Those customers wait until the cashier is free, at which point
+they occupy the cashier for some period of time. After the service time
+is complete, the cashier is free to serve the next customer.
+
+In each second, the simulation performs the following operations:
+
+1. Determine whether a new customer has arrived. New customers arrive
+randomly, with a probability given by the constant ARRIVAL_PROBABILITY.
+The value of ARRIVAL_PROBABILITY is the first argument read from the
+command-line.
+
+
+
+2. If the cashier is busy with a customer, subtract one second from the time
+remaining to service this customer. When that count reaches zero, the current
+customer is finished.
+
+3. If the cashier is free, serve the next customer. The service time
+is uniformly distributed between MIN_SERVICE_TIME and MAX_SERVICE_TIME.
+
+MIN_SERVICE_TIME is the second argument read from the command-line. Its
+units is in seconds.
+
+MAX_SERVICE_TIME is the third argument read from the command-lint. Its
+units is in minutes.
+
+4. Update the SIMULATION_TIME.
+SIMULATION_TIME is the fourth command-line arguement. Its units is in
+minutes.
+
+At the end of the simulation, the program displays the simulation
+parameters along with the results of the simulation.
+
+Sample Runs:
+
+$ java CheckoutLineSimulator 0.004 3 5 60
+Simulation results given the following constants:
+SIMULATION_TIME: 60 min
+MIN_SERVICE_TIME: 3 sec
+MAX_SERVICE_TIME: 300 sec
+ARRIVAL_PROBABILITY: 0.004
+
+Customers served: 17
+Average waiting time: 2.59 min
+Average queue length: 0.73
+
+
+$ java CheckoutLineSimulator 0.004 3 5 60
+Simulation results given the following constants:
+SIMULATION_TIME: 60 min
+MIN_SERVICE_TIME: 3 sec
+MAX_SERVICE_TIME: 300 sec
+ARRIVAL_PROBABILITY: 0.004
+
+Customers served: 15
+Average waiting time: 1.90 min
+Average queue length: 0.50
+
+$ java CheckoutLineSimulator 0.007 30 10 120
+Simulation results given the following constants:
+SIMULATION_TIME: 120 min
+MIN_SERVICE_TIME: 30 sec
+MAX_SERVICE_TIME: 600 sec
+ARRIVAL_PROBABILITY: 0.007
+
+Customers served: 20
+Average waiting time: 43.05 min
+Average queue length: 23.28
+
+$ java CheckoutLineSimulator 0.007 30 10 120
+Simulation results given the following constants:
+SIMULATION_TIME: 120 min
+MIN_SERVICE_TIME: 30 sec
+MAX_SERVICE_TIME: 600 sec
+ARRIVAL_PROBABILITY: 0.007
+
+Customers served: 20
+Average waiting time: 27.70 min
+Average queue length: 11.09
+Class comments
+Your work
+Turned in
+
+CheckoutLineSimulator.java
+Java
+Private comments
+Assignment-14 (Group Work)
+Displaying CheckoutLineSimulator.java.Turning in…

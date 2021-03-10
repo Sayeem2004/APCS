@@ -1,0 +1,34 @@
+Data Structures
+Period 6
+Assignment-13 (Individual Work)
+Rick Platek
+•
+Mar 9
+10 points
+Due Tomorrow
+*****************************************************************
+******************* Individual Homework *************************
+
+Assignment-13
+
+2. Write a recursive version of reverseQueue(Queue<String> queue).
+In this version, you are not permitted to instantiate an auxiliary
+data structure.
+
+Use the following method heading:
+
+public static void reverseQueueR(Queue<String> queue)
+
+
+Place this second method in the ReverseQueue program, document
+your code (remember to put your name in the documentation) and
+submit the file ReverseQueue.java.
+Class comments
+Your work
+Turned in
+
+ReverseQueue.java
+Java
+Private comments
+Assignment-13 (Individual Work)
+Displaying CheckoutLineSimulator.java.Turning in…
