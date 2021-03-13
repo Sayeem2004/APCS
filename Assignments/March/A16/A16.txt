@@ -1,0 +1,66 @@
+Data Structures
+Period 6
+Assignment-16 (Individual Work)
+Rick Platek
+•
+8:38 AM
+10 points
+Due Mar 15
+==========================================================================
+The Josephus Problem (Classic Problem). (Individual Work)
+==========================================================================
+
+
+
+Josephus problem.
+In the Josephus problem from antiquity, n people are in dire straits and
+agree to the following strategy to reduce the population. They arrange
+themselves in a circle (at positions numbered from 1 to n) and proceed
+around the circle, eliminating every kth person until only one person is
+left. Legend has it that Josephus figured out where to sit to avoid being
+eliminated. Write a Queue client Josephus.java that takes two integer
+command-line arguments n and k and prints the order in which people are
+eliminated (and thus would show Josephus where to sit in the circle).
+
+
+
+
+Sample Runs
+
+$ java Josephus 5 2
+members: [1, 2, 3, 4, 5]
+poisoned: 2
+poisoned: 4
+poisoned: 1
+poisoned: 5
+Survivor: 3
+$ java Josephus 5 1
+members: [1, 2, 3, 4, 5]
+poisoned: 1
+poisoned: 2
+poisoned: 3
+poisoned: 4
+Survivor: 5
+$ java Josephus 5 3
+members: [1, 2, 3, 4, 5]
+poisoned: 3
+poisoned: 1
+poisoned: 5
+poisoned: 2
+Survivor: 4
+$ java Josephus 8 5
+members: [1, 2, 3, 4, 5, 6, 7, 8]
+poisoned: 5
+poisoned: 2
+poisoned: 8
+poisoned: 7
+poisoned: 1
+poisoned: 4
+poisoned: 6
+Survivor: 3
+Class comments
+Your work
+Assigned
+Private comments
+Assignment-16 (Individual Work)
+Page 1 of 1Turning in…

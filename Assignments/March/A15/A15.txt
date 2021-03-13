@@ -1,0 +1,128 @@
+Data Structures
+Period 6
+Assignment-15 (Group Work)
+Rick Platek
+•
+8:32 AM
+10 points
+Due Mar 15
+============================================================================
+Round Robin Schedulers
+============================================================================
+
+A popular use of a queue data structure is to implement a round robin
+scheduler, where we iterate through a collection of elements in a
+circular fashion and "service" each element by performing a given
+action on it.
+
+Such a schedule is used, to fairly allocate a resource that must be
+shared by a collection of clients.
+
+- allocate a slice of CPU time to various applications running
+concurrently on a computer.
+
+
+Implement a round robin scheduler using a queue, Q, by repeating
+performing the following 3 steps
+
+1. e <- Q.dequeue()
+2. service element e
+3. Q.enqueue(e)
+
+
+
+
+==========================================================================
+Hot Potato (Group Work)
+==========================================================================
+
+
+Simulate the Hot Potato Game
+============================
+In this game, children form a circle then pass an object
+around the circle. As the object is passed from one child to another,
+an adult will randomly yell out "HOT POTATO". Upon which the child holding
+the object is removed from the circle. The game continues with the next
+child until there is one child remaining.
+
+Use a Round Robin Scheduler to simulate the child's game Hot Potato.
+
+From the command line, read the probability that "HOT POTATO" is
+called.
+
+
+$java HotPotato 0.25
+Children: [Bobby, Sue, Amy, Mark, Danny, Kelly, Yuki]
+Potato: Bobby
+Children: [Sue, Amy, Mark, Danny, Kelly, Yuki, Bobby]
+Hot Potato: Sue
+Children: [Amy, Mark, Danny, Kelly, Yuki, Bobby]
+Hot Potato: Amy
+Children: [Mark, Danny, Kelly, Yuki, Bobby]
+Potato: Mark
+Children: [Danny, Kelly, Yuki, Bobby, Mark]
+Potato: Danny
+Children: [Kelly, Yuki, Bobby, Mark, Danny]
+Potato: Kelly
+Children: [Yuki, Bobby, Mark, Danny, Kelly]
+Potato: Yuki
+Children: [Bobby, Mark, Danny, Kelly, Yuki]
+Potato: Bobby
+Children: [Mark, Danny, Kelly, Yuki, Bobby]
+Potato: Mark
+Children: [Danny, Kelly, Yuki, Bobby, Mark]
+Potato: Danny
+Children: [Kelly, Yuki, Bobby, Mark, Danny]
+Potato: Kelly
+Children: [Yuki, Bobby, Mark, Danny, Kelly]
+Potato: Yuki
+Children: [Bobby, Mark, Danny, Kelly, Yuki]
+Hot Potato: Bobby
+Children: [Mark, Danny, Kelly, Yuki]
+Potato: Mark
+Children: [Danny, Kelly, Yuki, Mark]
+Potato: Danny
+Children: [Kelly, Yuki, Mark, Danny]
+Hot Potato: Kelly
+Children: [Yuki, Mark, Danny]
+Potato: Yuki
+Children: [Mark, Danny, Yuki]
+Potato: Mark
+Children: [Danny, Yuki, Mark]
+Potato: Danny
+Children: [Yuki, Mark, Danny]
+Potato: Yuki
+Children: [Mark, Danny, Yuki]
+Potato: Mark
+Children: [Danny, Yuki, Mark]
+Potato: Danny
+Children: [Yuki, Mark, Danny]
+Potato: Yuki
+Children: [Mark, Danny, Yuki]
+Potato: Mark
+Children: [Danny, Yuki, Mark]
+Potato: Danny
+Children: [Yuki, Mark, Danny]
+Potato: Yuki
+Children: [Mark, Danny, Yuki]
+Hot Potato: Mark
+Children: [Danny, Yuki]
+Potato: Danny
+Children: [Yuki, Danny]
+Potato: Yuki
+Children: [Danny, Yuki]
+Potato: Danny
+Children: [Yuki, Danny]
+Potato: Yuki
+Children: [Danny, Yuki]
+Potato: Danny
+Children: [Yuki, Danny]
+Potato: Yuki
+Children: [Danny, Yuki]
+Hot Potato: Danny
+Children: [Yuki]
+Winner: Yuki
+Class comments
+Your work
+Assigned
+Private comments

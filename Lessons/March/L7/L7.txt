@@ -1,0 +1,238 @@
+Data Structures
+Period 6
+Lesson-07
+Rick Platek
+•
+7:39 AM
+
+lesson.txt
+Text
+Class comments
+
+Marking as done…
+============================================================================
+Topic #1: Class Participation Discussion
+============================================================================
+  - 15% of your grade
+  - A raw score is reported via Google Classroom.
+
+    Current Statistics and Scale
+
+      Class Average: 15.5
+
+       17 and above Exemplary
+       15 - 16      Proficient
+       11 - 14      Developing
+       0 -  10      Unacceptable
+
+  - Read the Class Participation Guidelines
+
+  - The score will be updated weekly.
+
+  - If you are concerned with your class participation grade,
+    come to my office hours.
+
+
+============================================================================
+Topic #2:  Academic Honesty (Individual Assignments)
+============================================================================
+	- You must do your own work.
+	- Do not share your code.
+
+	Problem Sets are Individual Assignments
+		- partial credit will be given
+
+
+============================================================================
+Topic #3: Volunteers To Present Matching.java
+============================================================================
+
+
+============================================================================
+Topic #4: Volunteers To Present PostScript.java
+============================================================================
+
+
+============================================================================
+Topic #5: Work on the CheckoutLine Simulator. (Group Work)
+============================================================================
+
+
+============================================================================
+Topic #6: UPCOMING ASSIGNMENTS
+============================================================================
+
+
+============================================================================
+Round Robin Schedulers
+============================================================================
+
+A populur use of a queue data structure is to implement a round robin
+scheduler, where we iterate through a collection of elements in a
+circular fashion and "service" each element by performing a given
+action on it.
+
+Such a schedule is used, to fairly allocate a resource that must be
+shared by a collection of clients.
+
+   - allocate a slice of CPU time to various applications running
+     concurrently on a computer.
+
+
+Implement a round robin scheduler using a queue, Q, by repeating
+performing the following 3 steps
+
+           1. e <- Q.dequeue()
+           2. service element e
+           3. Q.enqueue(e)
+
+
+==========================================================================
+Hot Potato (Group Work)
+==========================================================================
+
+
+Simulate the Hot Potato Game
+   ============================
+   In this game, children form a circle then pass an object
+   around the circle. As the object is passed from one child to another,
+   an adult will randomly yell out "HOT POTATO". Upon which the child holding
+   the object is removed from the circle. The game countinues with the next
+   child until there is one child remaining.
+
+   Use a Round Robin Scheduler to simulate the child's game Hot Potato.
+
+   From the command line, read the probability that "HOT POTATO" is
+   called.
+
+
+   $java HotPotato 0.25
+   Children: [Bobby, Sue, Amy, Mark, Danny, Kelly, Yuki]
+   Potato: Bobby
+   Children: [Sue, Amy, Mark, Danny, Kelly, Yuki, Bobby]
+   Hot Potato: Sue
+   Children: [Amy, Mark, Danny, Kelly, Yuki, Bobby]
+   Hot Potato: Amy
+   Children: [Mark, Danny, Kelly, Yuki, Bobby]
+   Potato: Mark
+   Children: [Danny, Kelly, Yuki, Bobby, Mark]
+   Potato: Danny
+   Children: [Kelly, Yuki, Bobby, Mark, Danny]
+   Potato: Kelly
+   Children: [Yuki, Bobby, Mark, Danny, Kelly]
+   Potato: Yuki
+   Children: [Bobby, Mark, Danny, Kelly, Yuki]
+   Potato: Bobby
+   Children: [Mark, Danny, Kelly, Yuki, Bobby]
+   Potato: Mark
+   Children: [Danny, Kelly, Yuki, Bobby, Mark]
+   Potato: Danny
+   Children: [Kelly, Yuki, Bobby, Mark, Danny]
+   Potato: Kelly
+   Children: [Yuki, Bobby, Mark, Danny, Kelly]
+   Potato: Yuki
+   Children: [Bobby, Mark, Danny, Kelly, Yuki]
+   Hot Potato: Bobby
+   Children: [Mark, Danny, Kelly, Yuki]
+   Potato: Mark
+   Children: [Danny, Kelly, Yuki, Mark]
+   Potato: Danny
+   Children: [Kelly, Yuki, Mark, Danny]
+   Hot Potato: Kelly
+   Children: [Yuki, Mark, Danny]
+   Potato: Yuki
+   Children: [Mark, Danny, Yuki]
+   Potato: Mark
+   Children: [Danny, Yuki, Mark]
+   Potato: Danny
+   Children: [Yuki, Mark, Danny]
+   Potato: Yuki
+   Children: [Mark, Danny, Yuki]
+   Potato: Mark
+   Children: [Danny, Yuki, Mark]
+   Potato: Danny
+   Children: [Yuki, Mark, Danny]
+   Potato: Yuki
+   Children: [Mark, Danny, Yuki]
+   Potato: Mark
+   Children: [Danny, Yuki, Mark]
+   Potato: Danny
+   Children: [Yuki, Mark, Danny]
+   Potato: Yuki
+   Children: [Mark, Danny, Yuki]
+   Hot Potato: Mark
+   Children: [Danny, Yuki]
+   Potato: Danny
+   Children: [Yuki, Danny]
+   Potato: Yuki
+   Children: [Danny, Yuki]
+   Potato: Danny
+   Children: [Yuki, Danny]
+   Potato: Yuki
+   Children: [Danny, Yuki]
+   Potato: Danny
+   Children: [Yuki, Danny]
+   Potato: Yuki
+   Children: [Danny, Yuki]
+   Hot Potato: Danny
+   Children: [Yuki]
+   Winner: Yuki
+
+
+
+==========================================================================
+The Josephus Problem (Classic Problem). (Individual Work)
+==========================================================================
+
+
+
+ Josephus problem.
+ In the Josephus problem from antiquity, n people are in dire straits and
+ agree to the following strategy to reduce the population. They arrange
+ themselves in a circle (at positions numbered from 1 to n) and proceed
+ around the circle, eliminating every kth person until only one person is
+ left. Legend has it that Josephus figured out where to sit to avoid being
+ eliminated. Write a Queue client Josephus.java that takes two integer
+ command-line arguments n and k and prints the order in which people are
+ eliminated (and thus would show Josephus where to sit in the circle).
+
+
+
+
+ Sample Runs
+
+ $ java Josephus 5 2
+ members: [1, 2, 3, 4, 5]
+ poisoned: 2
+ poisoned: 4
+ poisoned: 1
+ poisoned: 5
+ Survivor: 3
+ $ java Josephus 5 1
+ members: [1, 2, 3, 4, 5]
+ poisoned: 1
+ poisoned: 2
+ poisoned: 3
+ poisoned: 4
+ Survivor: 5
+ $ java Josephus 5 3
+ members: [1, 2, 3, 4, 5]
+ poisoned: 3
+ poisoned: 1
+ poisoned: 5
+ poisoned: 2
+ Survivor: 4
+ $ java Josephus 8 5
+ members: [1, 2, 3, 4, 5, 6, 7, 8]
+ poisoned: 5
+ poisoned: 2
+ poisoned: 8
+ poisoned: 7
+ poisoned: 1
+ poisoned: 4
+ poisoned: 6
+ Survivor: 3
+
+
+lesson.txt
+Displaying lesson.txt.
