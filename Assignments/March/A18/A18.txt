@@ -1,0 +1,70 @@
+Data Structures
+Period 6
+Assignment-18 (Individual Work)
+Rick Platek
+•
+8:56 AM
+20 points
+Due Mar 19
+
+assignment-18.txt
+Text
+Class comments
+Your work
+Assigned
+Private comments
+====================================================================================
+Assignment-18: Individual Work:  FindAreaCode.java
+====================================================================================
+
+
+
+Assignment-18:
+
+  Telephone numbers in the United States and Canada are organized into various
+  three-digit area codes. A single state or province often has many area codes,
+  but a single area code never crosses a state or provincial boundary. This rule
+  makes it possible to list the geographical locations of each area code in a date
+  file. For this program, use In.java to access the data from the file:
+
+              phone-na.csv
+	      located here https://introcs.cs.princeton.edu/java/data/phone-na.csv
+
+  which contains the North American telephone codes.
+
+  Use the AirportCodes program as a model, write the program FindAreaCode
+  to read this file into Map<Integer,String>, where the key is the area code and
+  the value is the location. Once you've read in the data, then repeatedly ask
+  the user for an area code and then look up the corresponding location, as illustrated
+  in the following sample run:
+
+     $ java FindAreaCode
+     Enter area code or state name: 650
+     California
+     Enter area code or state name: 202
+     District of Columbia
+     Enter area code or state name: 778
+     British Columbia
+     Enter area code or state name: -1
+
+
+   When the user enters -1 your program must terminate.
+
+   As the prompt suggests, however, your program should also allow users to
+   enter the name of a state or province and have the program list all the area
+   codes that serve that area, as illustrated by the following sample run:
+
+   $ java FindAreaCode
+   Enter area code or state name: Oregon
+   503
+   541
+   971
+   Enter area code or state name: -1
+
+
+  Submit the file: FindAreaCode.java
+                   Put your name in the documentation.
+		   Your program must use In.java and the file phone-na.csv.
+
+assignment-18.txt
+Displaying MorseCode.java.Turning in…

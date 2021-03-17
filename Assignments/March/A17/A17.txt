@@ -1,0 +1,64 @@
+Data Structures
+Period 6
+Assignment-17(Group Work)
+Rick Platek
+•
+Mar 15
+10 points
+Due Mar 19
+
+assignment-17.txt
+Text
+
+morse.txt
+Text
+Class comments
+Your work
+Assigned
+Private comments
+
+
+
+====================================================================================================
+   Morse Code (Group Assignment).
+
+   Chart : https://en.wikipedia.org/wiki/Morse_code
+===================================================================================================
+
+   Write a program that reads in lines from the user and translates each
+   line either to or from Morse code, depending on the first character
+   of the line:
+
+   * If the line starts with -1 then terminate the program.
+
+   * If the line starts with a letter, you want to translate it to Morse
+     code. Any characters other than the 26 letters should simply be
+     ignored.
+
+   * If the line starts with a period (dot) or a hyphen (dash), it should
+     read as a series of Morse code characters that you need to translate
+     back to letters. You may assume that each sequence of dots and dashes
+     in the input string will be separated by spaces, and you are free to
+     ignore any other characters that appear. Because there is no encoding
+     for the space between words, the characters of the translated
+     message will be run together when your program translates in this
+     direction.
+
+   The program should end when the user enters -1. A sample run
+   of this program might look like this:
+
+   Morse code translator
+   > SOS TITANTIC
+     ... --- ... - .. - .--. .. -.-.
+   > WE ARE SINKING FAST
+    .-- . .- .-. . ... .. -. -.- .. -. --. ..-. .- ... -
+   > .... . .- -.. .. -. --. ..-. --- .-. -.-- --- ..-
+     HEADINGFORYOU
+   > -1
+
+   You must use a map data structure to store the letters and the
+   Morse Code.
+
+   Your program should read the morse codes from morse.txt.
+assignment-17.txt
+Displaying assignment-17.txt.

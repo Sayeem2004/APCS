@@ -1,0 +1,192 @@
+Data Structures
+Period 6
+Lesson-08
+Rick Platek
+•
+8:43 AM
+
+AirportCodes.java
+Java
+
+airports.csv
+Comma Separated Values
+
+lesson.txt
+Text
+
+MapDemo.java
+Java
+Class comments
+
+Lesson-08
+================================================================================================
+Topic #1: The Map Abstraction (aka Symbol Table, Dictionary, Associative Array).
+================================================================================================
+
+  Read the Wikipedia Page for Associative Array (up to the Implementation Section).
+
+       https://en.wikipedia.org/wiki/Associative_array
+
+
+
+
+================================================================================================
+Tpoic #2: The Java Collections Framework
+================================================================================================
+
+  Map is an interface.
+
+  The two concrete classes : TreeMap and HashMap implement this interface.
+
+  The HashMap is slightly more efficient, but less convenient to use for applications that
+  require processing keys in order.
+
+  ex 1.
+      To simulate a dictionary in which individual words are associated with their definitions
+      you might declare:
+
+         Map<String,String> dictionary = new TreeMap<String, String>();
+
+
+  ex 2.
+      If you were implementing a programming language, you could use a Map to store the values of
+      floating-point variables as follows:
+
+         Map<String, Double> varTable = new HashMap<String, Double>();
+
+
+Map Interface API
+------------------
+
+ size()            Returns the number of key/value paris contained int the map.
+
+ isEmpty()         Returns true if the map is empty.
+
+ put(key,value)    Associates the specified key and value in the map. If key has
+                   no previous definition, a new entry is added; if a previous association
+		   exists, the old value is discarded and replaced by the new one.
+
+ get(key)          Returns the value currently associated with key in the map. If key is not
+                   defined, get returns null.
+
+ remove(key)       Removes key from the map along with any associated value. If key does not
+                   exist, this call leaves the map unchanged.
+
+ containsKey(key)  Returns true if key is associated with a value.
+
+ clear()           Removes all the key/value pairs from the map.
+
+ keySet()          Returns a set of all the keys in the map.
+
+
+================================================================================================
+Topic #3: Review MapDemo.java
+          Associates variable names with floating-point numbers.
+================================================================================================
+The program MapDemo takes an integer command-line arguement, n, and allows the user
+to store n key-value pairs.
+
+$ java -cp .:../stdlib.jar MapDemo 5
+hash map : {}
+tree map : {}
+Enter variable name -> wt
+Enter a floating-point value -> 235.5
+hash map : {wt=235.5}
+tree map : {wt=235.5}
+Enter variable name -> ht
+Enter a floating-point value -> 73.2
+hash map : {ht=73.2, wt=235.5}
+tree map : {ht=73.2, wt=235.5}
+Enter variable name -> age
+Enter a floating-point value -> 55.3
+hash map : {ht=73.2, wt=235.5, age=55.3}
+tree map : {age=55.3, ht=73.2, wt=235.5}
+Enter variable name -> wt
+Enter a floating-point value -> 240.4
+hash map : {ht=73.2, wt=240.4, age=55.3}
+tree map : {age=55.3, ht=73.2, wt=240.4}
+Enter variable name -> shoeSize
+Enter a floating-point value -> 11.5
+hash map : {shoeSize=11.5, ht=73.2, wt=240.4, age=55.3}
+tree map : {age=55.3, ht=73.2, shoeSize=11.5, wt=240.4}
+sum the values: 380.40000000000003
+
+
+
+
+
+
+
+
+====================================================================================================
+Topic #4: Map Exercise
+====================================================================================================
+   Test your knowledge with this exercise.
+
+   CodeStepByStep: Collection:Map:collectionMystery1
+
+   Link:  https://www.codestepbystep.com/problemset/view?id=2809
+
+
+
+====================================================================================================
+Topic #5: An application :  AirportCodes.java
+====================================================================================================
+Airport code: BOS
+BOS is  Boston Logan International
+Airport code: LGA
+LGA is  New York La Guardia
+Airport code: JFK
+JFK is  New York John F. Kennedy International
+Airport code: YYZ
+YYZ is  Lester B. Pearson International (Toronto)
+Airport code: SU
+There is no such airport code
+Airport code: -1
+
+
+
+
+====================================================================================================
+5. Morse Code (Individual Assignment).
+
+   Chart : https://en.wikipedia.org/wiki/Morse_code
+===================================================================================================
+
+   Write a program that reads in lines from the user and translates each
+   line either to or from Morse code, depending on the first character
+   of the line:
+
+   * If the line starts with -1 then terminate the program.
+
+   * If the line starts with a letter, you want to translate it to Morse
+     code. Any characters other than the 26 letters should simply be
+     ignored.
+
+   * If the line starts with a period (dot) or a hyphen (dash), it should
+     read as a series of Morse code characters that you need to translate
+     back to letters. You may assume that each sequence of dots and dashes
+     in the input string will be separated by spaces, and you are free to
+     ignore any other characters that appear. Because there is no encoding
+     for the space between words, the characters of the translated
+     message will be run together when your program translates in this
+     direction.
+
+   The program should end when the user enters -1. A sample run
+   of this program might look like this:
+
+   Morse code translator
+   > SOS TITANTIC
+     ... --- ... - .. - .--. .. -.-.
+   > WE ARE SINKING FAST
+    .-- . .- .-. . ... .. -. -.- .. -. --. ..-. .- ... -
+   > .... . .- -.. .. -. --. ..-. --- .-. -.-- --- ..-
+     HEADINGFORYOU
+   > -1
+
+   You must use a map data structure to store the letters and the
+   Morse Code.
+
+   Your program should read the morse codes from morse.txt.
+lesson.txt
+Displaying morse.txt.
