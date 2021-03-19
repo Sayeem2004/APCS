@@ -1,0 +1,255 @@
+Data Structures
+Period 6
+Lesson-09
+Rick Platek
+•
+8:46 AM
+
+lesson.txt
+Text
+
+Lexicon.java
+Java
+
+ospd.txt
+Text
+Class comments
+
+======================================================================
+Present a solution to the recursive reverseQueueR() method.
+======================================================================
+ Write a recursive version of reverseQueue(Queue<String> queue).
+   In this version, you are not permitted to instantiate an auxiliary
+   data structure.
+
+   Use the following method heading:
+
+      public static void reverseQueueR(Queue<String> queue)
+
+
+   Place this second method in the ReverseQueue program, document
+   your code (remember to put your name in the documentation) and
+   submit the file ReverseQueue.java.
+
+
+
+   public static void reverseQueueR(Queue<String> queue){ }
+
+
+
+
+=====================================================================================
+The Set Abstraction
+=====================================================================================
+
+
+ The Set interface is used to model the mathematical abstraction of a set, which
+ is a collection in which elements are unordered and in which each value appears
+ only once.
+
+
+
+
+
+ The Set interface API
+ -----------------------
+
+  size()	  Returns the number of elements in the set.
+
+  isEmpty()       Returns true if the set is empty.
+
+  add(value)      Adds the value to the set. If the value is already in the set,
+                  no error is generated and the set remains unchanged.
+
+  remove(value)   Removes the value from the set. If the value is not present, no
+                  error is generated, and the set remains unchanged.
+
+  contains(value) Returns true if the value is in the set.
+
+  clear()         Removes all elements from the set.
+
+
+
+
+There are two concrete implementations HashSet and TreeSet.
+
+  A HashSet uses a hash table, so like the HashMap the elements, are not ordered.
+
+
+  A TreeSet uses a binary search tree, so like the TreeMap, the elements are
+  ordered.
+
+  The operations of a HashSet is slightly more efficient than the operations of
+  the TreeSet.
+
+===================================================================================
+Example Application: Creating and using a Lexicon.
+===================================================================================
+
+A set of words with no associated definitions in called a lexicon.
+
+Lexicons are useful in such application such as a spell checker or Scrabble.
+
+
+You can get the Official Scrabble player's dictionary here:
+
+   https://introcs.cs.princeton.edu/java/data/ospd.txt
+
+
+--- Compile an run the program: Lexicon.java
+
+--- If you change the TreeSet to a HashSet what happens?
+
+
+
+
+
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.HashSet;
+
+
+public class Lexicon{
+
+
+    public static void main(String[] args){
+	// official Scrabble lexicon
+	// one word per line
+
+	In in = new In("ospd.txt");
+	Set<String> lexicon = new TreeSet<String>();
+
+	while (!in.isEmpty()){
+	    String s = in.readLine();
+	    lexicon.add(s);
+
+	}
+
+	System.out.println(lexicon);
+
+
+    }
+
+
+}
+
+
+
+
+
+
+====================================================================================
+ Using iterators
+====================================================================================
+
+ Iterating through the elements is a fundamental operation for any collection class.
+
+ The Java Collections Framework offers a powerful mechanism called an "iterator" for
+ doing this operation.
+
+ An example of an iterator used via the for-each loop:
+
+    for (type  variable: collection){
+    	body of the loop
+    }
+
+
+ The package of collection class is designed so clients are able to use  the
+ same strategy to peform that operation, no matter whether they are are cycling
+ through all elements in an ArrayList, a Set, or even a Java array.
+
+
+
+  --- Demonstrate using an iterator via the for-each loop by
+      modifying the Lexicon program to print each 7 letter word one per line.
+
+
+
+===================================================================================
+Exercise: removeRange  Code Step By Step
+===================================================================================
+
+
+https://www.codestepbystep.com/problemset/view?id=2819
+
+
+====================================================================================
+Assignment-17: Group Work   submit : MorseCode.java
+
+                            Put your names in the documentation.
+			    Your program must work with morse.txt and use In.java.
+
+====================================================================================
+====================================================================================
+
+====================================================================================
+Assignment-18: Individual Work:  FindAreaCode.java
+====================================================================================
+
+
+====================================================================================
+Assignment-18: Individual Work:  FindAreaCode.java
+====================================================================================
+
+====================================================================================
+Assignment-18: Individual Work:  FindAreaCode.java
+====================================================================================
+
+
+
+Assignment-18:
+
+  Telephone numbers in the United States and Canada are organized into various
+  three-digit area codes. A single state or province often has many area codes,
+  but a single area code never crosses a state or provincial boundary. This rule
+  makes it possible to list the geographical locations of each area code in a date
+  file. For this program, use In.java to access the data from the file:
+
+              phone-na.csv
+	      located here https://introcs.cs.princeton.edu/java/data/phone-na.csv
+
+  which contains the North American telephone codes.
+
+  Use the AirportCodes program as a model, write the program FindAreaCode
+  to read this file into Map<Integer,String>, where the key is the area code and
+  the value is the location. Once you've read in the data, then repeatedly ask
+  the user for an area code and then look up the corresponding location, as illustrated
+  in the following sample run:
+
+     $ java FindAreaCode
+     Enter area code or state name: 650
+     California
+     Enter area code or state name: 202
+     District of Columbia
+     Enter area code or state name: 778
+     British Columbia
+     Enter area code or state name: -1
+
+
+   When the user enters -1 your program must terminate.
+
+   As the prompt suggests, however, your program should also allow users to
+   enter the name of a state or province and have the program list all the area
+   codes that serve that area, as illustrated by the following sample run:
+
+   $ java FindAreaCode
+   Enter area code or state name: Oregon
+   503
+   541
+   971
+   Enter area code or state name: -1
+
+
+  Submit the file: FindAreaCode.java
+                   Put your name in the documentation.
+		   Your program must use In.java and the file phone-na.csv.
+
+
+
+
+
+
+
+
+lesson.txt
+Displaying lesson.txt.

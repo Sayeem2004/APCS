@@ -7,8 +7,8 @@
 
     Notes: A program that accepts character and morse code sequences and translates them. This program
     only accepts letters and morse code for letters and ignores all other characters. If a morse code
-    is given for a non-letter character the program will print out null instead of the character. Input
-    -1 to stop the program.
+    is given for a non-letter character or a non-letter character is given the program skips them.
+    Input -1 to stop the program.
 
     > java MorseCode
     Morse Code Translator
@@ -22,7 +22,6 @@
       HEADINGFORYOU
     > -1
 ****************************************************************************************************/
-
 import java.util.*;
 
 public class MorseCode {
@@ -71,12 +70,14 @@ public class MorseCode {
                 for (int i = 0; i < a.length(); i++) {
                     char t = a.charAt(i);
                     if (t == ' ') {
-                        System.out.print(fromMorse.get(b));
+                        if (fromMorse.containsKey(b))
+                            System.out.print(fromMorse.get(b));
                         b = ""; continue;
                     }
                     if (t == '-' || t == '.') b += t;
                 }
-                System.out.print(fromMorse.get(b));
+                if (fromMorse.containsKey(b))
+                    System.out.print(fromMorse.get(b));
             }
 
             System.out.println();

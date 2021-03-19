@@ -12,7 +12,6 @@
     queue: [alice, ben, carol, dave, eunice]
     reversed queue: [eunice, dave, carol, ben, alice]
     recursively reversed queue: [eunice, dave, carol, ben, alice]
-
 ****************************************************************************************************/
 import java.util.*;
 

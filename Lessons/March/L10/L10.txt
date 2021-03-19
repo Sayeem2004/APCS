@@ -1,0 +1,181 @@
+Data Structures
+Period 6
+Lesson-10
+Rick Platek
+•
+7:53 AM
+
+lesson.txt
+Text
+Class comments
+
+=======================================================================
+Task #1 : Warm Up Exercises
+=======================================================================
+
+ -Collections/Sets
+      1-numUniqueValues
+      2-numInCommon
+
+
+ Link: https://www.codestepbystep.com/problemset/view?id=2824
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+========================================================================
+Task #2: GPA.java - Group Work
+========================================================================
+Write a Map client GPA.java that creates a symbol table mapping letter
+grades to numerical scores, as in the table below, and then reads from
+standard input a list of letter grades and computes their average (GPA).
+
+     A+   A    A-   B+   B    B-   C+   C    C-   D    F
+    4.33 4.00 3.67 3.33 3.00 2.67 2.33 2.00 1.67 1.00 0.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+========================================================================
+Task#3: FrequencyTable.java - Group Work
+========================================================================
+
+Write a program,FrequencyTable.java, that displays a table showing the
+number of words that appear in the English lexicon, sorted by length of
+the word.
+
+Your program must use a Map and process the words found here:
+https://introcs.cs.princeton.edu/java/data/words.utf-8.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+========================================================================
+Task #4: ScrabbleShooks.java - Group Work
+========================================================================
+
+One of the most important stategic principles in Scrabble is to conserve
+your S tiles, because the rules for English plurals mean that many words
+take on S-hook at the end. Some words, of course, allow an S tile to be
+added at the beginning, but it turns out that there are words --including
+for example, both the words "cold" and "hot" -- that allow S-hooks on
+either end. Write a program that uses the Scrabble dictionary to make
+a list of all such words.
+
+Scrabble dictionary: https://introcs.cs.princeton.edu/java/data/ospd.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=========================================================================
+Task #5: RandomPhoneNumbers.java - Individual Work
+=========================================================================
+
+Write a program that takes a command line input N and prints N random
+phone numbers of the form (xxx) xxx-xxxx. Use a symbol table to avoid
+choosing the same number more than once.
+
+Use this list of area codes
+
+   https://introcs.cs.princeton.edu/java/data/phone-na.csv
+
+to avoid printing out bogus area codes.
+
+
+
+
+
+
+
+
+
+
+
+
+===========================================================================
+Task #6: UniqueSubstringsOfLengthL.java - Individual Work
+===========================================================================
+Write a program that reads in text from standard input and calculate the
+number of unique substrings of length L that it contains. For example, if
+the input is cgcgggcgcg then there are 5 unique substrings of length 3:
+            cgc, cgg, gcg, ggc, and ggg.
+
+Applications to data compression.
+
+Hint: use the string method substring(i, i + L) to extract ith substring
+and insert into an appropriate collection.
+Test it out on the first million digits of pi
+
+  https://introcs.cs.princeton.edu/java/data/pi-1million.txt
+
+or 10 million digits of pi
+
+  https://introcs.cs.princeton.edu/java/data/pi-10million.txt
+lesson.txt
+Displaying lesson.txt.

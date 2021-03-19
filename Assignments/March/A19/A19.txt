@@ -1,0 +1,71 @@
+Data Structures
+Period 6
+Assignment-19 (Group Work)
+Rick Platek
+•
+7:54 AM
+10 points
+Due Mar 24
+
+assignment-19-GroupWork.txt
+Text
+Class comments
+Your work
+Turned in
+
+GPA.java
+Java
+
+FrequencyTable.java
+Java
+
+ScrabbleShooks.java
+Java
+Private comments
+Assignment-19 (Group Work)
+One submission per group.
+Put your names in the documentation.
+Submit the following 3 files:
+       1. GPA.java
+       2. FrequencyTable.java
+       3. ScrabbleShooks.java
+
+========================================================================
+GPA.java
+=======================================================================
+
+
+
+Write a Map client GPA.java that creates a symbol table mapping letter
+grades to numerical scores, as in the table below, and then reads from
+standard input a list of letter grades and computes their average (GPA).
+
+     A+   A    A-   B+   B    B-   C+   C    C-   D    F
+    4.33 4.00 3.67 3.33 3.00 2.67 2.33 2.00 1.67 1.00 0.00
+
+========================================================================
+ FrequencyTable.java
+========================================================================
+
+Write a program,FrequencyTable.java, that displays a table showing the
+number of words that appear in the English lexicon, sorted by lenth of
+the word.
+
+Your program must use a Map and process the words found here:
+https://introcs.cs.princeton.edu/java/data/words.utf-8.txt
+
+========================================================================
+ ScrabbleShooks.java
+========================================================================
+
+One of the most important stategic principles in Scrabble is to conserve
+your S tiles, because the rules for English plurals mean that many words
+take on S-hook at the end. Some words, of course, allow an S tile to be
+added at the beginning, but it turns out that there are words --including
+for example, both the words "cold" and "hot" -- that allow S-hooks on
+either end. Write a program that uses the Scrabble dictionary to make
+a list of all such words.
+
+Scrabble dictionary: https://introcs.cs.princeton.edu/java/data/ospd.txt
+assignment-19-GroupWork.txt
+Displaying APUSH Period 7-C5 2020 Roosvelt.NewDeal.docx.Turning in…

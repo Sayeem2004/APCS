@@ -1,0 +1,59 @@
+Data Structures
+Period 6
+Assignment-20 (Individual Work)
+Rick Platek
+•
+7:55 AM
+10 points
+Due Mar 24
+
+assignment-20-IndividualWork.txt
+Text
+Class comments
+Your work
+Assigned
+Private comments
+Individual Work
+Submit the files:
+
+    1. RandomPhoneNumbers.java
+    2. UniqueSubstringsOfLengthL.java
+
+
+=========================================================================
+Task #5: RandomPhoneNumbers.java
+=========================================================================
+
+Write a program that takes a command line input N and prints N random
+phone numbers of the form (xxx) xxx-xxxx. Use a symbol table to avoid
+choosing the same number more than once.
+
+Use this list of area codes
+
+   https://introcs.cs.princeton.edu/java/data/phone-na.csv
+
+to avoid printing out bogus area codes.
+
+
+
+===========================================================================
+Task #6: UniqueSubstringsOfLengthL.java
+===========================================================================
+Write a program that reads in text from standard input and calculate the
+number of unique substrings of length L that it contains. For example, if
+the input is cgcgggcgcg then there are 5 unique substrings of length 3:
+            cgc, cgg, gcg, ggc, and ggg.
+
+Applications to data compression.
+
+Hint: use the string method substring(i, i + L) to extract ith substring
+and insert into an appropriate collection.
+Test it out on the first million digits of pi
+
+  https://introcs.cs.princeton.edu/java/data/pi-1million.txt
+
+or 10 million digits of pi
+
+  https://introcs.cs.princeton.edu/java/data/pi-10million.txt
+assignment-20-IndividualWork.txt
+Displaying assignment-20-IndividualWork.txt.
