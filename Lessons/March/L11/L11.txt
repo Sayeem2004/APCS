@@ -1,0 +1,219 @@
+Data Structures
+Period 6
+Lesson-11
+Rick Platek
+•
+8:46 AM
+
+AnimatedHanoi.java
+Java
+
+lesson.txt
+Text
+Class comments
+
+=======================================================================
+Task #1: Recursion
+=======================================================================
+
+
+Recall the recursive solution to calculating the factorial of n.
+
+   // Precondition: n is nonnegative
+   public static int factorial(int n){
+   	  if ( n < 2) return n;   // base case
+	  return n * factorial(n-1);  // recursive step
+   }
+
+
+Trace Diagram:
+
+factorial(3)
+= 3 * factorial(2)
+= 3 * 2 * factorial(1)  <-- Base Case
+= 3 * 2 * 1
+= 3 * 2
+= 6
+
+
+
+
+
+- Divide-and-Conquer Algorithms
+
+    When faced with a recursive problem, it is important to ignore the
+    details and think instead about the big picture. What you need to
+    do is think about the problem as a whole and determine whether there
+    is any way to divide it into problems of the same form that are
+    easier to solve. Because recursive techniques invariably involve
+    dividing a hard problem into simpler pieces and then solving those
+    subproblems using the same approach, recursive solutions are often
+    called "divide-and-conquer" algorithms.
+
+
+
+
+
+----------------- Exercise #1: Recursion warm up. --------------------
+
+
+1. Complete the digitSorted method found here:
+
+   https://www.codestepbystep.com/problemset/view?id=2849
+
+
+
+
+
+2. Draw a trace diagram for digitSorted(2345).
+
+digitSorted(2345)
+= digitSorted(234)
+= digitSorted(23)
+= digitSorted(2)
+= true
+
+
+
+
+
+
+
+
+
+3. Draw a trace diagram for  digitSorted(24378).
+digitSorted(24378)
+= digitSorted(2437)
+= digitSorted(243)
+= false
+
+
+
+=============================================================================
+   The Recursive Paradigm - a template for writing recursive methods.
+=============================================================================
+
+-- In general, the body of a recursive method has the following form:
+
+         if (test for simple case){
+	    Compute a simple solution without using recursion.
+	 }
+	 else{
+	    Break the problem down into subproblems of the same form.
+	    Solve each of the subproblems by calling this method recursively.
+	    Reassemble the subproblem into a solution for the whole.
+	 }
+
+
+--------------------- Exercise #2 ------------------------------------------
+
+1. Complete the evenDigits method found here:
+
+   https://www.codestepbystep.com/problemset/view?id=2850
+
+
+2. Draw a trace diagram for evenDigits(8342).
+
+ evenDigits(8342)
+ = 2 + evenDigits(834) * 10
+ = 2 + (4 + evenDigits(83) * 10) * 10
+ = 2 + (4 + evenDigits(8) * 10) * 10
+ = 2 + (4 + (8 + evenDigits(0) * 10) * 10) * 10
+ = 2 + (4 + (8 + 0 * 10) * 10) * 10
+ = 2 + (4 + 8 * 10) * 10
+ = 2 + (4 + 80) * 10)
+ = 2 + (84 * 10)
+ = 2 + 840
+ = 842
+
+
+
+
+==================================================================================
+Towers of Hanoi ( Group work)
+==================================================================================
+
+
+
+1. As a group discuss and complete the hanoi method found here:
+
+        https://www.codestepbystep.com/problemset/view?id=2852
+
+
+   The program AnimatedHanoi.java is a animation of this problem.
+
+      https://introcs.cs.princeton.edu/java/23recursion/AnimatedHanoi.java
+
+
+
+2. a. Copy your solution to the hanoi method from CodeStepByStep into a program named
+      TowersOfHanoi.java
+
+   b. Following the logic of the hanoi method, write a recursive method
+      countHanoiMoves(n) that computes the number of moves required to solve
+      the Towers of Hanoi puzzle for n disks. Test this method in the TowersOfHanoi
+      program.
+
+
+
+3. Read these notes:
+
+   https://www.cs.cmu.edu/~cburch/survey/recurse/hanoiimpl.html
+
+
+   Study the trace diagram found here:
+
+   https://www.cs.cmu.edu/~cburch/survey/recurse/hanoiex.html
+
+
+
+4. In the Towers of Hanoi program, write a method hanoiStack that uses an explicit
+   stack of pending tasks instead of recursion. In this context, a task can be
+   represented most easily as a structure containing the number of disks to move
+   and the names of the pegs used for the start, finish, and temporary repositories.
+   At the beginning of the process, you push onto your stack a single task that
+   describes the process of moving the entire tower. The method then repeatedly
+   pops the stack and executes the task found there until no tasks are left.
+   Except for the simple cases, the process of executing a task results in the
+   creation of more tasks that get pushed onto the stack for later execution.
+
+
+
+
+5. Group Submission: TowersOfHanoi.java
+
+      - Put your names in the documentation.
+
+      - The TowersOfHanoi program should take one command-line argument n
+        representing the number of disks.
+
+      - The output will use your solutions to questions #2 and #4 to
+        print the moves for n disks and then the number of moves required
+	to move those n disks.
+
+
+    Sample run,
+
+    $ java TowersOfHanoi 4
+    move disk 1 from peg 1 to peg 2
+    move disk 2 from peg 1 to peg 3
+    move disk 1 from peg 2 to peg 3
+    move disk 3 from peg 1 to peg 2
+    move disk 1 from peg 3 to peg 1
+    move disk 2 from peg 3 to peg 2
+    move disk 1 from peg 1 to peg 2
+    move disk 4 from peg 1 to peg 3
+    move disk 1 from peg 2 to peg 3
+    move disk 2 from peg 2 to peg 1
+    move disk 1 from peg 3 to peg 1
+    move disk 3 from peg 2 to peg 3
+    move disk 1 from peg 1 to peg 2
+    move disk 2 from peg 1 to peg 3
+    move disk 1 from peg 2 to peg 3
+    # moves: 15
+
+
+
+
+lesson.txt
+Displaying lesson.txt.

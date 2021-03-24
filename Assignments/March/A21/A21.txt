@@ -1,0 +1,103 @@
+Data Structures
+Period 6
+Assignment-21 (Group work)
+Rick Platek
+•
+8:48 AM
+10 points
+Due Apr 6
+
+assignment-21.txt
+Text
+Class comments
+Your work
+Assigned
+Private comments
+==================================================================================
+Towers of Hanoi ( Group work)
+==================================================================================
+
+
+
+1. As a group discuss and complete the hanoi method found here:
+
+        https://www.codestepbystep.com/problemset/view?id=2852
+
+
+   The program AnimatedHanoi.java is a animation of this problem.
+
+      https://introcs.cs.princeton.edu/java/23recursion/AnimatedHanoi.java
+
+
+
+2. a. Copy your solution to the hanoi method from CodeStepByStep into a program named
+      TowersOfHanoi.java
+
+   b. Following the logic of the hanoi method, write a recursive method
+      countHanoiMoves(n) that computes the number of moves required to solve
+      the Towers of Hanoi puzzle for n disks. Test this method in the TowersOfHanoi
+      program.
+
+
+
+3. Read these notes:
+
+   https://www.cs.cmu.edu/~cburch/survey/recurse/hanoiimpl.html
+
+
+   Study the trace diagram found here:
+
+   https://www.cs.cmu.edu/~cburch/survey/recurse/hanoiex.html
+
+
+
+4. In the Towers of Hanoi program, write a method hanoiStack that uses an explicit
+   stack of pending tasks instead of recursion. In this context, a task can be
+   represented most easily as a structure containing the number of disks to move
+   and the names of the pegs used for the start, finish, and temporary repositories.
+   At the beginning of the process, you push onto your stack a single task that
+   describes the process of moving the entire tower. The method then repeatedly
+   pops the stack and executes the task found there until no tasks are left.
+   Except for the simple cases, the process of executing a task results in the
+   creation of more tasks that get pushed ont the stack for later execution.
+
+
+
+
+5. Group Submission: TowersOfHanoi.java
+
+      - Put your names in the documentation.
+
+      - The TowersOfHanoi program should take one command-line argument n
+        representing the number of disks.
+
+      - The output will use your solutions to questions #2 and #4 to
+        print the moves for n disks and then the number of moves required
+	to move those n disks.
+
+
+    Sample run,
+
+    $ java TowersOfHanoi 4
+    move disk 1 from peg 1 to peg 2
+    move disk 2 from peg 1 to peg 3
+    move disk 1 from peg 2 to peg 3
+    move disk 3 from peg 1 to peg 2
+    move disk 1 from peg 3 to peg 1
+    move disk 2 from peg 3 to peg 2
+    move disk 1 from peg 1 to peg 2
+    move disk 4 from peg 1 to peg 3
+    move disk 1 from peg 2 to peg 3
+    move disk 2 from peg 2 to peg 1
+    move disk 1 from peg 3 to peg 1
+    move disk 3 from peg 2 to peg 3
+    move disk 1 from peg 1 to peg 2
+    move disk 2 from peg 1 to peg 3
+    move disk 1 from peg 2 to peg 3
+    # moves: 15
+
+
+
+
+assignment-21.txt
+Displaying assignment-21.txt.
