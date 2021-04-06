@@ -1,0 +1,66 @@
+Data Structures
+Period 6
+Assignment-23: Individual Work
+Rick Platek
+•
+8:33 AM
+10 points
+Due Apr 9
+
+assignment-23.txt
+Text
+Class comments
+Your work
+Turned in
+
+EmbeddedWords.java
+Java
+Private comments
+Assignment-23: Individual Work
+This is an individual assignment.
+
+Write a program EmbeddedWords that finds all the English words that can be formed by
+taking a some subset of letters in order from a given starting word. For example,
+given the starting word "happy", you can certainly produce the words:
+
+          "a", "ha", "hap", and "happy",
+
+in which the letters appear consecutively. You can also produce the words:
+
+         "hay" and "ay",
+
+because those letters appear in "happy" in the correct left-to-right order.
+
+You cannot, however, producee the words:
+
+          "pa" or "pap"
+
+because the letters-even though they appear int the word-don't appear in the correct
+order.
+
+A sample run of the program might look like this:
+
+$java EmbeddedWords happy
+The Embedded words are:
+ a
+ ap
+ app
+ ay
+ h
+ ha
+ hap
+ happy
+ hay
+ hp
+ hy
+ p
+ pp
+ y
+
+
+Your program should use this lexicon to determine whether a sequence of characters
+is or is not a word.
+
+https://introcs.cs.princeton.edu/java/data/words.utf-8.txt
+assignment-23.txt
+Displaying EmbeddedWords.java.Turning in…

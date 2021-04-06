@@ -1,0 +1,174 @@
+Data Structures
+Period 6
+Lesson-12
+Rick Platek
+•
+8:31 AM
+
+lesson.txt
+Text
+
+SubsetSum.java
+Java
+Class comments
+
+The Subset-Sum Problem
+===============================================================
+
+   Given a set of integers and a target value, determine
+   whether it is possible to find a subset of those integers
+   whose sum is equal to the specified target.
+
+
+
+ Example:
+ -------
+    Given the set : {-2, 1, 3, 8} and a target value of 7
+    the answer is yes since {-2,1,8} adds up to 7.
+
+    Given the same set and a target of 5, then the answer
+    is no.
+
+
+
+ The Inclusion/Exclusion Pattern
+ --------------------------------
+
+    This recursive strategy subdivides the general case into one
+    branch that includes a particular element and another that
+    excludes it.
+
+
+                                    set        : target
+                                    {-2,1,3,8} : 7
+		         +------------------------------------------+
+		         |                                          |
+                       include -2                                exclude -2
+                      {1,3,8} : 9                                {1,3,8} : 7
+              +-----------------------------+
+              |                             |
+            include 1                  exclude 1
+            {3,8} : 8                  {3,8}: 9
+    +-------------------------+
+    |                         |
+    include 3                exclude 3
+    {8} : 5                 {8} : 8
+ +------------+            +--------------+
+ |            |            |              |
+ include 8  exclude 8      include 8      exclude 8
+   {} : -3  {} : 5         {} : 0 <----------- Answer is true
+
+
+SubsetSum.java
+===============
+
+import java.util.TreeSet;
+
+
+public class SubsetSum{
+
+
+    public static boolean subsetExists(TreeSet<Integer> set, int target){
+	if (set.isEmpty()) return target == 0;
+	int first = set.first(); // returns and removes
+	TreeSet<Integer> rest = new TreeSet<Integer>(set);
+	rest.remove(first);
+	return subsetExists(rest,target - first) ||
+	    subsetExists(rest,target);
+    }
+
+
+    public static void main(String [] args){
+	TreeSet<Integer> set = new TreeSet<Integer>();
+	for (String s : args)
+	    set.add(Integer.parseInt(s));
+	System.out.print("enter target value: ");
+	int target = StdIn.readInt();
+
+	System.out.println("set: " + set);
+	System.out.println("target: " + target);
+	System.out.println("subset exits? " + subsetExists(set,target));
+
+    }
+
+
+
+}
+
+
+
+  Assignment-22 - Group
+=====================================================================================
+
+In the subset-sum problem there are often several ways to generate the desired target
+number. For example, given the set {1,3,4,5}, there are two different ways to produce
+the target value 5; you can select the 1 and the 4 or, alternatively, select just the 5.
+By contrast, there is no way to partition the set {1,3,4,5} to get 11.
+
+
+Write a method
+
+  public static int subsetSumWays(TreeSet<Integer> set, int target)
+
+that returns the number of ways in which you can produce the target value by choosing
+a subset of the specified set. For example, suppose that sampleSet has been initialized
+as follows:
+
+           TreeSet<Integer> sampleSet = new TreeSet<Integer>();
+	   sampleSet.add(1);
+	   sampleSet.add(3);
+	   sampleSet.add(4);
+	   sampleSet.add(5);
+
+Given this definition of sampleSet, calling
+
+    subsetSumWays(sampleSet,5);
+
+should return 2 (there are two ways to make 5),
+
+and calling,
+
+    subsetSumWays(sampleSet,11)
+
+should return 0 (there are no ways to make 11).
+
+
+Assignment 23
+======================================================================================
+
+Write a program EmbeddedWords that finds all the English words that can be formed by
+taking a some subset of letters in order from a given starting word. For example,
+given the starting word "happy", you can certainly produce the words:
+
+          "a", "ha", "hap", and "happy",
+
+in which the letters appear consecutively. You can also produce the words:
+
+         "hay" and "ay",
+
+because those letters appear in "happy" in the correct left-to-right order.
+
+You cannot, however, producee the words:
+
+          "pa" or "pap"
+
+because the letters-even though they appear int the word-don't appear in the correct
+order.
+
+A sample run of the program might look like this:
+
+$java EmbeddedWords happy
+The Embedded words are:
+ a
+ ay
+ ha
+ hap
+ happy
+ hay
+
+Your program should use this lexicon to determine whether a sequence of characters
+is or is not a word.
+
+https://introcs.cs.princeton.edu/java/data/words.utf-8.txt
+lesson.txt
+Displaying lesson.txt.
