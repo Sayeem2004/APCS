@@ -1,0 +1,144 @@
+Data Structures
+Period 6
+Lesson-15: Asynchronous (SAT ADMINISTRATION PROCTORING)
+Rick Platek
+•
+8:35 AM
+
+lesson.txt
+Text
+Class comments
+
+Today's lesson will be asynchronous due to the SAT administration.
+
+
+
+
+=========================================================================
+Part I: Be prepared to present solutions of the following assignments.
+=========================================================================
+1. Assignment-22 : subsetWays()
+2. Assignment-23 : embeddedWords()
+3. Exercise-1 (listed below)
+                   generatePermutations
+4. Exercise-2 (listed below)
+                   listPermutations()
+
+
+
+
+
+
+=========================================================================
+Exercise-1
+=========================================================================
+
+    Write a second version of generatePermutations(String) using
+    this algorithm instead:
+     1. Remove the first character from the string and store it
+        in the variable ch.
+
+     2. Generate the set containing all permutations of the remaining
+        characters.
+
+     3. Form a new set by inserting ch in every possible position in each
+        of those permutations.
+
+===========================================================================
+Exercise-2  Presentation
+===========================================================================
+  The strategy used to implement the Permutations program emphasizes
+  its recursive character. The resulting code is not particularly
+  efficient, mostly because it ends up generating sets that are later
+  discarded and because it applies methods like substring that require
+  copying the characters in a string. It is possible to eliminate those
+  inefficiencies by converting the string into a character array--the
+  String class includes a toCharArray method that does just that--and
+  then applying the following recursive strategy:
+
+  1. At each level, pass the character array along with an index that
+     indicates where the permutation process starts. Characters in the
+     string before this index stay where they are.
+
+  2. The simple case occurs when the index reaches the end of the array.
+
+  3. The recursive case operates by swapping the character at the index
+     position with every other character in the array and then generating
+     every permutation starting with the next higher index. You then need
+     to swap the characters back to ensure that the original order is
+     restored.
+
+  Use this strategy to implement a method
+
+      public static void listPermutations(String str)
+
+  that lists all permutations of the string str without generating any
+  sets at all. The listPermutations method itself must be a wrapper method
+  for a second method that includes the index.
+  This method is relatively easy to implement if you don't try to take account
+  of duplicated letters in the string. The interesting challenge arises only
+  when you change the structure of the algorithm  so that it lists each unique
+  permutation exactly once without using sets to accomplish the task. You
+  should not, however, worry about the order in which listPermutations
+  delivers its output.
+
+
+==========================================================================
+Part II: Work on the next 2 assignments.
+==========================================================================
+ 1. Assignment-24  (Group Work)
+ 2. Assignment-25  (Individual Work).
+
+=========================================================================
+Recursive Graphics-- Assignments: 24 and 25.
+=========================================================================
+ Here is the problem specification:
+
+   https://introcs.cs.princeton.edu/java/assignments/htree.html
+
+
+ As a group:
+------------------------------------------------------
+  a. Complete Part 1, the program Htree.java.
+
+
+  b.Computer animations. Our most important use of double buffering is to
+    produce computer animations, where we create the illusion of motion by
+    rapidly displaying static drawings. We can produce animations by repeating
+    the following four steps:
+
+       1. Clear the offscreen canvas.
+       2. Draw objects on the offscreen
+       3. Copy the offscreen canvas to the onscreen canvas.
+       4. Wait for a short while.
+
+     For an example, review the program BouncingBall.java
+
+       https://introcs.cs.princeton.edu/java/15inout/BouncingBall.java
+
+  c. Write a program AnimatedHTree.java that animates the
+     drawing of the H-tree.
+
+  d. Next, rearrange the order of the recursive calls (and the
+     base case), view the resulting animation, and explain
+     each outcome.
+
+
+
+  e. Submit the file: AnimatedHTree.java
+     Include documentation that includes:
+          - Your names
+	  - Your answers to part (d).
+
+ Individual Work : Assigmnent-25
+---------------------------------------------------------------------
+ From https://introcs.cs.princeton.edu/java/assignments/htree.html,
+ complete Part 2 and submit the file: Art.java.  Put your name in the
+ documentation.
+
+
+===========================================================================
+Part III: Problem Set 07
+===========================================================================
+lesson.txt
+Displaying lesson.txt.

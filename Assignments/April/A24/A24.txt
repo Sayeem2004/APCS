@@ -1,0 +1,61 @@
+Data Structures
+Period 6
+Assignment-24: Group Work
+Rick Platek
+•
+8:57 AM
+10 points
+Due Apr 15
+
+assigment-24.txt
+Text
+Class comments
+Your work
+Assigned
+Private comments
+
+
+=========================================================================
+Recursive Graphics-- Assignment-24
+=========================================================================
+ Here is the problem specification:
+
+   https://introcs.cs.princeton.edu/java/assignments/htree.html
+
+
+ As a group:
+------------------------------------------------------
+  a. Complete Part 1, the program Htree.java.
+
+
+  b.Computer animations. Our most important use of double buffering is to
+    produce computer animations, where we create the illusion of motion by
+    rapidly displaying static drawings. We can produce animations by repeating
+    the following four steps:
+
+       1. Clear the offscreen canvas.
+       2. Draw objects on the offscreen
+       3. Copy the offscreen canvas to the onscreen canvas.
+       4. Wait for a short while.
+
+     For an example, review the program BouncingBall.java
+
+       https://introcs.cs.princeton.edu/java/15inout/BouncingBall.java
+
+  c. Write a program AnimatedHTree.java that animates the
+     drawing of the H-tree.
+
+  d. Next, rearrange the order of the recursive calls (and the
+     base case), view the resulting animation, and explain
+     each outcome.
+
+
+
+  e. Submit the file: AnimatedHTree.java
+     Include documentation that includes:
+          - Your names
+	  - Your answers to part (d).
+
+
+assigment-24.txt
+Displaying assigment-24.txt.

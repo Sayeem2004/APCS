@@ -1,0 +1,25 @@
+Data Structures
+Period 6
+Assignment-25: Individual Work
+Rick Platek
+•
+8:58 AM
+10 points
+Due Apr 15
+
+assigment-25.txt
+Text
+Class comments
+Your work
+Assigned
+Private comments
+
+ Individual Work : Assigmnent-25
+---------------------------------------------------------------------
+ From https://introcs.cs.princeton.edu/java/assignments/htree.html,
+ complete Part 2 and submit the file: Art.java.  Put your name in the
+ documentation.
+
+
+assigment-25.txt
+Displaying assigment-25.txt.Turning in…

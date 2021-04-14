@@ -1,0 +1,258 @@
+Data Structures
+Period 6
+Lesson-13
+Rick Platek
+•
+8:03 AM
+
+lesson.txt
+Text
+
+Permutations.java
+Java
+Class comments
+
+==========================================================
+AP Review Material
+===========================================================
+1.AP MATERIAL ONLY
+
+  https://runestone.academy/runestone/books/published/csjava/index.html
+
+
+2. General Tutorial
+
+  https://www.gradiance.com/tutorials.html
+
+
+
+
+
+
+
+
+
+============================================================
+Go Over TowerOfHanoi.java
+============================================================
+
+ In the Towers of Hanoi program, write a method hanoiStack that uses an explicit
+ stack of pending tasks instead of recursion. In this context, a task can be
+ represented most easily as a structure containing the number of disks to move
+ and the names of the pegs used for the start, finish, and temporary repositories.
+ At the beginning of the process, you push onto your stack a single task that
+ describes the process of moving the entire tower. The method then repeatedly
+ pops the stack and executes the task found there until no tasks are left.
+ Except for the simple cases, the process of executing a task results in the
+ creation of more tasks that get pushed ont the stack for later execution.
+
+
+
+
+
+
+
+===========================================================
+Problem: Generating Permutations (Anagrams)
+===========================================================
+
+  Generate all possible arrangements of a particular set of
+  characters.
+
+
+  Suppose you wish to write the method
+
+   TreeSet<String> generatePermutations(String str)
+
+  that returns a set of all the permutations of the string.
+
+
+  For example,
+
+   generatePermutations("ABC") returns the set
+
+  {"ABC", "ACB", "BAC", "BCA", "CAB", "CBA"}
+
+
+
+
+
+
+
+
+
+============================================================
+Here's a concrete example of the algorithm implemented in the
+code given below.
+
+Consider the five-character permutation problem of the string
+
+  "ABCDE"
+
+Break the 5 character problem into the following subproblems
+
+ - The character 'A' followed by every possible permutation
+   of "BCDE"
+
+ - The character 'B' followed by every possible permutation
+   of "ACDE"
+
+ - The character 'C' followed by every possible permutation
+   of "ABDE"
+
+ - The character 'D' followed by every possible permutation
+   of "ABCE"
+
+ - The character 'E' followed by every possible permutation
+   of "ABCD"
+
+
+More generally, you can construct the set of all permutations of
+a string of length n by selecting each character in turn and then,
+for each of those n possible first characters, concatenating the
+selected  character on to the front of every possible permutation
+of the remaining n-1 characters.
+
+The problem of generating all permutations of n-1 characters is a
+smaller instance of the same problem and can therefore be solved
+recursively.
+
+The simplest case is when you call
+
+  generatePermutaions("")
+
+you should get back a set containing a single element, the empty string.
+
+
+
+
+
+
+
+
+
+========================================================================
+Permutations.java
+========================================================================
+import java.util.*;
+
+public class Permutations{
+
+
+    public static TreeSet<String> generatePermutations(String s){
+        TreeSet<String> ans = new TreeSet<String>();
+        if (s.length() < 1) ans.add(s);
+        else {
+            for (int i = 0; i < s.length(); i++){
+                String letter = s.substring(i,i+1);
+                String rest = s.substring(0,i) + s.substring(i+1);
+                for (String str: generatePermutations(rest))
+                    ans.add(letter + str);
+            }
+        }
+        return ans;
+    }
+
+
+    public static void main(String [] args){
+        if (args.length == 0)
+            System.out.println(generatePermutations(""));
+        else
+            System.out.println(generatePermutations(args[0]));
+
+    }
+
+
+}
+
+=========================================================================
+Exercise-1
+=========================================================================
+
+    Write a second version of generatePermutations(String) using
+    this algorithm instead:
+     1. Remove the first character from the string and store it
+        in the variable ch.
+
+     2. Generate the set containing all permutations of the remaining
+        characters.
+
+     3. Form a new set by inserting ch in every possible position in each
+        of those permutations.
+
+===========================================================================
+Exercise-2
+===========================================================================
+  The strategy used to implement the Permutations program emphasizes
+  its recursive character. The resulting code is not particularly
+  efficient, mostly because it ends up generating sets that are later
+  discarded and because it applies methods like substring that require
+  copying the characters in a string. It is possible to eliminate those
+  inefficiencies by converting the string into a character array--the
+  String class includes a toCharArray method that does just that--and
+  then applying the following recursive strategy:
+
+  1. At each level, pass the character array along with an index that
+     indicates where the permutation process starts. Characters in the
+     string before this index stay where they are.
+
+  2. The simple case occurs when the index reaches the end of the array.
+
+  3. The recursive case operates by swapping the character at the index
+     position with every other character in the array and then generating
+     every permutation starting with the next higher index. You then need
+     to swap the characters back to ensure that the original order is
+     restored.
+
+  Use this strategy to implement a method
+
+      public static void listPermutations(String str)
+
+  that lists all permutations of the string str without generating any
+  sets at all. The listPermutations method itself must be a wrapper method
+  for a second method that includes the index.
+
+  This method is relatively easy to implement if you don't try to take account
+  of duplicated letters in the string. The interesting challenge arises only
+  when you change the structure of the algorithm  so that it lists each unique
+  permutation exactly once without using sets to accomplish the task. You
+  should not, however, worry about the order in which listPermutations
+  delivers its output.
+
+============================================================================
+Exercise-3
+============================================================================
+  On a telephone keypad, the digits are mapped onto the alphabet
+   as shown in the following diagram:
+
+     1 -> {}
+     2 -> {A,B,C}
+     3 -> {D,E,F}
+     4 -> {G,H,I}
+     5 -> {J,K,L}
+     6 -> {M,N,O}
+     7 -> {P,Q,R,S}
+     8 -> {T,U,V}
+     9 -> {W,X,Y,Z}
+     0 -> {}
+
+   In order to make their phone numbers more memorable, service
+   providers like to find numbers that spell out some word (called
+   a mnemonic) appropriate to their business that makes that phone
+   number easier to remember.
+
+   Write a program Mnemonics, that includes the method listMnemonics
+   that generates all possible letter combinations that correspond
+   to a give number, represented as a string of digits. For example,
+   the call
+
+             listMnemonics("723")
+
+   should list the following 36 possible letter combinations that
+   correspond to that prefix:
+
+   PAD PBD PCD QAD QBD QCD RAD RBD RCD SAD SBD SCD
+   PAE PBE PCE QAE QBE QCE RAE RBE RCE SAE SBE SCE
+   PAF PBF PCF QAF QBF QCF RAF RBF RCF SAF SBF SCF
+lesson.txt
+Displaying lesson.txt.
