@@ -1,0 +1,73 @@
+Data Structures
+Period 6
+Assignment-27: Group Work
+Rick Platek
+•
+Apr 20
+10 points
+Due Apr 27
+
+assignment-27.txt
+Text
+Class comments
+Your work
+Assigned
+Private comments
+Assignment-27
+======================================================================
+
+
+    Run some experiments to determine how much time string operations
+    take.
+
+    Apply the scientific method to develop and validate a hypothesis
+    of the running time for the string methods:
+      1. length()
+      2. charAt()
+      3. toLowerCase()
+      4. replace()
+      5. compareTo()
+      6. equals()
+      7. startsWith()
+      8. endsWith()
+      9. indexOf()
+     10. substring()
+
+    For each string method, state a hypothesis, an explanation of
+    the experiment and provide a set of predictions and observations
+    which validate your hypothesis.
+
+
+
+    The hypothesis should be expressed in terms of the commonly encountered
+    order-of-growth classifications.
+
+           description             function
+	      constant                1
+	      logarithmic            log n
+	      linear                  n
+	      linearithmic           n log n
+	      quadratic               n^2
+	      cubic                   n^3
+	      exponential             2^n
+
+
+
+Submit the file : TimeStrings.java
+                  - include your names in the documentation
+		  - For each experiment, write the results of the experiment
+		    as a comment dircectly above the code for the experiment.
+
+                 Example:
+		/*  Experiment for: length
+		 *  Hypothesis:
+		 *  Experiment Description:
+		 *  Predictions and observations:
+		 *
+		 *
+		 */
+
+
+
+assignment-27.txt
+Displaying assignment-27.txt.

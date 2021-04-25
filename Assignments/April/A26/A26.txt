@@ -1,0 +1,37 @@
+Data Structures
+Period 6
+Assignment-26: Group Work
+Rick Platek
+•
+Apr 16
+10 points
+Due Apr 22
+
+assignment-26.txt
+Text
+
+Recursive-Graphics.pdf
+PDF
+
+sierpinski.zip
+Compressed Archive
+Class comments
+Your work
+Assigned
+Private comments
+Group Work
+
+
+1. Read RecursiveGraphics.pdf for the project specification.
+
+2. From RecursiveGraphics.pdf, complete parts I and II.
+   Submit the files via Google Classroom:
+
+   - Transform2D.java
+   - Sierpinski.java
+
+   Put your names in the documentation of each file.
+
+3. I will move the deadline of Assignment 25 to 4/23.
+assignment-26.txt
+Page 14 of 16 Page 1 of 16

@@ -1,0 +1,79 @@
+Data Structures
+Period 6
+Lesson-16
+Rick Platek
+•
+8:12 AM
+
+lesson.txt
+Text
+Class comments
+
+Lesson-16
+============================================================
+Go over:
+============================================================
+   1. Assignment-22: subsetWays()
+   2. Assignment-23: EmbeddedWords()
+   3. The third version of permutations using a charArray.
+
+
+
+
+==============================================================
+Trace the listPermutations() method
+==============================================================
+// Trace of version 3 : lp --> listPermutations
+    // lp("abc")
+    // lp([a,b,c], 0)
+    //   i = 0  k = 0
+    //    [a,b,c]
+    //    lp([a,b,c], 1)
+    //      i = 1 k = 1
+    //       [a,b,c]
+    //       lp([a,b,c], 2)   prints [a,b,c]
+    //       [a,b,c]
+    //      i = 1 k = 2
+    //       [a,c,b]
+    //       lp([a,c,b],2)    prints [a,c,b]
+    //       [a,b,c]
+    //    [a,b,c]
+    //   i = 0 k = 1
+    //    [b,a,c]
+    //    lp([b,a,c],1)
+    //      i = 1 k = 1
+    //       [b,a,c]
+    //       lp([b,a,c],2)  prints [b,a,c]
+    //       [b,a,c]
+    //      i = 1 k = 2
+    //       [b,c,a]
+    //       lp([b,c,a],2 )  prints [b,c,a]
+    //       [b,a,c]
+    //    [a,b,c]
+    //   i = 0 k = 2
+    //    [c,b,a]
+    //    lp([c,b,a], 1)
+    //      i = 1 k = 1
+    //       [c,b,a]
+    //       lp([c,b,a], 2)   prints [c,b,a]
+    //       [c,b,a]
+    //      i = 1 k = 2
+    //       [c,a,b]
+    //       lp([c,a,b]),2)   prints [c,a,b]
+    //       [c,b,a]
+    //   [a,b,c]
+
+
+
+
+
+==========================================================================
+Next assignments.
+==========================================================================
+ 1. Assignment-24  (Group Work)
+ 2. Assignemnt-26  (Group Work)
+ 3. Assignment-25  (Individual Work -- deadline extended).
+ 4. Problem Set 07 (Individual Work).
+
+lesson.txt
+Displaying assignment-26.txt.

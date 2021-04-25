@@ -1,0 +1,248 @@
+Data Structures
+Period 6
+Lesson-17
+Rick Platek
+•
+8:34 AM
+
+ap-computer-science-a-java-quick-reference.pdf
+PDF
+
+lesson.txt
+Text
+Class comments
+
+===============================================================================================
+Task #1: AP REVIEW : UNIT 2 FRQ
+         Complete questions (a) - (e).
+===============================================================================================
+
+
+Assume that the classes listed in the Java Quick Reference have been imported where appropriate.
+Unless otherwise noted in the question, assume that parameters in method calls are not null and
+that methods are called only when their preconditions are satisfied.
+
+In writing solutions for each question, you may use any of the accessible methods that are listed
+in classes defined in that question. Writing significant amounts of code that can be replaced by
+a call to one of these methods will not receive full credit.
+
+
+
+Consider the following class.
+
+public class LightSequence {
+
+       // attributes not shown
+
+       /** The parameter seq is the initial sequence used for
+	* the light display
+	*/
+
+	public LightSequence(String seq)
+
+	{ /* implementation not shown */ }
+
+
+	/** Inserts the string segment in the current sequence,
+	* starting at the index ind. Returns the new sequence.
+	*/
+
+	public String insertSegment(String segment, int ind)
+	{ /* implementation not shown */ }
+
+ 	/** Updates the sequence to the value in seq
+	*/
+
+	public void changeSequence(String seq)
+	{ /* implementation not shown */ }
+
+
+	/** Uses the current sequence to turn the light on and off
+	* for the show
+	*/
+
+	public void display()
+	{ /* implementation not shown */ }
+
+   }
+
+(a) Write a statement to create a LightSequence object gradShow that has the initial
+    light sequence "0101 0101 0101".
+
+    Write the statement below.
+
+    LightSequence gradShow = new LightSequence("0101 0101 0101");
+
+
+
+
+(b) Write a statement that will call the display method to display the light sequence
+    for the gradShow object.
+
+    Write the statement below.
+
+    gradShow.display();
+
+
+(c) Write a statement that will be used to update the gradShow light sequence to
+    "0011 0011 0011".
+
+     Write the statement below.
+
+     gradShow.changeSequence("0011 0011 0011");
+
+(d) Write a code segment that will call the insertSegment method to insert the
+    segment "1111 1111" in the current sequence for gradShow at index 4. The resulting
+    sequence will be stored in the string resultSeq.
+
+    Write the code segment below.
+
+    String resultSeq = gradShow.insertSegment("1111 1111", 4);
+
+
+(e) Assume that the string oldSeq has been properly declared and initialized and contains
+    the string segment. Write a code segment that will remove the first occurrence of segment
+    from oldSeq and store it in the string newSeq. Consider the following examples.
+
+    If oldSeq is "1100000111" and segment is "11", then "00000111" should be stored in newSeq.
+    If oldSeq is "0000011" and segment is "11", then "00000" should be stored in newSeq.
+    If oldSeq is "1100000111" and segment is "00", then "11000111" should be stored in newSeq.
+
+    Write the code segment below. Your code segment should meet all specifications and conform
+    to the examples.
+
+    String newSeq = oldSeq.substring(0,oldSeq.indexOf(segment)) + oldSeq.substring(oldSeq.indexOf(segment)+segment.length());
+
+(f) Two lights will be arranged on a two-dimensional plane. The vertical distance between the
+    two lights is stored in the double variable a. The horizontal distance between the two lights
+    is stored in the double variable b.
+
+    The straight-line distance between the two lights is given by the formula square root of the
+    quantity a squared plus b squared.
+
+    Write a code segment that prints the straight-line distance between the two lights according
+    to the formula above.
+
+    System.out.println(Math.sqrt(a*a+b*b));
+
+==============================================================================
+Task #2: Complete the Assignments-24 and 26
+==============================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+=============================================================================
+Task #3: Analysis of
+ Algorithms
+=============================================================================
+
+1. Go to the book site: https://introcs.cs.princeton.edu/java/41analysis/
+
+2. Read sections:
+
+      - Scientific Method
+      - Observations
+
+3. Download the program : Stopwatch.java
+
+    Link: https://introcs.cs.princeton.edu/java/41analysis/Stopwatch.java
+
+
+Question #1:
+
+    How do I find out how long it takes to add or multiply two floating-point
+    numbers on my system?
+
+
+    Run some experiments with the program TimePrimitives.java
+
+    https://introcs.cs.princeton.edu/java/41analysis/TimePrimitives.java
+
+
+Question #2:
+
+    How much time does it take to call functions such as Math.log() and
+    Math.sqrt()?
+
+
+Question #3:
+
+    Run some experiments to determine how much time string operations
+    take.
+
+    Apply the scientific method to develop and validate a hypothesis
+    of the running time for the string methods:
+      1. length()
+      2. charAt()
+      3. toLowerCase()
+      4. replace()
+      5. compareTo()
+      6. equals()
+      7. startsWith()
+      8. endsWith()
+      9. indexOf()
+     10. substring()
+
+    For each string method, state a hypothesis, an explanation of
+    the experiment and provide a set of predictions and observations
+    which validate your hypothesis.
+
+
+
+    The hypothesis should be expressed in terms of the commonly encountered
+    order-of-growth classifications.
+
+           description             function
+	      constant                1
+	      logarithmic            log n
+	      linear                  n
+	      linearithmic           n log n
+	      quadratic               n^2
+	      cubic                   n^3
+	      exponential             2^n
+
+
+
+Submit the file : TimeStrings.java
+                  - include your names in the documentation
+		  - For each experiment, write the results of the experiment
+		    as a comment dircectly above the code for the experiment.
+
+                 Example:
+		/*  Experiment for: length
+		 *  Hypothesis:
+		 *  Experiment Description:
+		 *  Predictions and observations:
+		 *
+		 *
+		 */
+
+
+
+****************************************************************************
+Task #4: Homework in preparation for the next class.
+****************************************************************************
+
+1. From https://introcs.cs.princeton.edu/java/41analysis/
+
+   Read the section: A concrete example.
+
+
+2. Review and run the programs:
+
+      -- ThreeSum.java
+      -- DoublingTest.java
+
+3. On the book site complete exercises 1 and 3.
+   Self check your answers.
+lesson.txt
+Displaying lesson.txt.

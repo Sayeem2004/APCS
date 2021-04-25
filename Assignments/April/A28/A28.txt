@@ -1,0 +1,33 @@
+Data Structures
+Period 6
+Assignment-28: Individual Work (Ungraded)
+Rick Platek
+•
+Apr 20
+Due Apr 27
+
+assignment-28.txt
+Text
+Class comments
+Your work
+Assigned
+Private comments
+Assignment-28: Individual Work (Ungraded)
+****************************************************************************
+Assigment-28: Homework in preparation for the next class.
+****************************************************************************
+
+1. From https://introcs.cs.princeton.edu/java/41analysis/
+
+   Read the section: A concrete example.
+
+
+2. Review and run the programs:
+
+      -- ThreeSum.java
+      -- DoublingTest.java
+
+3. On the book site complete exercises 1 and 3.
+   Self check your answers.
+assignment-28.txt
+Displaying assignment-28.txt.Turning in…

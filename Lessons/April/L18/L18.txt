@@ -1,0 +1,268 @@
+Data Structures
+Period 6
+Lesson-18
+Rick Platek
+•
+Apr 22
+
+lesson.txt
+Text
+Class comments
+
+===========================================================================
+AP REVIEW : Unit 3 - FREE RESPONSE
+===========================================================================
+Question 1
+Item 1
+Question 1
+
+SHOW ALL YOUR WORK. REMEMBER THAT PROGRAM SEGMENTS ARE TO BE WRITTEN IN JAVA.
+
+    Assume that the classes listed in the Java Quick Reference have been imported where appropriate.
+    Unless otherwise noted in the question, assume that parameters in method calls are not null and
+    that methods are called only when their preconditions are satisfied.
+    In writing solutions for each question, you may use any of the accessible methods that are listed
+    in classes defined in that question. Writing significant amounts of code that can be replaced by a
+    call to one of these methods will not receive full credit.
+
+
+
+Assume that the following variables have been properly declared and initialized.
+
+    a boolean variable named rsvp
+    an int variable named selection, where 1 represents "beef", 2 represents "chicken", 3 represents "pasta",
+                                     and all other values represent "fish"
+    a String variable named option1
+    a String variable named option2
+
+(a)   Write a code segment that prints "attending" if rsvp is true and
+      prints "not attending" otherwise.
+
+      Write the code segment below.
+
+
+     // *********  ANSWER ********************
+     if (rsvp) System.out.println("attending");
+     else      System.out.println("not attending");
+
+
+
+Question 2
+
+(b)   Write a code segment that prints the food item associated with selection. For example, if selection is 3,
+      the code segment should print "pasta".
+
+      Write the code segment below. Your code segment should meet all specifications and conform to the example.
+
+
+       // ***** ANSWER ******************************
+       if (selection == 1) System.out.println("beef");
+       else if (selection == 2) System.out.println("chicken");
+       else if (selection == 3) System.out.println("pasta");
+       else System.out.println("fish");
+
+
+
+
+(c)   Write a code segment that will store a dinner selection in option1 based on the values of rsvp and
+      selection. The intended behavior of the code segment is described below.
+
+      If rsvp is true, the code segment should store in option1 a string indicating the person’s attendance
+      and food choice. For example, if rsvp is true and selection is 1, the following string should be stored in option1.
+
+      "Thanks for attending. You will be served beef."
+
+      If rsvp is false, the following string should be stored in option1, regardless of the value of selection.
+
+      "Sorry you can't make it."
+
+      Write the code segment below. Your code segment should meet all specifications and conform to the examples.
+
+
+
+       // ***** ANSWER ******************************
+       if (rsvp){
+          option1 = "Thanks for attending. You will be served ";
+	  if (selection == 1) option1 += "beef.";
+	  else if (selection == 2) option1 += "chicken.";
+	  else if (selection == 3) option1 += "pasta.";
+	  else option1 += "beef.";
+
+	  }
+       else{
+          option1 = "Sorry you can't make it.";
+       }
+
+
+
+(d)   Write a code segment that will print true if the strings option1 and option2 contain the same values and will
+      print false otherwise.
+
+      Write the code segment below.
+
+
+
+      // *********** ANSWER **************
+      System.out.println(option1.equals(option2));
+
+
+--------------------------------------------------------------------------------------------------------------------------
+Question 2
+Item 2
+
+SHOW ALL YOUR WORK. REMEMBER THAT PROGRAM SEGMENTS ARE TO BE WRITTEN IN JAVA.
+
+    Assume that the classes listed in the Java Quick Reference have been imported where appropriate.
+    Unless otherwise noted in the question, assume that parameters in method calls are not null and
+    that methods are called only when their preconditions are satisfied.
+    In writing solutions for each question, you may use any of the accessible methods that are listed
+    in classes defined in that question. Writing significant amounts of code that can be replaced by
+    a call to one of these methods will not receive full credit.
+
+
+    This question involves the Draw class, which is used to draw line segments and squares on a
+    10-by-10 xy-coordinate grid.
+
+public class Draw{
+
+/** Precondition: All parameters are between 0 and 10, inclusive.
+* Draws a line segment in a 10-by-10 xy-coordinate grid.
+* The line segment is drawn from (x1, y1) to (x2, y2).
+*/
+
+public void drawLine(int x1, int y1, int x2, int y2)
+{ /* implementation not shown */ }
+
+
+
+/** Precondition: 0 ≤ x < 10, 0 < y ≤ 10, and len > 0.
+ * Draws a square on a 10-by-10 xy-coordinate grid
+ * and prints the square’s side length and area.
+ * The upper left corner of the square will be located
+ * at the coordinate (x, y) and the side length of the
+ * square will be len (or as large as will fit in the grid).
+ */
+
+public void drawSquare(int x, int y, int len)
+{ /* to be implemented */ }
+
+}
+
+The drawLine method, whose implementation is not shown, is used to draw a line segment from
+the coordinate (x1, y1) to the coordinate (x2, y2). For example, the call drawLine(2, 5, 6, 4)
+will produce the figure below. The figure presents a line segment in the x y coordinate plane.
+The numbers 0 through 10, in increments of 1, are indicated on the x axis, and the numbers 0 through 10,
+in increments of 1, are indicated on the y axis. One endpoint of the line segment is the point with
+coordinates 2 comma 5, and the other endpoint of the line segment is the point with coordinates 6 comma 4.
+
+
+You will write method drawSquare, which draws a square on a 10-by-10 grid and prints the square’s side length
+and area in the format shown in the examples. The upper left corner of the square is located at the coordinate (x, y).
+The sides of the square will be of length len, or as large as will fit on the grid.
+
+The following examples show the intended behavior of drawSquare.
+
+Example 1
+
+The call drawSquare(1, 4, 3) will produce the figure below. The upper left corner of the square is at the coordinate
+(1, 4) and the square has sides of length 3.
+
+The call will print "side length = 3, area = 9".
+
+
+
+Write the method drawSquare below.
+
+/** Precondition: 0 ≤ x < 10, 0 < y ≤ 10, and len > 0.
+ * Draws a square on a 10-by-10 xy-coordinate grid
+ * and prints the square’s side length and area.
+ * The upper left corner of the square will be located
+ * at the coordinate (x, y) and the side length of the
+ * square will be len (or as large as will fit in the grid).
+ */
+
+public void drawSquare(int x, int y, int len)
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+=============================================================================
+Task #2: Analysis of Algorithms
+=============================================================================
+
+1. Go to the book site: https://introcs.cs.princeton.edu/java/41analysis/
+
+2. Read sections:
+
+      - Scientific Method
+      - Observations
+
+3. Download the program : Stopwatch.java
+
+    Link: https://introcs.cs.princeton.edu/java/41analysis/Stopwatch.java
+
+
+   Computes the time for calculating Math.sqrt(n) and Math.pow(n,0.5).
+
+4.  How do I find out how long it takes to add or multiply two floating-point
+    numbers on my system?
+
+
+    Run some experiments with the program TimePrimitives.java
+
+    https://introcs.cs.princeton.edu/java/41analysis/TimePrimitives.java
+
+
+5. From https://introcs.cs.princeton.edu/java/41analysis/
+
+   Read the section: A concrete example.
+
+
+6. Review and run the programs:
+
+      -- ThreeSum.java
+      -- DoublingTest.java
+
+
+7. Complete the third columen of this table.
+
+            Order of Growth                            factor
+                                                       for doubling
+      	    description             function           hypthothesis
+				    f(n)	         f(2n)/f(n)
+	    ---------------------------------------------------------------
+              constant                1
+
+	      logarithmic            log n
+
+	      linear                  n
+
+	      linearithmic           n log n
+
+	      quadratic               n^2
+
+	      cubic                   n^3
+
+	      exponential             2^n
+
+
+=======================================================================================
+Task #3: Assignments due this week
+=======================================================================================
+
+        1. Assignment-26 (group work) due today
+	2. Problem Set - 07   due Friday.
+	3. AP Classroom : Unit 4 due at the start of next class.
+lesson.txt
+Displaying lesson.txt.
