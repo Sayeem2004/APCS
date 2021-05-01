@@ -1,0 +1,40 @@
+Data Structures
+Period 6
+Assignment-30 (Individual Work)
+Rick Platek
+•
+8:04 AM
+10 points
+Due May 4
+
+assignment-30.txt
+Text
+Class comments
+Your work
+Assigned
+Private comments
+Marking as done…
+
+============================================================================
+Assignment-30 (Individual Work) due 5/03
+============================================================================
+1. It is easy to write a recursive method
+
+      public static double raiseToPower(double x, int n)
+
+   that calculates x^n, by relying on the recursive insight that
+
+         x^n = x * x^(n-1).
+
+   Such a strategy leads to an implementation that runs in linear time,O(N).
+   You can however, adopt a recursive divide-and-conquer strategy which takes
+   advantage of the fact that
+
+         x^(2n) = x^n * x^n
+
+   Use this fact to write a recursive version of raiseToPower that runs in
+   O(log N) time.
+
+
+assignment-30.txt
+Displaying assignment-30.txt.

@@ -1,0 +1,55 @@
+Data Structures
+Period 6
+Lesson-21
+Rick Platek
+•
+8:33 AM
+
+lesson.txt
+Text
+
+TimeStrings.java
+Java
+Class comments
+
+Lesson-21
+=======================================================================
+Task #1: Unit 5 AP REVIEW
+=======================================================================
+1. (a)  public String getHostName() { return hostName;}
+
+   (b)  public void updateAddress(String newAddress){
+                address = newAddress;
+        }
+
+   (c) public String getMessage(String attendee){
+       	      return "Dear " + attendee +
+	             ", please attend my event at " +
+		     address + ". See you then, " + hostName + ".";
+       }
+
+    (d) public Invitation(String address){
+    	       this.address = address;
+	       hostName = "Host";
+	}
+
+
+2. Present the PasswordGenerator class.
+
+=======================================================================
+Task #2: Review Assigment-27
+=======================================================================
+
+
+
+========================================================================
+Task #3: Dynamic Programming Assignment (Assignment-32)
+========================================================================
+
+ 1. Assingment-29 Due Today
+ 2. Problem set 8 Due Friday
+ 3. Assingment-30 Due Monday
+ 4. Assingment-31 Due Monday
+ 5. Assingment-32 Due Friday
+lesson.txt
+Displaying assignment-32.txt.

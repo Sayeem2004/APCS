@@ -1,0 +1,113 @@
+Data Structures
+Period 6
+Lesson-19
+Rick Platek
+•
+8:30 AM
+
+lesson.txt
+Text
+Class comments
+
+=====================================================================
+Task #1: AP REVIEW : Unit Test 4 free response.
+=====================================================================
+ Go over question 1.
+
+
+====================================================================
+Task #2: Doubling Hypothesis Reveiw
+====================================================================
+Suppose the running time of an algorithm on inputs of size 1,000,
+2,000, 3,000, and 4,000 is 5 seconds, 20 seconds, 45 seconds, and
+80 seconds, respectively. Is the order of growth of the running time
+linear, linearithmic, quadratic, cubic, or exponential?
+
+
+====================================================================
+Task #3:  Order of Growth using Mathematical Analysis
+====================================================================
+
+Conisider the ThreeSum.java program.
+
+If you run this program, you will find that the elapsed time increases
+by about a factor of 8 to print each line. This leads immediately to
+the hypothesis that the running time increases by a factor of 8 when
+the input size doubles.
+
+Suggesting the hypothesis that the running time satisfies a power law
+of the form cn^3.
+
+  // return number of distinct triples (i, j, k)
+  // such that a[i] + a[j] + a[k] = 0
+    public static int count(int[] a) {
+        int n = a.length;
+        int count = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = i+1; j < n; j++) {
+                for (int k = j+1; k < n; k++) {
+                    if (a[i] + a[j] + a[k] == 0) {
+                        count++;
+                    }
+                }
+            }
+        }
+        return count;
+    }
+
+
+Mathematical analysis.
+The total running time is determined by two primary factors:
+
+    * The cost of executing each statement.
+    * The frequency of execution of each statement.
+
+The if statement in the innermost loop executes n choose 3 times
+
+  n!         n(n-1)(n-2)
+---------  = ----------- = n^3/6 - n^2/2 + n/3
+ 3!(n-3)!       6
+
+===========================================================================
+Task#4: Assignment-29: Asymptotic Equivalence (Tilde Notation)
+===========================================================================
+1. Watch the first 2 minutes of the video:
+
+   MIT VIDEO ASYMPTOTIC NOTATION:
+   https://www.youtube.com/watch?v=CWkh5kb4TGc
+
+
+2. From the book site, read the explanation of why
+
+     n^3/6 - n^2/2 + n/3 ~ n^3/6
+
+
+3. Use the tilde notation to simplify
+
+   a.  n(n-1)(n-2)(n-3)/24
+   b.  n(n+1) - n^2
+   c.  n(n+1)/2 + nlog n
+       Hint:
+       https://socratic.org/questions/how-do-you-find-the-limit-of-ln-n-n-as-n-approaches-infinity
+
+4. Watch minutes 5:15 - 6:45 of the MIT video.
+
+5. From the book site, read the explanation of why
+   the order of growth of the running time of ThreeSum.count()
+   is n^3.
+
+6. Give the order of growth of 3a, 3b, and 3c.
+
+7. Design a quadratic-time algorithm that, given an array of integers,
+   finds a pair that are closest to each other.
+   Write the program ClosestPair.java and modify the DoublingTest program
+   to test your code.
+
+
+
+Submit: The files: ClosestPair.java and DoublingTest.java.
+        Include in the documentation of ClosestPair.java
+        your answers to questions 3 and 6 as well as your names.
+
+lesson.txt
+Displaying lesson.txt.

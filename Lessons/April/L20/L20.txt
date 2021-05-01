@@ -1,0 +1,157 @@
+Data Structures
+Period 6
+Lesson-20
+Rick Platek
+•
+8:07 AM
+
+lesson.txt
+Text
+Class comments
+
+Marking as done…
+============================================================================
+Task #1: Unit 4 FRQ Question #2.
+============================================================================
+a. public int getPlayer2Move()
+
+b. public int playGame(int startingCoins, int maxRounds)
+
+============================================================================
+Assignment-27: ADVICE
+============================================================================
+
+	/***************************************************************
+         * toLowerCase
+         ***************************************************************/
+
+        s = "a";
+
+        previous = 1.0;
+        for (int i = 1; i <= n; i++) {
+            timer = new Stopwatch();
+            s.toLowerCase();
+            elapsed = timer.elapsedTime();
+            StdOut.println("toLowerCase ratio:" + "\t" + (elapsed / previous));
+            previous = elapsed;
+            s = new String(s+s); // ADVICE: create a new string
+        }
+
+
+============================================================================
+Assignment-30 (Individual Work)
+============================================================================
+1. It is easy to write a recursive method
+
+      public static double raiseToPower(double x, int n)
+
+   that calculates x^n, by relying on the recursive insight that
+
+         x^n = x * x^(n-1).
+
+   Such a strategy leads to an implementation that runs in linear time,O(N).
+   You can however, adopt a recursive divide-and-conquer strategy which takes
+   advantage of the fact that
+
+         x^(2n) = x^n * x^n
+
+   Use this fact to write a recursive version of raiseToPower that runs in
+   O(log N) time.
+
+==============================================================================
+Assignment-31 (Group work)
+==============================================================================
+1. Each of the four Java functions given here returns a string of length n
+   whose characters are all x. Determine the order of growth of the running
+   time of each function. Recall that concatenating two strings in Java
+   takes time proportional to the length of the resulting string.
+
+  (A).
+      public static String method1(int n){
+      	     if (n == 0) return "";
+	     String temp = method1(n/2);
+	     if (n%2 == 0) return temp + temp;
+	     else          return temp + temp + "x";
+
+      }
+
+   (B)
+	public static String method2(int n){
+	      String s = "";
+	      for (int i = 0; i < n; i++)
+	          s = s + "x";
+	      return s;
+	}
+
+
+   (C)
+        public static String method3(int n){
+	       if (n == 0) return "";
+	       if (n == 1) return  "x";
+	       return method3(n/2) + method3(n - n / 2);
+	}
+
+   (D)
+        public static String method4(int n){
+	       char [] temp = new char[n];
+	       for (int i  = 0; i < n; i++){
+	       	   temp[i] = 'x';
+	       }
+	       return new String(temp);
+
+        }
+
+
+2. What is the order of growth of the running time of the following
+   two functions? Each function takes a string as an argument and
+   returns the string reversed.
+
+
+  (A) public static String reverse1(String s){
+      	     int n = s.length();
+	     String reverse = "";
+	     for (int i = 0; i < n; i++){
+	     	 reverse = s.charAt(i) + reverse;
+	     }
+	     return reverse;
+       }
+
+
+  (B)  public static String reverse2(String s){
+       	      int n = s.length();
+	      if (n <= 1) reutrn s;
+	      String left = s.substring(0,n/2);
+	      String right = s.substring(n/2), n);
+	      return reverse2(right) + reverse2(left);
+        }
+
+3. Give an linear time algorithm for reversing a string.
+   The answer is posted on the book site (exercise 20, chapter 4.1).
+
+
+
+4. (Interview Question)
+
+  If you're ready for a real algorithmic challenge, write the method
+
+    public static int findMajorityElement(int [] array)
+
+  that takes an array of nonnegative integers and returns the majority
+  elment, which is defined to be a value that occurs in an absolute
+  majority of the element positions. If no majority element exists,
+  the method should return -1 to signal that fact. Your method must
+  also meet the following conditions:
+
+     - It must run in O(N) time.
+     - It must use O(1) additional space. In other words, it may use
+       individual temporary variables but may not allocate any additional
+       array storage. Moreover, this condition rules out recursive solutions,
+       because the space required for stack frames grows with the depth
+       of the recursion.
+     - It must not change any of the values in the array.
+
+  The hard part about this problem is coming up with the algorithm, not
+  implementing it. Play with some sample arrays and see if you can come
+  up with an effective strategy that satisfies the conditions.
+lesson.txt
+Displaying lesson.txt.

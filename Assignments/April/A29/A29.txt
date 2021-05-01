@@ -1,0 +1,58 @@
+Data Structures
+Period 6
+Assignment-29: Group Work
+Rick Platek
+•
+8:32 AM
+10 points
+Due Apr 30
+
+assignment-29.txt
+Text
+Class comments
+Your work
+Assigned
+Private comments
+===========================================================================
+Assignemnt-29: Asymptotic Equivalence (Tilde Notation)
+===========================================================================
+1. Watch the first 2 minutes of the video:
+
+   MIT VIDEO ASYMPTOTIC NOTATION:
+   https://www.youtube.com/watch?v=CWkh5kb4TGc
+
+
+2. From the book site, read the explanation of why
+
+     n^3/6 - n^2/2 + n/3 ~ n^3/6
+
+
+3. Use the tilde notation to simplify
+
+   a.  n(n-1)(n-2)(n-3)/24
+   b.  n(n+1) - n^2
+   c.  n(n+1)/2 + nlog n
+       Hint:
+       https://socratic.org/questions/how-do-you-find-the-limit-of-ln-n-n-as-n-approaches-infinity
+
+4. Watch minutes 5:15 - 6:45 of the MIT video.
+
+5. From the book site, read the explanation of why
+   the order of growth of the running time of ThreeSum.count()
+   is n^3.
+
+6. Give the order of growth of 3a, 3b, and 3c.
+
+7. Design a quadratic-time algorithm that, given an array of integers,
+   finds a pair that are closest to each other.
+   Write the program ClosestPair.java and modify the DoublingTest program
+   to test your code.
+
+
+
+Submit: The files: ClosestPair.java and DoublingTest.java.
+        Include in the documentation of ClosestPair.java
+        your answers to questions 3 and 6 as well as your names.
+
+assignment-29.txt
+Displaying ap-computer-science-a-java-quick-reference.pdf.
