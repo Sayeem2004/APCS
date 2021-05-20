@@ -1,0 +1,83 @@
+Data Structures
+Period 6
+Lesson-22
+Rick Platek
+•
+8:59 AM
+
+lesson.txt
+Text
+Class comments
+
+=============================================================================
+Task #1:  Unit 6 :Free Response Question
+=============================================================================
+
+  Are there any questions or concerns?
+
+
+  For the next session, be prepared to present your solution.
+
+=============================================================================
+Task #2:  Linear and Binary Searches (AP MATERIAL)
+=============================================================================
+1. Read about the Binary Search
+
+    https://introcs.cs.princeton.edu/java/42sort/
+
+
+
+  Linear Search
+    -- a brute force algorthm
+    -- Expected run time O(N).
+
+  Binary Search
+    -- O(log N)
+    -- Requires a sorted array
+
+
+2. Source code
+
+   Linear Search Source Code
+
+   public static int linear(int[] a, int key){
+       int ans = -1;
+       for (int i = 0; i < a.length; i++){
+       	   if (a[i] == key) break;
+	   ans++;
+       }
+       return ans;
+   }
+
+
+  Binary Search Source Code
+
+   public static int binarySearch(int []a, int key){
+   	  return bsHelper(a,0,a.length-1, key);
+
+   }
+
+   public  static int bsHelper(int [] a, int left, int right, int key){
+      if (left > right) return -1;
+	  int mid =  left + (right - left) / 2;
+	  if (a[mid] == key) return mid;
+	  if (a[mid] < key) return bsHelper(a,left,mid-1,key);
+	  return bsHelper(a,mid+1,right,key);
+   }
+
+
+
+
+
+
+
+=============================================================================
+Task #3: Things to work on.
+=============================================================================
+  1. Assingment 30 and 31 due today.
+  2. Unit 6 : Free Response Due Wednesday
+  3. Assignment 31 due Friday
+  4. Problem Set 09 due Friday (you may work together).
+
+lesson.txt
+Displaying lesson.txt.

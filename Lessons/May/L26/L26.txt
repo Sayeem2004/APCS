@@ -1,0 +1,47 @@
+Data Structures
+Period 6
+Lesson-26
+Rick Platek
+•
+May 14
+
+lesson.txt
+Text
+Class comments
+
+Lesson-26
+============================================================================
+Task #1: Unit Test 9
+============================================================================
+- Unit Tests
+   - go over unit 9: questions 1 and 2
+   - assign unit 10: released
+
+
+
+============================================================================
+Task #2: AP REVIEW
+============================================================================
+
+
+     1. Problem-set-10 due Today(you may work with your group)
+     2. Unit-10-FRQ -
+     3. 2014 Practice Exam (AP CLASSROOM)
+        2015 Practice Exam (AP CLASSROOM)
+        2020 Practice Exam (AP CLASSROOM)
+     4. Coding Bat - AP-1 Problems (ungraded)
+     5. Code Step By Step (Ungraded)
+         - Practice with object-oriented programming in a GUI: Critters section
+         Problem Statement and CODE
+         - http://www.martystepp.com/critters/critters.pdf
+         - https://www.cis.upenn.edu/~cis110/11fa/hw/hw08/index.html
+     6. Practice-IT
+        https://practiceit.cs.washington.edu/problem/list
+
+     7. CSAWESOME
+
+        https://csawesome.runestone.academy/runestone/books/published/csawesome/index.html
+
+
+lesson.txt
+Displaying lesson.txt.

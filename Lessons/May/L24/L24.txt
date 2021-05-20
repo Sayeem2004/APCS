@@ -1,0 +1,147 @@
+Data Structures
+Period 6
+Lesson-24
+Rick Platek
+•
+8:51 AM
+
+lesson.txt
+Text
+Class comments
+
+=============================================================================
+Task #1: Unit 7 : FRQ
+=============================================================================
+         Be prepared to present your solution.
+
+
+
+AP Curriculm includes 3 sorting algorithms
+   1. Selection Sort
+   2. Insertion Sort
+   3. Merge Sort
+
+    The next problem set and assignment will test your understanding of these
+    sorts plus other sorts.
+
+=============================================================================
+Task #2: Class Participation Scoring (15 % of your grade).
+=============================================================================
+Pts  Freq Running-Total  Score
+
+55
+54
+53
+52
+51
+50
+49
+48
+47
+46
+45
+44  1  1  100
+43
+42  1  2  100
+41
+40  4  6  100
+39  3  9   99
+38  5 14   99
+37  2 16   98
+36  2 18   98
+35  9 27   97
+34  4 31   96
+33  1 32   96
+32  5 37   95
+31  4 41   94
+30  3 44   93
+29  9 53   92
+28  7 60   91
+27  4 64   90
+26  4 68   90
+25  3 71   89
+24  6 77   89
+23  3 80   88
+22  8 88   88
+21  3 91   87
+20  1 92   87
+19  2 94   87
+18  4 98   85
+17  4 102  85
+16  3 105  84
+15  6 111  84
+14  9 120  80
+13  3 123  75
+12  5 128  70
+11  5 133  60
+10  1 134  50
+
+
+
+
+
+
+
+=============================================================================
+Task #3: TO DO
+=============================================================================
+
+     1. Assigment-32 due 5/20
+     2. Problem-set-09 due Tuesday (you may work with you group)
+     3. Unit-8-FRQ - go over Tuesday
+     4. 2014 Practice Exam (AP CLASSROOM)
+
+
+
+Need more work???
+
+1. Go to https://visualgo.net/en
+   work through the Sorting Module.
+
+2. Review the notes on sorting found here:
+
+    https://web.stanford.edu/class/archive/cs/cs106b/cs106b.1206/lectures/sorting/
+
+    and here:
+
+    https://introcs.cs.princeton.edu/java/42sort/
+
+
+    and this video:
+
+       https://www.youtube.com/watch?v=pcJHkWwjNl4
+3. From this book:
+       https://cses.fi/book/book.pdf
+
+   Read the section: I Basic Techniques  Sorting
+
+4. Here's another interview question
+
+If you enjoyed the findMarjority Element problem, here's an even
+more challenging one that used to be an interview question at Microsoft.
+Suppose that you have an array of N elements, in which each element has a
+value in the inclusive range 1 to N-1. Given that there are N elements
+in the array and only N-1 possible values to store in each slot, there
+must be at least one value that is duplicated in the array. There may,
+of course, be many duplicated values, but you know that there must be at
+least one by virtue of what mathematicians call the "pigeonhole principle":
+if you have more items to put into a set of pigeonholes than the number
+of pigeonholes, there must be some pigeonhole that ends up with more
+than one item.
+
+Your task in this problem is to write a method
+
+        public static int findDuplicate(int [] array)
+
+
+that takes an array whose values are constrained to be in the 1 to N-1
+range and returns one of the duplicated values. The hard part of this
+problem is to design an algorithm so that your implementation adheres
+to the same set of conditionns as the solution to the findMarjority
+element probelm.
+
+   - It must run in O(N) time.
+   - It must use O(1) additional space.
+   - It must not change any of the values in the array.
+lesson.txt
+Displaying lesson.txt. 

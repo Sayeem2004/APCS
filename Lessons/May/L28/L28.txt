@@ -1,0 +1,60 @@
+Data Structures
+Period 6
+Lesson-28
+Rick Platek
+•
+7:05 AM
+
+lesson.txt
+Text
+Class comments
+
+Lesson-28
+======================================================================
+Task #1 : To Do
+======================================================================
+      - Assignment-32
+      - Assignment-33
+
+Let me know if you need more time.
+
+
+
+========================================================================
+Task #2: Next topic -> Linked Lists
+========================================================================
+
+1. Book site notes:
+
+    https://introcs.cs.princeton.edu/java/43stack/
+
+   See sections : Linked Lists
+                  Implementing stacks with linked lists.
+
+
+2. Princeton Lectures are available if you enroll in the
+   Coursera course: Computer Science: Algorithms, Theory,
+                    and Machines.
+
+   It is free.
+
+   There are quizzes but no graded assignments.
+
+3. Here's a video from the creator of codeStepByStep
+
+    https://www.youtube.com/watch?v=ku5TRGICifA
+
+  Note he uses a ListNode object instead of a Node object.
+
+
+
+4. Try Problem-Set-11.
+   You may work on these exercises as a group, but each person must submit.
+
+    https://www.codestepbystep.com/problemset/view?id=3026
+
+   13 exercises
+
+    due 5/28
+lesson.txt
+Displaying lesson.txt. Turning in…

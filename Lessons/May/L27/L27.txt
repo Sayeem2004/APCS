@@ -1,0 +1,32 @@
+Data Structures
+Period 6
+Lesson-27: AP EXAM DAY
+Rick Platek
+•
+May 18
+
+ap21-frq-computer-science-a.pdf
+PDF
+
+ap-computer-science-a-java-quick-reference.pdf
+PDF
+
+lesson.txt
+Text
+Class comments
+
+Lesson-27: AP EXAM DAY
+ 1. Unit 10 FRQ and MCQ are available.
+
+ 2. CodeStepByStep is inaccessible.
+
+ 3. AP 2021 Released Free Response
+    Video
+     https://www.youtube.com/watch?v=QDBtIX_CnzA
+
+4. Try Practice-It
+    https://practiceit.cs.washington.edu/
+
+Good Luck
+lesson.txt
+Displaying lesson.txt.Turning in…

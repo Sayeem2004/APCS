@@ -1,0 +1,89 @@
+Data Structures
+Period 6
+Lesson-25
+Rick Platek
+•
+8:58 AM
+
+lesson.txt
+Text
+Class comments
+
+Marking as done…
+=============================================================================
+Task #1: Unit 8 : FRQ
+=============================================================================
+         Be prepared to present your solution.
+
+
+
+AP Curriculm includes 3 sorting algorithms
+   1. Selection Sort
+   2. Insertion Sort
+   3. Merge Sort
+
+    The next problem set and assignment will test your understanding of these
+    sorts plus other sorts.
+
+
+
+
+==============================================================================
+Task #2: Assignment-33 : Sort Detective
+==============================================================================
+
+
+
+
+
+=============================================================================
+Task #3: TO DO
+=============================================================================
+
+     1. Assigment-32 due 5/20
+     2. Problem-set-09 due Today(you may work with your group)
+     3. Unit-9-FRQ -
+     4. 2014 Practice Exam (AP CLASSROOM)
+        2015 Practice Exam (AP CLASSROOM)
+	2020 Practice Exam (AP CLASSROOM)
+     5. Problem-Set-10 due May 14 (you may work with your group)
+     6. Assignment-33
+
+Need more work???
+
+
+7. From this book:
+       https://cses.fi/book/book.pdf
+
+   Read the section: I Basic Techniques  Sorting
+
+8. Here's another interview question
+
+If you enjoyed the findMarjority Element problem, here's an even
+more challenging one that used to be an interview question at Microsoft.
+Suppose that you have an array of N elements, in which each element has a
+value in the inclusive range 1 to N-1. Given that there are N elements
+in the array and only N-1 possible values to store in each slot, there
+must be at least one value that is duplicated in the array. There may,
+of course, be many duplicated values, but you know that there must be at
+least one by virtue of what mathematicians call the "pigeonhole principle":
+if you have more items to put into a set of pigeonholes than the number
+of pigeonholes, there must be some pigeonhole that ends up with more
+than one item.
+
+Your task in this problem is to write a method
+
+        public static int findDuplicate(int [] array)
+
+
+that takes an array whose values are constrained to be in the 1 to N-1
+range and returns one of the duplicated values. The hard part of this
+problem is to design an algorithm so that your implementation adheres
+to the same set of conditionns as the solution to the findMarjority
+element probelm.
+
+   - It must run in O(N) time.
+   - It must use O(1) additional space.
+   - It must not change any of the values in the array.
+lesson.txt
+Displaying lesson.txt.
