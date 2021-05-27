@@ -1,0 +1,39 @@
+Data Structures
+Period 6
+Assignment-34: Group Work
+Rick Platek
+•
+May 24
+15 points
+Due Jun 3
+
+assignment-34.txt
+Text
+Class comments
+Your work
+Assigned
+Private comments
+Assignment-34: Group Work
+Group Project:   GuitarHero
+
+Links to problem statement:
+
+  https://www.cis.upenn.edu/~cis110/13sp/hw/hw07/guitar.shtml
+  https://introcs.cs.princeton.edu/java/assignments/
+
+   Part I: RingBuffer.java        (5 pts)
+
+   Part II: GuitarString.java     (5 pts)
+
+   Part III: GuitarHero.java      (5 pts)
+
+   Extra Credit 1:                (5 pts)
+
+   Extra Credit 2:                (5 pts)
+
+
+
+
+
+assignment-34.txt
+Displaying assignment-34.txt.

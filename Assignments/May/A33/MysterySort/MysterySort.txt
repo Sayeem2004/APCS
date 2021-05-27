@@ -1,0 +1,172 @@
+Names: Mohammad Khan, Asa Muhammad, Dylan Hu, Caroline Leung, Esteak Shapin, Han
+Zhang, Jishan Chowdhury
+
+Final Guesses:
+    Alpha    =  Bubble Sort
+    Beta     =  Selection Sort
+    Gamma    =  Insertion Sort
+    Delta    =  Merge Sort
+    Epsilon  =  Quick Sort
+    Zeta     =  Heap Sort
+
+    We made these guesses through the 5 tests/experiments shown below in order. 
+
+Test 1: Comparisons Made
+    Bubble Sort, Quick Sort, and Selection Sort will run the same number of
+    comparisons regardless of whether it is in the best case of ordered or the
+    worst case of reverse order, so we can test that out for each mystery sort
+    and see which ones make the same number of comparisons in both the best case
+    and the worst case.
+
+    Sort     Type      N     Mov     Comp    Time
+    Alpha    In order  1000	 0	     499500	 4
+    Beta	 In order  1000	 0	     499500	 2
+    Gamma	 In order  1000	 0	     999	 0
+    Delta	 In order  1000	 10926	 4932	 1
+    Epsilon  In order  1000	 500499	 499500	 6
+    Zeta	 In order  1000	 9708	 20416	 5
+
+    Sort     Type            N     Mov     Comp    Time
+    Alpha	 Reversed order	 1000  499500  499500  17
+    Beta	 Reversed order	 1000  250000  499500  3
+    Gamma	 Reversed order	 1000  499500  500499  17
+    Delta	 Reversed order	 1000  11038   5044	   1
+    Epsilon	 Reversed order	 1000  250499  499500  5
+    Zeta	 Reversed order	 1000  8316	   17632   0
+
+    The above tests show that Alpha, Beta, and Epsilon have the same number of
+    comparisons in both the best case and the worst case so they can be narrowed
+    down to Bubble Sort, Quick Sort, and Selection Sort.
+
+Test 2: Best Case Time Complexities
+                    Best        Average       Worst
+    Selection Sort	Ω(n^2)	    θ(n^2)	      O(n^2)
+    Bubble Sort	    Ω(n)	    θ(n^2)	      O(n^2)
+    Insertion Sort	Ω(n)	    θ(n^2)	      O(n^2)
+    Heap Sort	    Ω(nlogn)	θ(nlogn)	  O(nlogn)
+    Quick Sort	    Ω(nlogn)	θ(nlogn)	  O(n^2)
+    Merge Sort	    Ω(nlogn)	θ(nlogn)	  O(nlogn)
+
+    Since Selection Sort is the only sort that is Ω(n^2) in the best case we can
+    test each unknown sort (from test 1) in the best case of ordered to see which
+    one is closest Ω(n^2) and is thus selection sort.
+
+    Sort   Type      N      Mov  Comp       Time
+    Alpha  In order	 1000	0	 499500 	5
+    Alpha  In order	 2000	0	 1999000	11
+    Alpha  In order	 4000	0	 7998000	27
+    Alpha  In order	 8000	0	 31996000   73
+    Alpha  In order	 16000  0	 127992000	273
+
+    Sort  Type      N      Mov  Comp       Time
+    Beta  In order	1000   0    499500	   3
+    Beta  In order	2000   0	1999000	   13
+    Beta  In order	4000   0	7998000	   42
+    Beta  In order	8000   0	31996000   122
+    Beta  In order	16000  0	127992000  370
+
+    Sort     Type      N     Mov      Comp     Time
+    Epsilon  In order  1000	 500499	  499500   6
+    Epsilon	 In order  2000	 2000999  1999000  16
+    Epsilon  In order  3910	 7646004  7642095  37
+    Note* Sizes larger than 3910 would not run with epsilon for some reason
+
+    After testing out each unknown (from test 1) with a doubling test in the
+    best case, the unknown Beta shown above is the sort that is closest to a
+    complexity of Ω(n^2) in the best case because it is has the most doubling
+    factors greater than 3 and it has the largest times out of the sorts.
+    This means that Beta must be Selection Sort.
+
+Test 3: Swaps Made
+    From our results in Test 1 and Test 2 we can limit Bubble Sort and Quick Sort
+    to Alpha and Epsilon. One major difference between Bubble Sort and Quick Sort
+    is that in the best case of ordered, Bubble Sort will make 0 swaps, while
+    Quick Sort will not. We can test both Alpha and Epsilon to find which one
+    makes 0 swaps in the best case.
+
+    Sort   Type      N     Mov  Comp     Time
+    Alpha  In order	 100   0    4950	 0
+    Alpha  In order	 200   0    19900	 0
+    Alpha  In order	 400   0    79800	 0
+    Alpha  In order	 800   0    319600	 2
+    Alpha  In order	 1600  0    1279200	 7
+    Alpha  In order	 3200  0    5118400	 24
+
+    Sort     Type      N     Mov      Comp     Time
+    Epsilon	 In order  100	 5049	  4950	   0
+    Epsilon	 In order  200	 20099	  19900	   0
+    Epsilon	 In order  400	 80199	  79800	   1
+    Epsilon	 In order  800	 320399	  319600   3
+    Epsilon	 In order  1600	 1280799  1279200  9
+    Epsilon	 In order  3200	 5121599  5118400  33
+
+    The above tests show that no matter the size of the original list Alpha makes
+    0 swaps in the best case of ordered, so Alpha must be Bubble Sort. Also, by
+    process of elimination Epsilon must be Quick Sort.
+
+Test 4: Best Case Time Complexities 2
+                    Best        Average       Worst
+    Selection Sort	Ω(n^2)	    θ(n^2)	      O(n^2)
+    Bubble Sort	    Ω(n)	    θ(n^2)	      O(n^2)
+    Insertion Sort	Ω(n)	    θ(n^2)	      O(n^2)
+    Heap Sort	    Ω(nlogn)	θ(nlogn)	  O(nlogn)
+    Quick Sort	    Ω(nlogn)	θ(nlogn)	  O(n^2)
+    Merge Sort	    Ω(nlogn)	θ(nlogn)	  O(nlogn)
+
+    From the remaining three sorts of Insertion Sort, Merge Sort, and Heap Sort,
+    Insertion Sort is the only one with a Ω(n) best case time complexity. So we
+    can test the remaining unknowns of Gamma, Delta, and Zeta and see which one
+    runs Ω(n) in the best case.
+
+    Sort   Type      N        Mov  Comp     Time
+    Gamma  In order	 256000	  0	   255999	2
+    Gamma  In order	 512000	  0	   511999	5
+    Gamma  In order	 1024000  0	   1023999  8
+    Gamma  In order	 2048000  0	   2047999  15
+    Gamma  In order  4096000  0	   4095999  28
+
+    Sort   Type      N        Mov       Comp      Time
+    Delta  In order	 256000	  3822586	2286592	  129
+    Delta  In order	 512000	  7901178	4829184	  207
+    Delta  In order	 1024000  16314362	10170368  378
+    Delta  In order	 2048000  33652730	21364736  752
+    Delta  In order	 4096000  69353466	44777472  1488
+
+    Sort  Type      N        Mov       Comp       Time
+    Zeta  In order	256000	 4549378   9354756	  39
+    Zeta  In order	512000	 9592336   19696672	  63
+    Zeta  In order	1024000	 20290294  41604588	  100
+    Zeta  In order	2048000	 42785156  87618312	  188
+    Zeta  In order	4096000	 89552106  183200212  380
+
+    After testing out each of the remaining unknowns with a doubling test in the
+    best case, the test shown above shows that the Gamma sort runs in Ω(n), while
+    the others run in Ω(nlogn) because although they all have doubling factors of
+    around 2, Gamma runs much quicker than the other two which means that it is
+    most likely Ω(n). Since it is the only sort out of the remaining three that
+    runs in Ω(n), Gamma must be Insertion Sort.
+
+Test 5: Comparisons Made 2
+    The only two sorts left are Heap Sort and Merge Sort, and they must belong to
+    Delta and Zeta. Heap Sort is an algorithm that uses less space than Merge Sort
+    but in return it does more comparisons. So we can compare the comparisons
+    made between the Delta and Zeta, and which ever makes less comparisons must be
+    Merge Sort.
+
+    Sort   Type      N      Mov     Comp    Time
+    Delta  In order	 1000	10926	4932	1
+    Delta  In order	 2000	22858	10864	2
+    Delta  In order	 4000	47722	23728	5
+    Delta  In order	 8000	99450	51456	7
+    Delta  In order	 16000	206906	110912  12
+
+    Sort  Type      N      Mov     Comp    Time
+    Zeta  In order	1000   9708	   20416   1
+    Zeta  In order	2000   21300   44600   0
+    Zeta  In order	4000   47142   98284   4
+    Zeta  In order	8000   102638  213276  3
+    Zeta  In order  16000  220380  456760  3
+
+    The above tests shows that Delta has way fewer comparisons than Zeta, and
+    thus Delta must be Merge Sort, and by process of elimination Zeta must be
+    Heap Sort.

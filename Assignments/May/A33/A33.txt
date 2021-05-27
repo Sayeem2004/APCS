@@ -1,0 +1,91 @@
+Data Structures
+Period 6
+Assignment-33: Group work
+Rick Platek
+•
+May 11
+10 points
+Due May 24
+
+assigment-33.txt
+Text
+1 class comment
+
+Noakai Aronesty10:06 AM
+https://www.cs.usfca.edu/~galles/visualization/HeapSort.html
+
+Your work
+Turned in
+
+MysterySort.txt
+Text
+Private comments
+Your assignment has been turned in
+The Sorting Detective - Group work
+-------------------------------------------------------------------------
+
+1. Read the original problem statement found here:
+
+   http://nifty.stanford.edu/2002/LevineSort/labWriteUp.htm
+
+
+2. First modification, consider only these  sorts:
+    Bubble
+    Selection
+    Insertion
+    Merge
+    Quick
+    Heap
+
+   Suggested resources
+
+    Suggested Resources:
+
+   a. Go to https://visualgo.net/en
+      work through the Sorting Module.
+
+   b. Review the notes on sorting found here:
+
+      https://web.stanford.edu/class/archive/cs/cs106b/cs106b.1206/lectures/sorting/
+
+      and here:
+
+      https://introcs.cs.princeton.edu/java/42sort/
+
+
+   c. Selection and Insertion sort
+
+       https://www.youtube.com/watch?v=pcJHkWwjNl4
+
+   d. MergeSort and Quick sort
+
+       https://www.youtube.com/playlist?list=PLXFMmlk03Dt7Q0xr1PIAriY5623cKiH7V
+
+
+
+
+
+
+
+
+3. Second modification, use the online sort detective to run
+   your experiments.
+
+    https://labs.penjee.com/sort-detective/
+
+
+
+4. The Write-Up
+
+   You are to identify the mystery sorts and justify your conclusions.
+   Your write-up should demonstrate an understanding of the sorting
+   algorithms and should also identify how their differences are realized by
+   your experiments. Please keep things low-key (i.e. no need for
+   multi-color graphs with dozens of data points).  But you should write in
+   clear English sentences and include a reasonable amount of detail. If your
+   experiments are well chosen, your write-up can still be pretty short.
+
+   One write up per group.
+   Put your names in the document.
+assigment-33.txt
+Displaying MysterySort.txt.Turning in…
